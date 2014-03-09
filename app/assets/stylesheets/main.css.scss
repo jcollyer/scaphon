@@ -72,7 +72,7 @@ body {
 #carousel{
   width:100%;
   max-width:600px;
-  margin:10px auto;
+  margin:0px auto;
   .item{
     img{
       display: block;
@@ -80,9 +80,48 @@ body {
       height: auto;
     }
   }
+  .caption{
+    display:none;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    text-align:center;
+    font-size:30px;
+  }
 }
 
+.info{
+  background:white;
+  padding:10px;
+  text-align:center;
+}
 
+.community{
+  background:#f9f9f9;
+  height:400px; //remove
+  .community_board{
+    max-width:600px;
+    background:#ddd;
+    height:300px; //remove
+    margin:50px auto;
+    padding:20px;
+    text-align:center;
+  }
+}
+
+.footer{
+  background:#fe6659;
+  height:220px; //remove
+  padding:20px;
+}
+.base{
+  background:#444;
+  height:40px; //remove
+  width:100%;
+  text-align:center;
+  padding:20px;
+}
 
 
 
