@@ -6,14 +6,59 @@ body {
 }
 
 .top-bar{
-  background:#353535;
+  background:#444;
   width:100%;
-  height:auto;
-  position:absolute;
+  position:relative;
+  height:60px; //remove
   h5{
     color:white;
     float:right;
-    margin-right:40px;
+    margin:20px;
     padding:0px;
+  }
+}
+
+.logo{
+  background-image:url(image_path("logo.png"));
+  background-repeat:no-repeat;
+  background-size:100%;
+  cursor:pointer;
+  margin:10px 0px 0px;
+  height:100px;
+  position:relative;
+  width:100px;
+  &:after{
+    bottom:15px;
+    content:"SCAPHON";
+    color:white;
+    font-size:24px;
+    left:103px;
+    position:absolute;
+  }
+}
+
+.nav{
+  background:#3b9bc5;
+  height:40px;
+  div{
+    float:left;
+    padding:0px 20px;
+    &:hover{
+      background:#2f82a4;
+    }
+    a{
+      color:white;
+      display:block;
+      padding:12px;
+      text-align:center;
+      text-decoration:none;
+      text-transform:uppercase;
+    }
+  }
+  .special{
+    background:#2f82a4;
+    float:right;
+    text-align:right;
+    width:300px;
   }
 }
