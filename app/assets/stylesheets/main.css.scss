@@ -1,0 +1,19 @@
+$font-main: 'Josefin Sans', sans-serif;
+
+body {
+  font-family:$font-main;
+  background:#4aaad2;
+}
+
+.top-bar{
+  background:#353535;
+  width:100%;
+  height:auto;
+  position:absolute;
+  h5{
+    color:white;
+    float:right;
+    margin-right:40px;
+    padding:0px;
+  }
+}
