@@ -35,6 +35,12 @@ end
 
 gem "paperclip", "~> 4.1"
 gem "aws-sdk"
+
+group :development, :test do
+  gem 'debugger'
+  gem 'pry'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
