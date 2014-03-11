@@ -1,10 +1,11 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
-
+  before_filter :load_imageable
   # GET /pictures
   # GET /pictures.json
   def index
-    @pictures = Picture.all
+    # @imageable = Newsletter.find(params[:newsletter_id])
+    @pictures = @imageable.pictures
   end
 
   # GET /pictures/1
@@ -14,27 +15,22 @@ class PicturesController < ApplicationController
 
   # GET /pictures/new
   def new
-    @picture = Picture.new
-  end
-
-  # GET /pictures/1/edit
-  def edit
+    @picture = @imageable.pictures.new
   end
 
   # POST /pictures
   # POST /pictures.json
   def create
-    @picture = Picture.new(picture_params)
-
-    respond_to do |format|
-      if @picture.save
-        format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @picture }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @picture.errors, status: :unprocessable_entity }
-      end
+    @picture = @imageable.pictures.new(params[:picture])
+    if @picture.save
+      redirect_to @imageable, notice: "picture created."
+    else
+      render :new
     end
+  end
+
+  # GET /pictures/1/edit
+  def edit
   end
 
   # PATCH/PUT /pictures/1
@@ -70,5 +66,10 @@ class PicturesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
       params.require(:picture).permit(:name, :image)
+    end
+
+    def load_imageable
+      resource, id = request.path.split('/')[1, 2]
+      @imageable = resource.singularize.classify.constantize.find(id)
     end
 end
