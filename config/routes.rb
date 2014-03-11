@@ -1,8 +1,8 @@
 Scaphon::Application.routes.draw do
 
-  resources :pictures
+  resources :newsletters do
+    resources :pictures
+  end
 
   root to: "home#index"
-
-  resources :newsletters
 end
