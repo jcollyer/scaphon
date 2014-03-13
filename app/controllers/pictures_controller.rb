@@ -21,7 +21,7 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
-    @picture = @imageable.pictures.new(params[:picture])
+    @picture = @imageable.pictures.new(picture_params)
     if @picture.save
       redirect_to @imageable, notice: "picture created."
     else

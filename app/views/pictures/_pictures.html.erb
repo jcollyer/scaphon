@@ -1,0 +1,5 @@
+<% @pictures.each do | picture | %>
+  <%= picture.name %>
+  <%= image_tag picture.image.url(:thumb) %>
+  <input type="radio" name="picture" value="<%= picture.id %>">
+<% end %>
