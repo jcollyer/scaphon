@@ -16,3 +16,6 @@
 /tmp
 
 config/initializers/s3_constants.rb
+
+
+app/assets/images/o*
