@@ -5,7 +5,7 @@ class AttachmentsController < ApplicationController
   # GET /attachments
   # GET /attachments.json
   def index
-    @attachments = @imageable.attachments
+    @attachments = @fileable.attachments
   end
 
   # GET /attachments/1
@@ -15,7 +15,7 @@ class AttachmentsController < ApplicationController
 
   # GET /attachments/new
   def new
-    @attachment = Attachment.new
+    @attachment = @fileable.attachments.new
   end
 
   # GET /attachments/1/edit
@@ -25,16 +25,11 @@ class AttachmentsController < ApplicationController
   # POST /attachments
   # POST /attachments.json
   def create
-    @attachment = Attachment.new(attachment_params)
-
-    respond_to do |format|
-      if @attachment.save
-        format.html { redirect_to @attachment, notice: 'Attachment was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @attachment }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @attachment.errors, status: :unprocessable_entity }
-      end
+    @attachment = @fileable.attachments.new(attachment_params)
+    if @attachment.save
+      redirect_to @fileable, notice: "file added."
+    else
+      render :new
     end
   end
 
@@ -71,5 +66,14 @@ class AttachmentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def attachment_params
       params.require(:attachment).permit(:name)
+    end
+
+    def load_fileable
+      resource, id = request.path.split('/')[1, 2]
+      @fileable = resource.singularize.classify.constantize.find(id)
+
+      # alternative
+      # klass = [Newsletter, Conference].detect { |c| params["#{c.name.underscore}_id"] }
+      # @fileable = klass.find(params["#{klass.name.underscore}_id"])
     end
 end

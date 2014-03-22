@@ -4,7 +4,6 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
-    # @imageable = Newsletter.find(params[:newsletter_id])
     @pictures = @imageable.pictures
   end
 
@@ -71,5 +70,8 @@ class PicturesController < ApplicationController
     def load_imageable
       resource, id = request.path.split('/')[1, 2]
       @imageable = resource.singularize.classify.constantize.find(id)
+
+      # klass = [Newsletter, Conference].detect { |c| params["#{c.name.underscore}_id"] }
+      # @imageable = klass.find(params["#{klass.name.underscore}_id"])
     end
 end

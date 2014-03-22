@@ -1,0 +1,4 @@
+<% @attachments.each do | attachment | %>
+  <%= attachment.name %>
+  <input type="radio" name="attachment" value="<%= attachment.id %>">
+<% end %>

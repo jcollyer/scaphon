@@ -10,10 +10,15 @@ class NewslettersController < ApplicationController
   # GET /newsletters/1
   # GET /newsletters/1.json
   def show
-    @newsletter = Newsletter.find(params[:id])
-    @imageable  = @newsletter
-    @pictures   = @imageable.pictures
-    @picture    = Picture.new
+    @newsletter  = Newsletter.find(params[:id])
+
+    @imageable   = @newsletter
+    @pictures    = @imageable.pictures
+    @picture     = Picture.new
+
+    @fileable    = @newsletter
+    @attachments = @fileable.attachments
+    @attachment  = Attachment.new
   end
 
   # GET /newsletters/new
