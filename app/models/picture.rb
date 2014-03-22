@@ -12,5 +12,7 @@ class Picture < ActiveRecord::Base
     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
     :url => "/system/:attachment/:id/:style/:filename",
     :default_url => '/assets/missing_:style.jpg'
+
+    #actually freakin needed
     validates_attachment_content_type :image, :content_type => %w(image/jpeg image/jpg image/png)
 end
