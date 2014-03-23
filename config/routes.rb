@@ -4,6 +4,7 @@ Scaphon::Application.routes.draw do
 
   resources :conferences do
     resources :pictures
+    resources :attachments
   end
 
   resources :newsletters do
