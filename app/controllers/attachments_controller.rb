@@ -51,10 +51,7 @@ class AttachmentsController < ApplicationController
   # DELETE /attachments/1.json
   def destroy
     @attachment.destroy
-    respond_to do |format|
-      format.html { redirect_to attachments_url }
-      format.json { head :no_content }
-    end
+    redirect_to(:back)
   end
 
   private
