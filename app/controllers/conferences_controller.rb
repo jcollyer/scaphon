@@ -14,6 +14,8 @@ class ConferencesController < ApplicationController
     @imageable   = @conferences
     @pictures    = @imageable.pictures
     @picture     = Picture.new
+
+    @thisModel =  Conference.find(params[:id])
   end
 
   # GET /conferences/new

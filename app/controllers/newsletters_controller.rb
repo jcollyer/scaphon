@@ -19,6 +19,8 @@ class NewslettersController < ApplicationController
     @fileable    = @newsletter
     @attachments = @fileable.attachments
     @attachment  = Attachment.new
+
+    @thisModel =  Newsletter.find(params[:id])
   end
 
   # GET /newsletters/new
