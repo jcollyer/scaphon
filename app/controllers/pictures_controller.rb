@@ -50,10 +50,7 @@ class PicturesController < ApplicationController
   # DELETE /pictures/1.json
   def destroy
     @picture.destroy
-    respond_to do |format|
-      format.html { redirect_to pictures_url }
-      format.json { head :no_content }
-    end
+    redirect_to(:back)
   end
 
   private
