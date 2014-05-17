@@ -11,7 +11,7 @@ body {
 }
 
 .top-bar{
-  background:$light-blue;
+  background:$dark-blue;
   width:100%;
   position:relative;
   height:60px; //remove
@@ -26,10 +26,11 @@ body {
 
 .nav{
   border-bottom:2px solid $dark-orange;
-  height: 100px;
+  height:100px;
+  margin-top:10px;
   div{
     float:left;
-    margin:50px 0px 2px;
+    margin-top:50px;
     padding:0px 20px;
     text-align:center;
     width:16%;
@@ -68,28 +69,30 @@ body {
   }
 }
 
-.home-title{
-  color:$dark-blue;
-  font-size:50px;
-  margin:25px;
-}
-
+.home-main{
+  div{
+    float:left;
+    height:300px;
+    margin:20px 0px 0px 1%;
+    width:32%;
   }
-  .caption{
-    display:none;
-    position:absolute;
-    bottom:0px;
-    left:0px;
-    right:0px;
+  h1{
+    color:white;
     text-align:center;
-    font-size:30px;
+    margin-top:10px;
   }
-}
-
-.info{
-  background:white;
-  padding:10px;
-  text-align:center;
+  .events{
+    border:4px solid $light-blue;
+    box-shadow: 0 0 150px $light-blue inset;
+  }
+  .newsletters{
+    border:4px solid $light-green;
+    box-shadow: 0 0 150px $light-green inset;
+  }
+  .scholarships{
+    border:4px solid $mid-yellow;
+    box-shadow: 0 0 150px $mid-yellow inset;
+  }
 }
 
 .community{
@@ -105,7 +108,7 @@ body {
 }
 
 .footer{
-  background:$mid-yellow;
+  background:$light-blue;
   height:220px; //remove
   padding:20px;
 }
