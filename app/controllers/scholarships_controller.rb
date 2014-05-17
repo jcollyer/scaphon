@@ -10,6 +10,17 @@ class ScholarshipsController < ApplicationController
   # GET /scholarships/1
   # GET /scholarships/1.json
   def show
+    @scholarship  = Scholarship.find(params[:id])
+
+    @imageable   = @scholarship
+    @pictures    = @imageable.pictures
+    @picture     = Picture.new
+
+    @fileable    = @scholarship
+    @attachments = @fileable.attachments
+    @attachment  = Attachment.new
+
+    @thisModel =  Scholarship.find(params[:id])
   end
 
   # GET /scholarships/new
