@@ -1,5 +1,7 @@
 Scaphon::Application.routes.draw do
 
+  resources :scholarships
+
   resources :attachments
 
   resources :affairs do
