@@ -10,6 +10,17 @@ class AffairsController < ApplicationController
   # GET /affairs/1
   # GET /affairs/1.json
   def show
+    @affair  = Affair.find(params[:id])
+
+    @imageable   = @affair
+    @pictures    = @imageable.pictures
+    @picture     = Picture.new
+
+    @fileable    = @affair
+    @attachments = @fileable.attachments
+    @attachment  = Attachment.new
+
+    @thisModel =  Affair.find(params[:id])
   end
 
   # GET /affairs/new
