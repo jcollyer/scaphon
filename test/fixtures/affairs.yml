@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  kind: MyString
+  name: MyString
+  date: 2014-05-17
+  location: MyString
+  cost: 1.5
+  paypal: MyText
+
+two:
+  kind: MyString
+  name: MyString
+  date: 2014-05-17
+  location: MyString
+  cost: 1.5
+  paypal: MyText

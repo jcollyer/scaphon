@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @affair.kind %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @affair.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @affair.date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @affair.location %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @affair.cost %>
+</p>
+
+<p>
+  <strong>Paypal:</strong>
+  <%= @affair.paypal %>
+</p>
+
+<%= link_to 'Edit', edit_affair_path(@affair) %> |
+<%= link_to 'Back', affairs_path %>

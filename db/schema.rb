@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319034424) do
+ActiveRecord::Schema.define(version: 20140517175259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "affairs", force: true do |t|
+    t.string   "kind"
+    t.string   "name"
+    t.date     "date"
+    t.string   "location"
+    t.float    "cost"
+    t.text     "paypal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "attachments", force: true do |t|
     t.string   "name"
@@ -36,6 +47,21 @@ ActiveRecord::Schema.define(version: 20140319034424) do
     t.text     "paypal"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.date     "date"
+    t.string   "location"
+    t.string   "cost"
+    t.text     "paypal"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "kind_file_name"
+    t.string   "kind_content_type"
+    t.integer  "kind_file_size"
+    t.datetime "kind_updated_at"
   end
 
   create_table "files", force: true do |t|
