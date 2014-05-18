@@ -63,11 +63,12 @@ body {
 }
 
 .home-main{
+  height:200px;
   div{
     float:left;
-    height:300px;
-    margin:20px 0px 0px 1%;
-    width:32%;
+    margin-top:10px;
+    padding:0px;
+    width:33.333%;
   }
   h1{
     color: white;
@@ -77,26 +78,32 @@ body {
     padding: 10px;
   }
   .events{
-    border:4px solid $light-blue;
+    border-left:4px solid $light-blue;
+    border-top:4px solid $light-blue;
+    border-bottom:4px solid $light-blue;
     box-shadow: 0 0 5px $light-blue inset;
+    height:88%;
+    margin-top:2%;
   }
   .newsletters{
     border:4px solid $light-green;
     box-shadow: 0 0 5px $light-green inset;
+    height:100%;
   }
   .scholarships{
-    border:4px solid $light-blue;
+    border-right:4px solid $light-blue;
+    border-top:4px solid $light-blue;
+    border-bottom:4px solid $light-blue;
     box-shadow: 0 0 5px $light-blue inset;
+    height:88%;
+    margin-top:2%;
   }
 }
 
 .community{
-  height:400px; //remove
   .community_board{
-    max-width:600px;
-    background:#ddd;
-    height:300px; //remove
-    margin:50px auto;
+    border:5px solid $light-green;
+    margin:10px 0px 20px;
     padding:20px;
     text-align:center;
   }
@@ -104,11 +111,11 @@ body {
 
 .footer{
   background:$dark-orange;
-  height:220px; //remove
+  height:120px; //remove
   padding:20px;
 }
 .base{
-  background:$mid-yellow;
+  background:$light-green;
   height:40px; //remove
   width:100%;
   text-align:center;
