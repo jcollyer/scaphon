@@ -1,6 +1,6 @@
 <% @pictures.each do | picture | %>
   <%= picture.name %>
   <%= image_tag picture.image.url(:thumb) %>
-  <input type="radio" name="picture" value="<%= picture.id %>">
+  <!-- <input type="radio" name="picture" value="<%= picture.id %>"> -->
   <%= link_to 'Destroy', [@thisModel, picture], method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>

@@ -7,7 +7,7 @@
   <div class="events">
     <h1>Events</h1>
     <%= @event.name %>
-    <%= image_tag @event_picture.image.url(:xlarg), class: "home-box-image" %>
+    <% if defined? @event_picture %><%= image_tag @event_picture.image.url(:xlarg), class: "home-box-image" %><% end %>
   </div>
   <div class="scholarships">
     <h1>Scholarships</h1>
