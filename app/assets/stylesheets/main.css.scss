@@ -1,141 +1,143 @@
 $font-main: 'Josefin Sans', sans-serif;
 $off-white: #f5f5f5;
+$dark-gray: #353535;
 $dark-blue: #314d5b;
 $light-blue: #27a6d1;
 $dark-orange: #e1574c;
 $light-green: #3db39d;
 $mid-yellow: #f0c75e;
 body {
-  font-family:$font-main;
-  background:$off-white;
+  font-family: $font-main;
+  background: $off-white;
 }
 
 .top-bar{
-  background:$light-green;
-  width:100%;
-  position:relative;
-  height:60px; //remove
+  background: $light-green;
+  width: 100%;
+  position: relative;
+  height: 60px; //remove
   h5{
-    color:white;
-    float:right;
-    margin:20px;
-    padding:0px;
+    color: white;
+    float: right;
+    margin: 20px;
+    padding: 0px;
   }
 }
 
 
 .nav{
-  border-bottom:2px solid $light-blue;
-  height:100px;
-  margin-top:10px;
-  position:relative;
+  border-bottom: 2px solid $light-blue;
+  height: 100px;
+  margin: 20px 0px;
+  position: relative;
   &:before{
-    background-image:url(image_path("logo2.png"));
-    background-repeat:no-repeat;
-    background-size:100%;
-    content:"";
-    height:100px;
-    top:0px;
-    position:absolute;
-    width:195px;
-    left:0px;
+    background-image: url(image_path("logo2.png"));
+    background-repeat: no-repeat;
+    background-size: 100%;
+    content: "";
+    height: 100px;
+    top: 0px;
+    position: absolute;
+    width: 195px;
+    left: 0px;
   }
   div{
-    float:left;
-    margin-top:50px;
-    padding:0px 20px;
-    text-align:center;
+    float: left;
+    margin-top: 50px;
+    padding: 0px 20px;
+    text-align: center;
     &:hover{
-      background:$light-blue;
+      border-top:2px solid $light-blue;
+      border-left:2px solid $light-blue;
+      border-right:2px solid $light-blue;
     }
     a{
-      color:$light-blue;
-      display:block;
-      font-weight:bold;
-      padding:17px;
-      text-decoration:none;
-      text-transform:uppercase;
-      &:hover{
-        color:$off-white;
-      }
+      color: $light-blue;
+      display: block;
+      font-weight: bold;
+      padding: 17px;
+      text-decoration: none;
+      text-transform: uppercase;
     }
   }
 }
 
 .home-main{
-  height:300px;
+  height: 360px;
   div{
-    float:left;
-    margin-top:10px;
-    padding:0px;
-    position:relative;
-    width:33.333%;
+    float: left;
+    margin-top: 10px;
+    padding: 0px;
+    position: relative;
   }
   h1{
-    color: white;
+    color: $dark-gray;
     text-align: center;
     margin-top: 0px;
-    background: rgba(255,255,255,0.3);
+    background: rgba(0,0,0,0.3);
     padding: 10px;
   }
   .home-box-image {
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0px;
-    left:0px;
-    z-index:-1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
   }
   .newsletters{
-    border-left:4px solid $light-blue;
-    border-top:4px solid $light-blue;
-    border-bottom:4px solid $light-blue;
+    border-left: 1px solid $light-blue;
+    border-top: 1px solid $light-blue;
+    border-bottom: 1px solid $light-blue;
     box-shadow: 0 0 5px $light-blue inset;
-    height:88%;
-    margin-top:2%;
+    height: 92%;
+    margin: 2% 0 0 1%;
+    width: 30%;
   }
   .events{
-    border:4px solid $light-green;
+    border: 1px solid $light-green;
     box-shadow: 0 0 5px $light-green inset;
-    height:100%;
+    height: 100%;
+    width: 36%;
   }
   .scholarships{
-    border-right:4px solid $light-blue;
-    border-top:4px solid $light-blue;
-    border-bottom:4px solid $light-blue;
+    border-right: 1px solid $light-blue;
+    border-top: 1px solid $light-blue;
+    border-bottom: 1px solid $light-blue;
     box-shadow: 0 0 5px $light-blue inset;
-    height:88%;
-    margin-top:2%;
+    height: 92%;
+    margin: 2% 1% 0 0;
+    width: 30%;
   }
 }
 
 .home-box-image {
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0px;
-  left:0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
 }
 .community{
   .community_board{
-    border:5px solid $light-green;
-    margin:10px 0px 20px;
-    padding:20px;
-    text-align:center;
+    border: 2px solid $light-green;
+    margin: 40px 0px 20px;
+    padding: 20px;
+    text-align: center;
   }
 }
 
 .footer{
-  background:$dark-orange;
-  height:120px; //remove
-  padding:20px;
+  background: $dark-orange;
+  height: 120px; //remove
+  padding: 20px;
 }
 .base{
-  background:$light-green;
-  height:40px; //remove
-  width:100%;
-  text-align:center;
-  padding:20px;
+  background: $light-green;
+  height: 40px; //remove
+  width: 100%;
+  text-align: center;
+  padding: 20px;
 }
 
 
@@ -144,5 +146,5 @@ body {
 
 
 .center-text{
-  text-align:center;
+  text-align: center;
 }
