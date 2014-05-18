@@ -6,15 +6,22 @@
   </div>
   <div class="events">
     <h1>Events</h1>
-    <%= @event.name %>
     <% if defined? @event_picture %><%= image_tag @event_picture.image.url(:xlarg), class: "home-box-image" %><% end %>
+    <div class="home-box-rollover">
+      <% @events.each do |e| %>
+        <div class="line">&nbsp;</div>
+        <div class="name"><h3><%= e.name %></h3></div>
+        <div class="kind"><h4 class="<%= e.kind %>"><%= e.kind %></h4></div>
+        <div class="link"><a href="/affairs/<%= e.id %>">Link</a></div>
+      <% end %>
+
+    </div>
   </div>
   <div class="scholarships">
     <h1>Scholarships</h1>
     <%= image_tag "scholarships.jpg", class: "home-box-image" %>
   </div>
 </div>
-
 
 <div class="community">
   <div class="row">
