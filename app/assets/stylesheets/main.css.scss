@@ -65,87 +65,63 @@ body {
 }
 
 .home-main{
-  height: 360px;
+  height: 340px;
   div{
     float: left;
-    margin-top: 10px;
-    padding: 0px;
     position: relative;
   }
-  h1{
-    color: $off-white;
-    text-align: center;
-    margin: 0px;
-    background: rgba(0,0,0,0.5);
-    padding: 10px;
-  }
-  .home-box-image{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: -1;
-  }
   .home-box-rollover{
-    background: rgba(0,0,0,0.8);
+    background: $off-white;
     bottom: 0px;
+    height: 100%;
     margin: 0px;
     position: absolute;
     width: 100%;
-    .line{
-      border-top: 1px solid #333;
-      height: 10px;
-      margin: 0px;
+    &:hover {
+      background: #fff;
+    }
+    .rollover-item-link{
+      background: rgba(255,255,255,0.5);
+      display: block;
+      height: 33.4%;
+      overflow: hidden;
       width: 100%;
+    }
+    .image-div{
+
+    }
+    .item-image{
+      width: 133px;
     }
     .name{
       margin: 0px;
       width: 100%;
     }
-    .kind{
-      float: left;
-      margin: 0px;
-      width: 50%;
-      text-align: center;
-      h4.conference{
-        color: $light-blue;
-        margin-left: 5px;
-        padding:3px 20px;
-        font-size: 140%;
-      }
-      .quarterly{
-        color: $mid-yellow;
-        margin-left: 5px;
-        padding:3px 20px;
-        font-size: 140%;
-      }
-      .event{
-        color: $light-green;
-        margin-left: 5px;
-        padding:3px 20px;
-        font-size: 140%;
-      }
+    .conference{
+      color: $off-white;
+      background: $light-blue;
     }
-    .link{
-      float: left;
-      margin: 10px 0px;
-      width: 50%;
+    .quarterly{
+      color: $off-white;
+      background: $mid-yellow;
+    }
+    .event{
+      color: $off-white;
+      background: $light-green;
+    }
+    h1{
+      font-size: 150%;
+      line-height: 25px;
+      margin:   0px;
+      padding-top: 3px;
       text-align: center;
-      border-radius: 3px;
-      a{
-        border: 1px solid #444;
-        color: $off-white;
-        padding:3px 20px;
-        text-decoration: none;
-      }
     }
     h2{
       text-align: center;
-      color: $off-white;
+      color: $dark-gray;
     }
     h3{
-      color: $off-white;
+      color: $dark-gray;
       margin: 0px;
       text-align: center;
     }
@@ -167,24 +143,24 @@ body {
     border-top: 1px solid $light-blue;
     border-bottom: 1px solid $light-blue;
     box-shadow: 0 0 5px $light-blue inset;
-    height: 92%;
+    height: 87%;
     margin: 2% 0 0 1%;
-    width: 30%;
+    width: 28%;
   }
   .events{
     border: 1px solid $light-green;
     box-shadow: 0 0 5px $light-green inset;
     height: 100%;
-    width: 36%;
+    width: 42%;
   }
   .scholarships{
     border-right: 1px solid $light-blue;
     border-top: 1px solid $light-blue;
     border-bottom: 1px solid $light-blue;
     box-shadow: 0 0 5px $light-blue inset;
-    height: 92%;
+    height: 87%;
     margin: 2% 1% 0 0;
-    width: 30%;
+    width: 28%;
   }
 }
 
