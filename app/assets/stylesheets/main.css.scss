@@ -12,14 +12,14 @@ body {
 }
 
 .top-bar{
-  background: $light-green;
+  background: $light-blue;
   width: 100%;
   position: relative;
-  height: 60px; //remove
+  height: 30px; //remove
   h5{
     color: white;
     float: right;
-    margin: 20px;
+    margin: 7px 15px;
     padding: 0px;
   }
 }
@@ -41,7 +41,7 @@ body {
     top: 0px;
     position: absolute;
     width: 195px;
-    left: 0px;
+    left: 20px;
   }
   div{
     float: left;
