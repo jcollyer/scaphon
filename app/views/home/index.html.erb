@@ -22,11 +22,10 @@
 <div class="community">
   <div class="row">
     <div class="community_board small-12 columns">
-      <h2>
-        Thank you to all of you who donated food to our food drive at the December Quarterly. It was an amazing success!! We were able to collect hundreds of pounds of food that was donated to the Los Angeles Regional Food Bank.
-        Please continue to collect toothbrushes, toothpaste and dental floss to donate to Project Healthy Smile. Their mission is to provide oral health education and dental supplies to underprivileged children globally and they currently have programs in Haiti, Uganda, Vietnam and Cambodia. You can bring them with you to the next Quarterly or to the conference in May.
-        Please put on you aprons and get out your knives and join us as we prepare food for the families at 3 local Ronald McDonald Houses. We will be providing dinner for the Los Angeles, the Orange County and the Loma Linda houses. We will need many volunteers to make this a success so please consider spending a few hours with your SCAPHON colleagues and helping to support the families of our patients. Please contact the following people for more information:
-      </h2>
+      <%= image_tag @community_picture.image.url(:large) %>
+      <p>
+        <%= @community.description %>
+      </p>
     </div>
   </div>
 </div>

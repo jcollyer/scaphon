@@ -4,9 +4,10 @@ class HomeController < ApplicationController
     @event = Affair.last
     @event_picture = @event.pictures.first
 
-
-
     @newsletter = Newsletter.last
     @newsletter_picture = @newsletter.pictures.first
+
+    @community = Community.last
+    @community_picture = @community.pictures.first
   end
 end

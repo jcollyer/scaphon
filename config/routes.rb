@@ -1,7 +1,10 @@
 Scaphon::Application.routes.draw do
+  root to: "home#index"
 
-
-  resources :attachments
+  resources :communities do
+    resources :pictures
+    resources :attachments
+  end
 
   resources :scholarships do
     resources :pictures
@@ -23,5 +26,4 @@ Scaphon::Application.routes.draw do
     resources :attachments
   end
 
-  root to: "home#index"
 end
