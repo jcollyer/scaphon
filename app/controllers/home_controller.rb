@@ -4,7 +4,8 @@ class HomeController < ApplicationController
     @event = Affair.last
     @event_picture = @event.pictures.first
 
-    @newsletters = Newsletter.all.limit(3)
+
+
     @newsletter = Newsletter.last
     @newsletter_picture = @newsletter.pictures.first
   end
