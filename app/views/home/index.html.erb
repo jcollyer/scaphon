@@ -1,31 +1,28 @@
-<div class="row home-main">
-  <div class="newsletters">
-    <%= @newsletter.name %>
-    <%= image_tag @newsletter_picture.image.url(:xlarg), class: "home-box-image" %>
+<div class="home-main">
+  <div class="home-item">
+    <% if defined? @newsletter %>
+      <h1 class="newsletter"><%= @newsletter.name %></h1>
+      <%= image_tag @newsletter_picture.image.url(:xlarg), class: "item-image" %>
+    <% end %>
   </div>
-  <div class="events">
-    <div class="home-box-rollover">
-      <% @events.each do |e| %>
-        <div class="rollover-item-link">
-          <% if defined? e.pictures.first %>
-          <div class="name"><h1 class="<%= e.kind %>"><%= e.name %></h1></div>
-            <div class="image-div">
-              <%= image_tag e.pictures.first.image.url(:large), class: "item-image" %>
-            </div>
-          <% end %>
-        </div>
+  <% @events.each do |e| %>
+    <div class="home-item">
+      <% if defined? e.pictures.first %>
+        <h1 class="<%= e.kind %>"><%= e.name %></h1>
+        <%= image_tag e.pictures.first.image.url(:large), class: "item-image" %>
       <% end %>
     </div>
-  </div>
-  <div class="scholarships">
-    <%= image_tag "scholarships.jpg", class: "home-box-image" %>
-  </div>
+  <% end %>
 </div>
 
 <div class="community">
   <div class="row">
     <div class="community_board small-12 columns">
-      something in the community board.
+      <h2>
+        Thank you to all of you who donated food to our food drive at the December Quarterly. It was an amazing success!! We were able to collect hundreds of pounds of food that was donated to the Los Angeles Regional Food Bank.
+        Please continue to collect toothbrushes, toothpaste and dental floss to donate to Project Healthy Smile. Their mission is to provide oral health education and dental supplies to underprivileged children globally and they currently have programs in Haiti, Uganda, Vietnam and Cambodia. You can bring them with you to the next Quarterly or to the conference in May.
+        Please put on you aprons and get out your knives and join us as we prepare food for the families at 3 local Ronald McDonald Houses. We will be providing dinner for the Los Angeles, the Orange County and the Loma Linda houses. We will need many volunteers to make this a success so please consider spending a few hours with your SCAPHON colleagues and helping to support the families of our patients. Please contact the following people for more information:
+      </h2>
     </div>
   </div>
 </div>
