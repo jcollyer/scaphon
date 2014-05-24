@@ -1,15 +1,19 @@
 <div class="home-main">
   <div class="home-item">
     <% if defined? @newsletter %>
-      <h1 class="newsletter"><%= @newsletter.name %></h1>
-      <%= image_tag @newsletter_picture.image.url(:xlarg), class: "item-image" %>
+      <a href="/newsletters">
+        <h1 class="newsletter"><%= @newsletter.name %></h1>
+        <%= image_tag @newsletter_picture.image.url(:xlarg), class: "item-image" %>
+      </a>
     <% end %>
   </div>
   <% @events.each do |e| %>
     <div class="home-item">
       <% if defined? e.pictures.first %>
-        <h1 class="<%= e.kind %>"><%= e.name %></h1>
-        <%= image_tag e.pictures.first.image.url(:large), class: "item-image" %>
+        <a href="/affairs">
+          <h1 class="<%= e.kind %>"><%= e.name %></h1>
+          <%= image_tag e.pictures.first.image.url(:large), class: "item-image" %>
+        </a>
       <% end %>
     </div>
   <% end %>

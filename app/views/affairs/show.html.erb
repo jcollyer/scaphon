@@ -1,41 +1,54 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <%= link_to 'Edit', edit_affair_path(@affair) %> |
+  <%= link_to 'Back', affairs_path %>
+  <div class="small-6 small-offset-3 columns">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Kind:</strong>
-  <%= @affair.kind %>
-</p>
+    <p>
+      <strong>Kind:</strong>
+      <%= @affair.kind %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @affair.name %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @affair.name %>
+    </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @affair.date %>
-</p>
+    <p>
+      <strong>Date:</strong>
+      <%= @affair.date %>
+    </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @affair.location %>
-</p>
+    <p>
+      <strong>Location:</strong>
+      <%= @affair.location %>
+    </p>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @affair.cost %>
-</p>
+    <p>
+      <strong>Cost:</strong>
+      <%= @affair.cost %>
+    </p>
 
-<p>
-  <strong>Paypal:</strong>
-  <%= @affair.paypal %>
-</p>
+    <p>
+      <strong>Paypal:</strong>
+      <%= @affair.paypal %>
+    </p>
 
-<%= link_to 'Edit', edit_affair_path(@affair) %> |
-<%= link_to 'Back', affairs_path %>
+    <p>
+      <strong>Description:</strong>
+      <%= @affair.description %>
+    </p>
+  </div>
+</div>
 
-<%= render "pictures/pictures" %>
-<%= render "pictures/form" %>
-<br>
-<hr>
-<%= render "attachments/attachments" %>
-<%= render "attachments/form" %>
+
+<div class="row">
+  <div class="small-3 small-offset-3 columns">
+    <%= render "pictures/pictures" %>
+    <%= render "pictures/form" %>
+  </div>
+  <div class="small-3 columns">
+    <%= render "attachments/attachments" %>
+    <%= render "attachments/form" %>
+  </div>
+</div>

@@ -12,13 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
     <h3><%= f.label :file %></h3>
-    <%= f.file_field :file %>
+    <%= f.file_field :file, style: "width:190px;" %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
