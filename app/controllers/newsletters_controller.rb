@@ -4,23 +4,23 @@ class NewslettersController < ApplicationController
   # GET /newsletters
   # GET /newsletters.json
   def index
-    @newsletters = Newsletter.all
+    @newsletters  = Newsletter.all
   end
 
   # GET /newsletters/1
   # GET /newsletters/1.json
   def show
-    @newsletter  = Newsletter.find(params[:id])
-
-    @imageable   = @newsletter
+    @imageable   = Newsletter.find(params[:id])
     @pictures    = @imageable.pictures
+
     @picture     = Picture.new
 
     @fileable    = @newsletter
+
     @attachments = @fileable.attachments
     @attachment  = Attachment.new
 
-    @thisModel =  Newsletter.find(params[:id])
+    @thisModel   = Newsletter.find(params[:id])
   end
 
   # GET /newsletters/new
