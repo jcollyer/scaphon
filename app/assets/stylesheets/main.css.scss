@@ -122,7 +122,7 @@ body {
     h1{
       background: rgba(255,255,255,0.3);
       color: $light-gray;
-      font-size: 180%;
+      font-size: 230%;
       line-height: 1.2em;
       margin:   0px;
       padding: 5px 0 0 40px;
@@ -133,10 +133,20 @@ body {
 .community{
   min-height: 200px;
   .community_board{
+    border-bottom: 3px solid $off-white;
     background: $light-blue;
-    margin: 80px 0px;
+    margin: 10px 0px;
     padding: 20px;
     text-align: center;
+  }
+  h1{
+    color: $off-white;
+    float: left;
+    margin: 15px 10px 0 0px;
+  }
+  p{
+    color: $off-white;
+    line-height: 1.2em;
   }
 }
 
@@ -150,6 +160,15 @@ body {
   text-align: center;
 }
 
+
+
+
+
+.image-style{
+  border-radius: 20px;
+  float: right;
+  margin:10px 0 0 10px;
+}
 .plad{
   background-color: hsl(34, 53%, 82%);
   background-image: repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px,

@@ -20,12 +20,11 @@
 </div>
 
 <div class="community">
-  <div class="row">
-    <div class="community_board small-12 columns">
-      <%= image_tag @community_picture.image.url(:large) %>
-      <p>
-        <%= @community.description %>
-      </p>
-    </div>
+  <div class="community_board small-12 columns">
+    <%= image_tag @community_picture.image.url(:large), class: "image-style" %>
+    <h1><%= @community.name %></h1>
+    <p>
+      <%= @community.description %>
+    </p>
   </div>
 </div>
