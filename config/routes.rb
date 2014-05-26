@@ -1,4 +1,6 @@
 Scaphon::Application.routes.draw do
+  resources :supporters
+
   root to: "home#index"
 
   resources :abouts do

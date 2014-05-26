@@ -1,0 +1,31 @@
+<h1>Listing supporters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Active</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supporters.each do |supporter| %>
+      <tr>
+        <td><%= supporter.name %></td>
+        <td><%= supporter.status %></td>
+        <td><%= supporter.active %></td>
+        <td><%= link_to 'Show', supporter %></td>
+        <td><%= link_to 'Edit', edit_supporter_path(supporter) %></td>
+        <td><%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supporter', new_supporter_path %>
