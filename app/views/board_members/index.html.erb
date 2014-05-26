@@ -18,6 +18,7 @@
         <td><%= board_member.name %></td>
         <td><%= board_member.position %></td>
         <td><%= board_member.info %></td>
+        <td><% if defined? board_member.pictures.last.image %><%= image_tag board_member.pictures.last.image.url(:medium) %><% end %></td>
         <td><%= link_to 'Show', board_member %></td>
         <td><%= link_to 'Edit', edit_board_member_path(board_member) %></td>
         <td><%= link_to 'Destroy', board_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>

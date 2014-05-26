@@ -10,6 +10,13 @@ class BoardMembersController < ApplicationController
   # GET /board_members/1
   # GET /board_members/1.json
   def show
+    @board_member  = BoardMember.find(params[:id])
+
+    @imageable     = @board_member
+    @pictures      = @imageable.pictures
+    @picture       = Picture.new
+
+    @thisModel     =  BoardMember.find(params[:id])
   end
 
   # GET /board_members/new
