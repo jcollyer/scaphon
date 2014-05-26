@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  about: MyText
+  scaphon: MyText
+  aphon: MyText
+  csp: MyText
+  more: MyText
+
+two:
+  about: MyText
+  scaphon: MyText
+  aphon: MyText
+  csp: MyText
+  more: MyText

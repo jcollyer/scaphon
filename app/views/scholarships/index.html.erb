@@ -18,6 +18,7 @@
         <td><%= scholarship.name %></td>
         <td><%= scholarship.author %></td>
         <td><%= scholarship.info %></td>
+        <td><% if defined? scholarship.pictures.last.image %><%= image_tag scholarship.pictures.last.image.url(:medium) %><% end %></td>
         <td><%= link_to 'Show', scholarship %></td>
         <td><%= link_to 'Edit', edit_scholarship_path(scholarship) %></td>
         <td><%= link_to 'Destroy', scholarship, method: :delete, data: { confirm: 'Are you sure?' } %></td>

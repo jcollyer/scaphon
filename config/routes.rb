@@ -1,4 +1,6 @@
 Scaphon::Application.routes.draw do
+  resources :abouts
+
   root to: "home#index"
 
   resources :board_members do

@@ -16,7 +16,7 @@
       <tr>
         <td><%= newsletter.name %></td>
         <td><%= newsletter.date %></td>
-        <td><%= image_tag newsletter.pictures.last.image.url(:medium) %></td>
+        <td><% if defined? newsletter.pictures.last.image %><%= image_tag newsletter.pictures.last.image.url(:medium) %><% end %></td>
         <td><%= link_to 'Show', newsletter %></td>
         <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
         <td><%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
