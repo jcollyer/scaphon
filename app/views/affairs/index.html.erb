@@ -24,6 +24,7 @@
         <td><%= affair.location %></td>
         <td><%= affair.cost %></td>
         <td><%= affair.paypal %></td>
+        <td><% if defined? affair.pictures.last.image %><%= image_tag affair.pictures.last.image.url(:medium) %><% end %></td>
         <td><%= link_to 'Show', affair %></td>
         <td><%= link_to 'Edit', edit_affair_path(affair) %></td>
         <td><%= link_to 'Destroy', affair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
