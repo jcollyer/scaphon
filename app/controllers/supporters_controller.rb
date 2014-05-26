@@ -10,6 +10,13 @@ class SupportersController < ApplicationController
   # GET /supporters/1
   # GET /supporters/1.json
   def show
+    @supporter  = Supporter.find(params[:id])
+
+    @imageable     = @supporter
+    @pictures      = @imageable.pictures
+    @picture       = Picture.new
+
+    @thisModel     =  Supporter.find(params[:id])
   end
 
   # GET /supporters/new
