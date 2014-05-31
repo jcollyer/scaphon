@@ -22,6 +22,7 @@
         <td><%= about.aphon %></td>
         <td><%= about.csp %></td>
         <td><%= about.more %></td>
+        <td><% if defined? about.pictures.last.image %><%= image_tag about.pictures.last.image.url(:medium) %><% end %></td>
         <td><%= link_to 'Show', about %></td>
         <td><%= link_to 'Edit', edit_about_path(about) %></td>
         <td><%= link_to 'Destroy', about, method: :delete, data: { confirm: 'Are you sure?' } %></td>

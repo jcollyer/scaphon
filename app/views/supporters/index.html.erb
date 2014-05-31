@@ -18,6 +18,7 @@
         <td><%= supporter.name %></td>
         <td><%= supporter.status %></td>
         <td><%= supporter.active %></td>
+        <td><% if defined? supporter.pictures.last.image %><%= image_tag supporter.pictures.last.image.url(:medium) %><% end %></td>
         <td><%= link_to 'Show', supporter %></td>
         <td><%= link_to 'Edit', edit_supporter_path(supporter) %></td>
         <td><%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
