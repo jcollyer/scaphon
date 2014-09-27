@@ -2,8 +2,8 @@
   <div class="home-item">
     <% if defined? @newsletter %>
       <a href="/newsletters">
-        <h1 class="newsletter"><%= @newsletter.name %></h1>
-        <%= image_tag @newsletter_picture.image.url(:xlarg), class: "item-image" %>
+        <h1 class="newsletter"><% if defined? @newsletter.name %><%= @newsletter.name %><%end%></h1>
+        <% if defined? @newsletter_picture.image %><%= image_tag @newsletter_picture.image.url(:xlarg), class: "item-image" %><%end%>
       </a>
     <% end %>
   </div>
@@ -21,10 +21,12 @@
 
 <div class="community">
   <div class="community_board small-12 columns">
-    <%= image_tag @community_picture.image.url(:large), class: "image-style" %>
-    <h1><%= @community.name %></h1>
-    <p>
-      <%= @community.description %>
-    </p>
+    <% if defined? @community_picture.image %><%= image_tag @community_picture.image.url(:large), class: "image-style" %><%end%>
+    <% if defined? @community.name %><h1><%= @community.name %></h1><%end%>
+    <% if defined? @community.description %>
+      <p>
+        <%= @community.description %>
+      </p>
+    <%end%>
   </div>
 </div>

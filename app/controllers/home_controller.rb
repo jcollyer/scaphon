@@ -2,12 +2,17 @@ class HomeController < ApplicationController
   def index
     @events = Affair.all.limit(3)
     @event = Affair.last
-    @event_picture = @event.pictures.first
-
+    if @event
+      @event_picture = @event.pictures.first
+    end
     @newsletter = Newsletter.last
-    @newsletter_picture = @newsletter.pictures.first
+    if @newsletter
+      @newsletter_picture = @newsletter.pictures.first
+    end
 
     @community = Community.last
-    @community_picture = @community.pictures.first
+    if @community
+      @community_picture = @community.pictures.first
+    end
   end
 end
