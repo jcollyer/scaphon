@@ -1,5 +1,5 @@
 <% @attachments.each do | attachment | %>
   <%= attachment.name %>
-  <input type="radio" name="attachment" value="<%= attachment.id %>">
+  <%= link_to "View File", attachment.file.url %>
   <%= link_to 'Destroy', [@thisModel, attachment], method: :delete, data: { confirm: 'Are you sure?' }  %>
 <% end %>
