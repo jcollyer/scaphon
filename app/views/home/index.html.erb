@@ -1,5 +1,6 @@
 <div class="home-main">
   <div class="home-item">
+    <div class="home-item-icon"><i class="fa fa-paperclip"></i></div>
     <% if defined? @newsletter %>
       <a href="/newsletters">
         <h1 class="newsletter"><% if defined? @newsletter.name %><%= @newsletter.name %><%end%></h1>
@@ -9,6 +10,11 @@
   </div>
   <% @events.each do |e| %>
     <div class="home-item">
+      <div class="home-item-icon">
+        <% if e.kind == "quarterly" %><i class="fa fa-users"></i>
+        <% elsif e.kind == "event" %> <i class="fa fa-paper-plane"></i>
+        <% else %><i class="fa fa-graduation-cap"></i><% end %>
+        </div>
       <% if defined? e.pictures.first %>
         <a href="/affairs">
           <h1 class="<%= e.kind %>"><%= e.name %></h1>
@@ -17,6 +23,14 @@
       <% end %>
     </div>
   <% end %>
+
+  <div class="home-item">
+    <div class="home-item-icon"><i class="fa fa-graduation-cap"></i></div>
+    <a href="/scholarships">
+      <h1 class="scholarships">Scholarships</h1>
+      <%= image_tag 'scholarships.jpg', class: "item-image" %>
+    </a>
+  </div>
 </div>
 
 <div class="community">
