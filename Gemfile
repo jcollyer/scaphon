@@ -24,6 +24,8 @@ group :development, :test do
   gem 'pry'
 end
 
-
+# for heroku
 gem 'rails_12factor', group: :production
 
+#for User auth
+gem 'bcrypt-ruby', '~> 3.0.0'
