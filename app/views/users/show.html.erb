@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password hash:</strong>
+  <%= @user.password_hash %>
+</p>
+
+<p>
+  <strong>Password salt:</strong>
+  <%= @user.password_salt %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @user.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @user.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @user.zip %>
+</p>
+
+<p>
+  <strong>Phone home:</strong>
+  <%= @user.phone_home %>
+</p>
+
+<p>
+  <strong>Phone work:</strong>
+  <%= @user.phone_work %>
+</p>
+
+<p>
+  <strong>Nurse:</strong>
+  <%= @user.nurse %>
+</p>
+
+<p>
+  <strong>Institution:</strong>
+  <%= @user.institution %>
+</p>
+
+<p>
+  <strong>Rn:</strong>
+  <%= @user.rn_id %>
+</p>
+
+<p>
+  <strong>Stage registerd:</strong>
+  <%= @user.stage_registerd %>
+</p>
+
+<p>
+  <strong>Aphon member:</strong>
+  <%= @user.aphon_member %>
+</p>
+
+<p>
+  <strong>Scaphon member:</strong>
+  <%= @user.scaphon_member %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
