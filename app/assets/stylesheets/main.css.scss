@@ -75,26 +75,26 @@ body {
 }
 
 .home-main{
-  height: 240px;
   width: 70%;
   margin-left: 15%;
   margin-top: 40px;
-  div{
+  position: relative;
+  height: 100%;
+  .home-item{
+    height: 240px;
     float: left;
     position: relative;
-  }
-  .home-item{
     background: rgba(255,255,255,0.5);
     display: block;
-    height: 100%;
     overflow: hidden;
-    width: 30%;
+    width: 35%;
+    position: relative;
     transition: background 0.2s;
     border-top: 1px solid #999;
     border-left: 1px solid #999;
     border-right: 1px solid #999;
     border-bottom: 4px solid $light-blue;
-    margin: 0 0 0 1%;
+    margin: 100px 0 0 10%;
     &:hover{
       background: rgba(255,255,255,0.0);
     }
@@ -104,6 +104,20 @@ body {
       -moz-filter: blur(1px);
       -o-filter: blur(1px);
       -ms-filter: blur(1px);
+    }
+    .home-item-icon {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      margin: auto;
+      top: -40px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #999;
+      i {
+        color: $light-blue;
+      }
     }
   }
   .item-image{
