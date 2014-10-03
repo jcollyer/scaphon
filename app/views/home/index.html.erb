@@ -1,38 +1,44 @@
 <div class="home-main">
-  <div class="home-item">
-    <div class="home-item-icon"><i class="fa fa-paperclip"></i></div>
-    <% if defined? @newsletter %>
-      <a href="/newsletters">
-        <h1 class="newsletter"><% if defined? @newsletter.name %><%= @newsletter.name %><%end%></h1>
-        <% if defined? @newsletter_picture.image %><%= image_tag @newsletter_picture.image.url(:xlarg), class: "item-image" %><%end%>
-      </a>
-    <% end %>
-  </div>
+  <a href="/newsletters">
+    <div class="home-item-container large-6 small-12 columns">
+      <div class="home-item-icon"><i class="fa fa-paperclip"></i></div>
+      <div class="home-item">
+        <% if defined? @newsletter %>
+            <h1 class="ellipsis"><% if defined? @newsletter.name %><%= @newsletter.name %><%end%></h1>
+            <% if defined? @newsletter_picture.image %><%= image_tag @newsletter_picture.image.url(:xlarg), class: "item-image" %><%end%>
+        <% end %>
+      </div>
+    </div>
+  </a>
   <% @events.each do |e| %>
-    <div class="home-item">
+  <a href="/affairs">
+    <div class="home-item-container large-6 small-12 columns">
       <div class="home-item-icon">
         <% if e.kind == "quarterly" %><i class="fa fa-users"></i>
         <% elsif e.kind == "event" %> <i class="fa fa-paper-plane"></i>
         <% else %><i class="fa fa-graduation-cap"></i><% end %>
-        </div>
-      <% if defined? e.pictures.first %>
-        <a href="/affairs">
-          <h1 class="<%= e.kind %>"><%= e.name %></h1>
+      </div>
+      <div class="home-item">
+        <% if defined? e.pictures.first %>
+          <h1 class="ellipsis"><%= e.name %></h1>
           <%= image_tag e.pictures.first.image.url(:large), class: "item-image" %>
-        </a>
-      <% end %>
+        <% end %>
+      </div>
     </div>
+  </a>
   <% end %>
 
-  <div class="home-item">
-    <div class="home-item-icon"><i class="fa fa-graduation-cap"></i></div>
-    <a href="/scholarships">
-      <h1 class="scholarships">Scholarships</h1>
-      <%= image_tag 'scholarships.jpg', class: "item-image" %>
-    </a>
-  </div>
-</div>
+  <a href="/scholarships">
+    <div class="home-item-container large-6 small-12 columns">
+      <div class="home-item-icon"><i class="fa fa-graduation-cap"></i></div>
+      <div class="home-item">
+        <h1 class="ellipsis">Scholarships</h1>
+        <%= image_tag 'scholarships.jpg', class: "item-image" %>
+      </div>
+    </div>
+  </a>
 
+</div>
 <div class="community">
   <div class="community_board small-12 columns">
     <% if defined? @community_picture.image %><%= image_tag @community_picture.image.url(:large), class: "image-style" %><%end%>
