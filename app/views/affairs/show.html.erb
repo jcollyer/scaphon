@@ -29,10 +29,16 @@
       <%= @affair.cost %>
     </p>
 
+
     <p>
       <strong>Paypal:</strong>
-      <%= @affair.paypal %>
     </p>
+    <div id="new_pp_code">
+      <div style="display:none" id="initial_paypal_code">
+        <%= @affair.paypal %>
+
+      </div>
+    </div>
 
     <p>
       <strong>Description:</strong>

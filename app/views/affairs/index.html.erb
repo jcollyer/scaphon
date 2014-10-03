@@ -13,7 +13,9 @@
     <h3><%= affair.cost %></h3>
   </div>
   <div class="large-3 columns">
-    <%= affair.paypal %>
+    <div style="" id="initial_paypal_code">
+      <%= affair.paypal %>
+    </div>
   </div>
   <div class="large-3 columns">
     <%= link_to 'New Affair', new_affair_path %>
