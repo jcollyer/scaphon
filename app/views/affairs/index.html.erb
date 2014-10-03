@@ -1,38 +1,26 @@
-<h1>Listing affairs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Kind</th>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Location</th>
-      <th>Cost</th>
-      <th>Paypal</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @affairs.each do |affair| %>
-      <tr>
-        <td><%= affair.kind %></td>
-        <td><%= affair.name %></td>
-        <td><%= affair.date %></td>
-        <td><%= affair.location %></td>
-        <td><%= affair.cost %></td>
-        <td><%= affair.paypal %></td>
-        <td><% if defined? affair.pictures.last.image %><%= image_tag affair.pictures.last.image.url(:medium) %><% end %></td>
-        <td><%= link_to 'Show', affair %></td>
-        <td><%= link_to 'Edit', edit_affair_path(affair) %></td>
-        <td><%= link_to 'Destroy', affair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @affairs.each do |affair| %>
+<div class="row">
+  <div class="large-3 columns">
+    <% if defined? affair.pictures.last.image %>
+      <%= image_tag affair.pictures.last.image.url(:medium) %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div class="large-3 columns">
+    <h3><%= affair.name %></h3>
+    <h3><%= affair.date %></h3>
+    <h3><%= affair.location %></h3>
+    <h3><%= affair.cost %></h3>
+  </div>
+  <div class="large-3 columns">
+    <%= affair.paypal %>
+  </div>
+  <div class="large-3 columns">
+    <%= link_to 'New Affair', new_affair_path %>
+    <%= link_to 'Edit', edit_affair_path(affair) %>
+    <%= link_to 'Destroy', affair, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+<% end %>
 
-<br>
 
-<%= link_to 'New Affair', new_affair_path %>
