@@ -13,8 +13,10 @@
     <h3><%= affair.cost %></h3>
   </div>
   <div class="large-3 columns">
-    <div style="" id="initial_paypal_code">
-      <%= affair.paypal %>
+    <div id="new_pp_code">
+      <div style="display:none" id="initial_paypal_code">
+        <%= affair.paypal %>
+      </div>
     </div>
   </div>
   <div class="large-3 columns">
