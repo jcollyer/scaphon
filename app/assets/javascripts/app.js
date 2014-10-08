@@ -1,5 +1,5 @@
 $(function(){
-  //paypal - not sure why i need to do this
+  //paypal - ensure document is ready
   var paypal = $('#initial_paypal_code');
   var ppcode = $('#new_pp_code');
   var code = paypal.text();
