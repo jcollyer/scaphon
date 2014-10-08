@@ -1,4 +1,5 @@
 $font-main: 'Josefin Sans', sans-serif;
+$transparent: rgba(255,255,255,0.3);
 $off-white: #f5f5f5;
 $light-gray: #DDDDDD;
 $gray: #999999;
@@ -54,12 +55,14 @@ a.button, input[type="submit"].button {
   background: $light-blue;
   width: 100%;
   position: relative;
-  height: 30px; //remove
-  h5{
-    color: white;
+  height: 50px; //remove
+  .log-in {
+    margin: 5px  5px 0px 0px;
+    background: $transparent;
     float: right;
-    margin: 7px 15px;
-    padding: 0px;
+    a {
+      margin: 5px 10px;
+    }
   }
 }
 
