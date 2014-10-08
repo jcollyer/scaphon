@@ -3,15 +3,17 @@
     <div class="home-item-container large-6 small-12 columns">
       <div class="home-item-icon"><i class="fa fa-paperclip"></i></div>
       <div class="home-item">
-        <% if defined? @newsletter %>
-            <h1 class="ellipsis"><% if defined? @newsletter.name %><%= @newsletter.name %><%end%></h1>
-            <% if defined? @newsletter_picture.image %><%= image_tag @newsletter_picture.image.url(:xlarg), class: "item-image" %><%end%>
+        <% @newsletters.each do |n| %>
+          <h1 class="ellipsis"><%=n.name %></h1>
+          <% if defined? n.pictures.last.image %>
+            <%= image_tag n.pictures.last.image.url(:large), class: "item-image" %>
+          <% end %>
         <% end %>
       </div>
     </div>
   </a>
   <% @events.each do |e| %>
-  <a href="/affairs">
+  <a href="/affairs/<%= e.id %>">
     <div class="home-item-container large-6 small-12 columns">
       <div class="home-item-icon">
         <% if e.kind == "quarterly" %><i class="fa fa-users"></i>
