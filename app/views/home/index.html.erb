@@ -1,17 +1,5 @@
 <div class="home-main">
-  <a href="/newsletters">
-    <div class="home-item-container large-6 small-12 columns">
-      <div class="home-item-icon"><i class="fa fa-paperclip"></i></div>
-      <div class="home-item">
-        <% @newsletters.each do |n| %>
-          <h1 class="ellipsis"><%=n.name %></h1>
-          <% if defined? n.pictures.last.image %>
-            <%= image_tag n.pictures.last.image.url(:large), class: "item-image" %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </a>
+
   <% @events.each do |e| %>
   <a href="/affairs/<%= e.id %>">
     <div class="home-item-container large-6 small-12 columns">
@@ -25,6 +13,20 @@
           <h1 class="ellipsis"><%= e.name %></h1>
           <%= image_tag e.pictures.first.image.url(:large), class: "item-image" %>
         <% end %>
+      </div>
+    </div>
+  </a>
+  <% end %>
+
+  <% @newsletters.each do |n| %>
+  <a href="newsletters/<%= n.id %>">
+    <div class="home-item-container large-6 small-12 columns">
+      <div class="home-item-icon"><i class="fa fa-paperclip"></i></div>
+      <div class="home-item">
+          <h1 class="ellipsis"><%=n.name %></h1>
+          <% if defined? n.pictures.last.image %>
+            <%= image_tag n.pictures.last.image.url(:large), class: "item-image" %>
+          <% end %>
       </div>
     </div>
   </a>
