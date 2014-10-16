@@ -280,6 +280,11 @@ a.button, input[type="submit"].button {
   background: $light-gray;
   padding: 20px;
   margin-top: 10%;
+  a {
+    i{
+      font-size: 34px;
+    }
+  }
 }
 
 

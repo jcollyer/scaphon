@@ -1,16 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-12 columns">
+    <br>
+    <br>
+    <br>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @newsletter.name %>
-</p>
+  <div class="large-6 small-12 columns">
+    <div class="affair-image">
+      <%= image_tag @newsletter.pictures.last.image.url(:xlarg) %>
+    </div>
+  </div>
+  <div class="large-6 small-12 columns">
+    <div style="text-align:center">
+      <p id="notice"><%= notice %></p>
+      <div class="affair-info">
+        <h3><%= @newsletter.name %></h3>
+        <h3><%= @newsletter.date %></h3>
 
-<p>
-  <strong>Date:</strong>
-  <%= @newsletter.date %>
-</p>
+        <% if defined? @newsletter.attachments.last.file %>
+          <a class="button" href="<%= @newsletter.attachments.last.file %>" >
+            <i class="fa fa-download"></i>
+            download Scoop
+          </a>
+        <% end %>
+      </div>
+    </div>
 
-<%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
-<%= link_to 'Back', newsletters_path %>
+    <%= link_to 'Edit', edit_newsletter_path(@newsletter), class: "button" %>
+    <%= link_to 'Back', newsletters_path, class: "button" %>
+  </div>
 
-<%= render "module/picture_attachment" %>
+  <div class="small-12 columns">
+    <%= render "module/picture_attachment" %>
+  </div>
+</div>
+
