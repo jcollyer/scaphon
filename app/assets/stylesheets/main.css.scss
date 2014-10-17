@@ -6,13 +6,22 @@ $gray: #999999;
 $dark-gray: #353535;
 $dark-blue: #314d5b;
 $light-blue: #27a6d1;
+$light-blue-a: rgba(39,166, 209, 0.1);
 $dark-orange: #e1574c;
 $light-green: #3db39d;
 $mid-yellow: #f0c75e;
+
 body {
   font-family: $font-main;
   background: $off-white;
   color: $dark-gray;
+  background:
+linear-gradient(135deg, $light-blue-a 25%, transparent 25%) -50px 0,
+linear-gradient(225deg, $light-blue-a 25%, transparent 25%) -50px 0,
+linear-gradient(315deg, $light-blue-a 25%, transparent 25%),
+linear-gradient(45deg, $light-blue-a 25%, transparent 25%);
+background-size: 100px 100px;
+background-color: #eee;
 }
 
 p {
@@ -86,7 +95,7 @@ a.button, input[type="submit"].button {
   }
   div{
     float: left;
-    margin-top: 50px;
+    margin: 15px;
     text-align: center;
     width: 15%;
     a{
@@ -106,12 +115,8 @@ a.button, input[type="submit"].button {
     }
   }
   .active {
-    border-left: 3px solid $light-blue;
-    border-right: 3px solid $light-blue;
-    border-top: 3px solid $light-blue;
-    background: $off-white;
+    border: 3px solid $light-blue;
     border-radius: 2px;
-    margin-top: 51px;
   }
 }
 
