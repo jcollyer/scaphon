@@ -3,7 +3,7 @@ $transparent: rgba(255,255,255,0.3);
 $off-white: #f5f5f5;
 $light-gray: #DDDDDD;
 $gray: #999999;
-$dark-gray: #353535;
+$dark-gray: #555555;
 $dark-blue: #314d5b;
 $light-blue: #27a6d1;
 $light-blue-a: rgba(39,166, 209, 0.1);
@@ -30,7 +30,7 @@ p {
 }
 
 h1 {
-  color: $gray;
+  color: $dark-gray;
 }
 
 a.button, input[type="submit"].button {
@@ -253,7 +253,7 @@ a.button, input[type="submit"].button {
   margin-top: 40px;
 }
 .scholarship:nth-child(even){
-  background: $light-gray;
+  background: $light-blue-a;
   padding: 20px;
 }
 .scholarship-info {
