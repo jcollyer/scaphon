@@ -29,3 +29,6 @@ gem 'rails_12factor', group: :production
 
 #for User auth
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+# for markdown
+gem "redcarpet"

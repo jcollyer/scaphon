@@ -3,13 +3,13 @@
     <div class="scholarship-info">
       <p id="notice"><%= notice %></p>
       <h1><%= @about.about %></h1>
-      <p><%= @about.scaphon %></p>
+      <p><%= markdown(@about.scaphon) %></p>
     </div>
   </div>
 
   <div class="small-12 columns background-a">
     <div class="scholarship-info">
-       <p><%= @about.aphon %></p>
+       <p><%= markdown(@about.aphon) %></p>
     </div>
   </div>
 </div>
