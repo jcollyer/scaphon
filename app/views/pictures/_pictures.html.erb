@@ -1,6 +1,8 @@
 <% @pictures.each do | picture | %>
-  <%= picture.name %>
-  <%= image_tag picture.image.url(:thumb) %>
-  <!-- <input type="radio" name="picture" value="<%= picture.id %>"> -->
-  <%= link_to 'Destroy', [@thisModel, picture], method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div class="small-4 columns image-box">
+    <%= picture.name %>
+    <%= image_tag picture.image.url(:large) %>
+    <!-- <input type="radio" name="picture" value="<%= picture.id %>"> -->
+    <%= link_to 'Destroy', [@thisModel, picture], method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+  </div>
 <% end %>

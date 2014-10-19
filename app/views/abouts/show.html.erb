@@ -1,33 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-12 columns background-a">
+    <div class="scholarship-info">
+      <p id="notice"><%= notice %></p>
+      <h1><%= @about.about %></h1>
+      <p><%= @about.scaphon %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>About:</strong>
-  <%= @about.about %>
-</p>
+  <div class="small-12 columns background-a">
+    <div class="scholarship-info">
+       <p><%= @about.aphon %></p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <%= render "pictures/pictures" %>
+</div>
 
-<p>
-  <strong>Scaphon:</strong>
-  <%= @about.scaphon %>
-</p>
 
-<p>
-  <strong>Aphon:</strong>
-  <%= @about.aphon %>
-</p>
 
-<p>
-  <strong>Csp:</strong>
-  <%= @about.csp %>
-</p>
-
-<p>
-  <strong>More:</strong>
-  <%= @about.more %>
-</p>
-
-<%= link_to 'Edit', edit_about_path(@about) %> |
-<%= link_to 'Back', abouts_path %>
-
-<%= render "pictures/pictures" %>
-
-<%= render "pictures/form" %>
+<div class="small-12 columns picture-attachment-module">
+  <%= link_to 'Edit', edit_about_path(@about), class: "button" %>
+  <%= link_to 'Back', abouts_path, class: "button" %>
+  <%= render "pictures/form" %>
+</div>
