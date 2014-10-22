@@ -24,6 +24,10 @@
             <%= @affair.paypal %>
           </div>
         </div>
+        <a class="button" href="<%= @affair.attachments.last.file.url %>" >
+          <i class="fa fa-file-pdf-o"></i>
+          View PDF
+        </a>
       </div>
     </div>
 

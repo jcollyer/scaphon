@@ -1,29 +1,31 @@
-<%= form_for [@fileable, @attachment] do |f| %>
-  <% if @attachment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@attachment.errors.count, "error") %> prohibited this attachment from being saved:</h2>
+<div class="small-6 columns">
+  <%= form_for [@fileable, @attachment] do |f| %>
+    <% if @attachment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@attachment.errors.count, "error") %> prohibited this attachment from being saved:</h2>
 
-      <ul>
-      <% @attachment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @attachment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <h3>upload PDF or DOC files</h3>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.file_field :file %>
+    </div>
+
+
+    <br>
+    <div class="actions">
+      <%= f.submit class: "button" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <h3>upload PDF or DOC files</h3>
-    <%= f.file_field :file %>
-  </div>
-
-
-  <br>
-  <div class="actions">
-    <%= f.submit class: "button" %>
-  </div>
-<% end %>
+</div>

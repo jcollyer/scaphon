@@ -3,6 +3,7 @@
     <div class="scholarship-info">
       <p id="notice"><%= notice %></p>
       <h1><%= @about.about %></h1>
+      <%= render "pictures/pictures" %>
       <p><%= markdown(@about.scaphon) %></p>
     </div>
   </div>
@@ -12,15 +13,12 @@
        <p><%= markdown(@about.aphon) %></p>
     </div>
   </div>
-</div>
-<div class="row">
-  <%= render "pictures/pictures" %>
+
+  <div class="small-12 columns picture-attachment-module">
+    <%= link_to 'Edit', edit_about_path(@about), class: "button" %>
+    <%= link_to 'Back', abouts_path, class: "button" %>
+    <%= render "pictures/form" %>
+  </div>
 </div>
 
 
-
-<div class="small-12 columns picture-attachment-module">
-  <%= link_to 'Edit', edit_about_path(@about), class: "button" %>
-  <%= link_to 'Back', abouts_path, class: "button" %>
-  <%= render "pictures/form" %>
-</div>
