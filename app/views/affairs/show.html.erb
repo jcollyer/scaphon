@@ -24,10 +24,12 @@
             <%= @affair.paypal %>
           </div>
         </div>
+        <% if defined? @affair.attachments.last.file %>
         <a class="button" href="<%= @affair.attachments.last.file.url %>" >
           <i class="fa fa-file-pdf-o"></i>
           View PDF
         </a>
+        <% end %>
       </div>
     </div>
 
