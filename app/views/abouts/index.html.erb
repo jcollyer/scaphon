@@ -1,0 +1,32 @@
+<% @abouts.each do |about| %>
+  <div class="row">
+    <div class="small-12 columns background-a">
+      <div class="scholarship-info">
+        <p id="notice"><%= notice %></p>
+        <h1><%= about.about %></h1>
+
+        <% about.pictures.each do | picture | %>
+          <div class="small-4 columns image-box">
+            <%= picture.name %>
+            <%= image_tag picture.image.url(:large) %>
+          </div>
+        <% end %>
+
+        <p><%= markdown(about.scaphon) %></p>
+      </div>
+    </div>
+
+    <div class="small-12 columns background-a">
+      <div class="scholarship-info">
+         <p><%= markdown(about.aphon) %></p>
+      </div>
+    </div>
+
+    <div class="small-12 columns picture-attachment-module">
+      <%= link_to 'Edit', edit_about_path(about), class: "button" %>
+      <%= link_to 'Back', abouts_path, class: "button" %>
+    </div>
+  </div>
+<% end %>
+
+
