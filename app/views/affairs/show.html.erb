@@ -6,7 +6,7 @@
   </div>
 
   <div class="large-6 small-12 columns">
-    <div class="affair-image">
+    <div class="index-image">
       <%= image_tag @affair.pictures.last.image.url(:xlarg) %>
     </div>
   </div>
@@ -14,7 +14,7 @@
     <div style="text-align:center">
       <h1><%= @affair.name %></h1>
       <p id="notice"><%= notice %></p>
-      <div class="affair-info background-a">
+      <div class="index-info background-a">
         <h3><%= @affair.date %></h3>
         <h3><%= @affair.location %></h3>
         <p><%= @affair.description %></p>

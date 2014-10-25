@@ -1,30 +1,59 @@
-<h1>Listing newsletters</h1>
+<% @newsletters.each do |newsletter| %>
+  <div class="row">
+    <div class="small-12 columns">
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="large-4 small-12 columns">
+      <div class="index-image">
+        <% if defined? affair.pictures.last.image %>
+          <%= image_tag affair.pictures.last.image.url(:large) %>
+        <% end %>
+      </div>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <tr>
+    <td><%= newsletter.name %></td>
+    <td><%= newsletter.date %></td>
+    <td><% if defined? newsletter.pictures.last.image %><%= image_tag newsletter.pictures.last.image.url(:medium) %><% end %></td>
+    <td><%= link_to 'Show', newsletter %></td>
+    <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
+    <td><%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
 
-  <tbody>
-    <% @newsletters.each do |newsletter| %>
-      <tr>
-        <td><%= newsletter.name %></td>
-        <td><%= newsletter.date %></td>
-        <td><% if defined? newsletter.pictures.last.image %><%= image_tag newsletter.pictures.last.image.url(:medium) %><% end %></td>
-        <td><%= link_to 'Show', newsletter %></td>
-        <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
-        <td><%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
 <%= link_to 'New Newsletter', new_newsletter_path %>
+
+
+<% @affairs.each do |affair| %>
+
+
+  <div class="large-8 small-12 columns">
+    <div style="text-align:center">
+      <h1><%= affair.name %></h1>
+      <div class="index-info background-a">
+        <h3><%= affair.date %></h3>
+        <h3><%= affair.location %></h3>
+        <h3><%= affair.cost %></h3>
+        <div id="new_pp_code">
+          <div style="display:none" id="initial_paypal_code">
+            <%= affair.paypal %>
+          </div>
+        </div>
+        <% if defined? @affair.attachments.last.file %>
+          <a class="button" href="<%= @affair.attachments.last.file.url %>" >
+            <i class="fa fa-file-pdf-o"></i>
+            View PDF
+          </a>
+        <% end %>
+        <%= link_to 'Edit', edit_affair_path(affair), class: "button" %>
+        <%= link_to 'Destroy', affair, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

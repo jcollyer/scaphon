@@ -54,6 +54,23 @@ a.button, input[type="submit"].button {
   font-size: 50px;
 }
 
+.index-image {
+  img {
+    width: 100%;
+  }
+}
+
+.index-info {
+  padding: 20px;
+  margin-top: 5%;
+  a {
+    i{
+      font-size: 34px;
+    }
+  }
+}
+
+
 #error_explanation {
   border: 1px solid $dark-orange;
   border-radius: 3px;
@@ -300,20 +317,5 @@ a.button, input[type="submit"].button {
 
 //affair///////////
 ///////////////////////
-.affair-image {
-  img {
-    width: 100%;
-  }
-}
-
-.affair-info {
-  padding: 20px;
-  margin-top: 5%;
-  a {
-    i{
-      font-size: 34px;
-    }
-  }
-}
 
 
