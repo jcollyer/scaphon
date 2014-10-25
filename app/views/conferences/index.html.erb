@@ -1,35 +1,50 @@
-<h1>Listing conferences</h1>
+<% if @conferences.blank? %>
+  <div class="row">
+    <div class="small-12 columns background-a">
+      <h1>section empty</h1>
+    </div>
+  </div>
+<% end %>
+<% @conferences.each do |conference| %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Location</th>
-      <th>Cost</th>
-      <th>Paypal</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @conferences.each do |conference| %>
-      <tr>
-        <td><%= conference.name %></td>
-        <td><%= conference.date %></td>
-        <td><%= conference.location %></td>
-        <td><%= conference.cost %></td>
-        <td><%= conference.paypal %></td>
-        <td><%= link_to 'Show', conference %></td>
-        <td><%= link_to 'Edit', edit_conference_path(conference) %></td>
-        <td><%= link_to 'Destroy', conference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Conference', new_conference_path %>
+  <div class="row">
+    <div class="small-12 columns">
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="large-4 small-12 columns">
+      <div class="index-image">
+        <% if defined? conference.pictures.last.image %>
+          <%= image_tag conference.pictures.last.image.url(:large) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="large-8 small-12 columns">
+      <div style="text-align:center">
+        <h1><%= conference.name %></h1>
+        <div class="index-info background-a">
+          <h3><%= conference.date %></h3>
+          <h3><%= conference.date %></h3>
+          <h3><%= conference.location %></h3>
+          <h3><%= conference.cost %></h3>
+          <div id="new_pp_code">
+            <div style="display:none" id="initial_paypal_code">
+              <%= conference.paypal %>
+            </div>
+          </div>
+          <% if defined? conference.attachments.last.file %>
+            <a class="button" href="<%= conference.attachments.last.file.url %>" >
+              <i class="fa fa-file-pdf-o"></i>
+              View PDF
+            </a>
+          <% end %>
+          <%= link_to 'Show', conference, class: "button" %>
+          <%= link_to 'Edit', edit_conference_path(conference), class: "button" %>
+          <%= link_to 'Destroy', conference, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
