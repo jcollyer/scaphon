@@ -1,8 +1,15 @@
-<div class="footer">
-  <div class="row">
-    <div class="large-4 small-12 columns">asdfaasdf</div>
-    <div class="large-4 small-12 columns">asdfaasdf</div>
-    <div class="large-4 small-12 columns">asdfaasdf</div>
-    <div class="large-4 small-12 columns">asdfaasdf</div>
+<div id="footer">
+  <div class="row" id="footer-content">
+    <div class="large-10 small-12 columns">&nbsp;</div>
+    <div class="large-2 small-12 columns">
+      <div class="<%= 'active' if current_page?(root_path) %>"><%= link_to "home", root_path %></div>
+      <div class="<%= 'active' if current_page?(newsletters_path) %>"><%= link_to "newsletter", newsletters_path %></div>
+      <div class="<%= 'active' if current_page?(conferences_path) %>"><%= link_to "conferences", conferences_path %></div>
+      <%= link_to "about us", abouts_path %>
+      <div class="<%= 'active' if current_page?(scholarships_path) %>"><%= link_to "scholarships", scholarships_path %></div>
+      <div class="<%= 'active' if current_page?(affairs_path) %>"><%= link_to "events", affairs_path %></div>
+      <div class="<%= 'active' if current_page?(supporters_path) %>"><%= link_to "supporters", supporters_path %></div>
+
+    </div>
   </div>
 </div>
