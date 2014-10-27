@@ -159,7 +159,7 @@ a.button, input[type="submit"].button {
       cursor: pointer;
       height: 240px;
       float: left;
-      background: rgba(0,0,0,0.2);
+      background: rgba(0,0,0,0.1);
       display: block;
       overflow: hidden;
       width: 100%;
@@ -217,11 +217,11 @@ a.button, input[type="submit"].button {
       transition: blur 0.05s;
       z-index: -1;
       height: 100%;
-      filter: blur(5px);
-      -webkit-filter: blur(5px);
-      -moz-filter: blur(5px);
-      -o-filter: blur(5px);
-      -ms-filter: blur(5px);
+      filter: blur(1px);
+      -webkit-filter: blur(1px);
+      -moz-filter: blur(1px);
+      -o-filter: blur(1px);
+      -ms-filter: blur(1px);
     }
   }
 }
