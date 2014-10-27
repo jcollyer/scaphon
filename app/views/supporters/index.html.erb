@@ -1,32 +1,30 @@
-<h1>Listing supporters</h1>
+<% @supporters.each do |supporter| %>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= link_to 'New Supporter', new_supporter_path, class: "button" %>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="large-4 small-12 columns">
+      <div class="index-image">
+        <% if defined? supporter.pictures.last.image %>
+          <%= image_tag supporter.pictures.last.image.url(:large) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="large-8 small-12 columns">
+      <div style="text-align:center">
+        <h1><%= supporter.name %></h1>
+        <div class="index-info background-a">
+          <h3><%= supporter.status %></h3>
+          <h3><%= supporter.active %></h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Status</th>
-      <th>Active</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @supporters.each do |supporter| %>
-      <tr>
-        <td><%= supporter.name %></td>
-        <td><%= supporter.status %></td>
-        <td><%= supporter.active %></td>
-        <td><% if defined? supporter.pictures.last.image %><%= image_tag supporter.pictures.last.image.url(:medium) %><% end %></td>
-        <td><%= link_to 'Show', supporter %></td>
-        <td><%= link_to 'Edit', edit_supporter_path(supporter) %></td>
-        <td><%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Supporter', new_supporter_path %>
+          <%= link_to 'Show', supporter, class: "button" %>
+          <%= link_to 'Edit', edit_supporter_path(supporter), class: "button" %>
+          <%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
