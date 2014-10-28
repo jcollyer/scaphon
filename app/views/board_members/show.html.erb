@@ -1,21 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-12 columns">
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+<div class="row">
+  <div class="large-4 small-12 columns">
+    <% if defined? @board_member.pictures.last.image %>
+      <div class="index-image">
+        <%= image_tag @board_member.pictures.last.image.url(:xlarg) %>
+      </div>
+    </div>
+  <% end%>
+  <div class="large-8 small-12 columns">
+    <div style="text-align:center">
+        <h1><%= @board_member.name %></h1>
+        <p id="notice"><%= notice %></p>
+      <div class="background-a">
+        <h3><%= @board_member.position %></h3>
+        <%= link_to 'Edit', edit_board_member_path(@board_member), class: "button" %>
+        <%= link_to 'Back', board_members_path, class: "button" %>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @board_member.name %>
-</p>
+  <div class="small-12 columns">
+    <%= render "pictures/pictures" %>
+    <%= render "pictures/form" %>
+  </div>
+</div>
 
-<p>
-  <strong>Position:</strong>
-  <%= @board_member.position %>
-</p>
-
-<p>
-  <strong>Info:</strong>
-  <%= @board_member.info %>
-</p>
-
-<%= link_to 'Edit', edit_board_member_path(@board_member) %> |
-<%= link_to 'Back', board_members_path %>
-
-<%= render "pictures/pictures" %>

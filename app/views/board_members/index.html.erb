@@ -1,32 +1,42 @@
-<h1>Listing board_members</h1>
+      <%= link_to 'New Board member', new_board_member_path, class: "button" %>
+<% @board_members.each do |board_member| %>
+  <div class="row">
+    <div class="small-12 columns">
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="large-2 small-12 columns">
+      <% if defined? board_member.pictures.last.image %>
+        <div class="index-image">
+          <br>
+          <br>
+          <%= image_tag board_member.pictures.last.image.url(:large) %>
+        </div>
+      <% end %>
+    </div>
+    <div class="large-10 small-12 columns">
+      <div style="text-align:center">
+        <h1><%= board_member.name %></h1>
+        <div class="index-info background-a">
+          <h3><%= board_member.position %></h3>
+          <h3><%= board_member.info %></h3>
+          <% if defined? board_member.attachments.last.file %>
+            <a class="button" href="<%= board_member.attachments.last.file.url %>" >
+              <i class="fa fa-file-pdf-o"></i>
+              View PDF
+            </a>
+          <% end %>
+          <br>
+          <%= link_to 'Show', board_member, class: "button" %>
+          <%= link_to 'Edit', edit_board_member_path(board_member), class: "button" %>
+          <%= link_to 'Destroy', board_member, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Position</th>
-      <th>Info</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @board_members.each do |board_member| %>
-      <tr>
-        <td><%= board_member.name %></td>
-        <td><%= board_member.position %></td>
-        <td><%= board_member.info %></td>
-        <td><% if defined? board_member.pictures.last.image %><%= image_tag board_member.pictures.last.image.url(:medium) %><% end %></td>
-        <td><%= link_to 'Show', board_member %></td>
-        <td><%= link_to 'Edit', edit_board_member_path(board_member) %></td>
-        <td><%= link_to 'Destroy', board_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Board member', new_board_member_path %>
