@@ -1,5 +1,9 @@
 <% @abouts.each do |about| %>
   <div class="row">
+    <div class="small-12 columns picture-attachment-module">
+      <%= link_to 'Edit', edit_about_path(about), class: "button" %>
+      <%= link_to 'Back', abouts_path, class: "button" %>
+    </div>
     <div class="small-12 columns background-every-other">
       <div class="scholarship-info">
         <p id="notice"><%= notice %></p>
@@ -22,10 +26,6 @@
       </div>
     </div>
 
-    <div class="small-12 columns picture-attachment-module">
-      <%= link_to 'Edit', edit_about_path(about), class: "button" %>
-      <%= link_to 'Back', abouts_path, class: "button" %>
-    </div>
   </div>
 <% end %>
 

@@ -1,4 +1,8 @@
-      <%= link_to 'New Board member', new_board_member_path, class: "button" %>
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'New Board member', new_board_member_path, class: "button" %>
+  </div>
+</div>
 <% @board_members.each do |board_member| %>
   <div class="row">
     <div class="small-12 columns">
