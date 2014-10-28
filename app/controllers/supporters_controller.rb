@@ -5,6 +5,7 @@ class SupportersController < ApplicationController
   # GET /supporters.json
   def index
     @supporters = Supporter.all
+    @thisModel = Supporter.all
   end
 
   # GET /supporters/1

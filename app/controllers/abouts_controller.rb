@@ -5,6 +5,7 @@ class AboutsController < ApplicationController
   # GET /abouts.json
   def index
     @abouts = About.all
+    @thisModel = About.all
   end
 
   # GET /abouts/1

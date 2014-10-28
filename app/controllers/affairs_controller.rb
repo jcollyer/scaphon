@@ -5,6 +5,7 @@ class AffairsController < ApplicationController
   # GET /affairs.json
   def index
     @affairs = Affair.all
+    @thisModel = Affair.all
   end
 
   # GET /affairs/1

@@ -5,6 +5,7 @@ class CommunitiesController < ApplicationController
   # GET /communities.json
   def index
     @communities = Community.all
+    @thisModel = Community.all
   end
 
   # GET /communities/1

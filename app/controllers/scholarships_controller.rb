@@ -5,6 +5,7 @@ class ScholarshipsController < ApplicationController
   # GET /scholarships.json
   def index
     @scholarships = Scholarship.all
+    @thisModel = Scholarship.all
   end
 
   # GET /scholarships/1

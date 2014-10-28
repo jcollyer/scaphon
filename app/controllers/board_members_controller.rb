@@ -5,6 +5,7 @@ class BoardMembersController < ApplicationController
   # GET /board_members.json
   def index
     @board_members = BoardMember.all
+    @thisModel = BoardMember.all
   end
 
   # GET /board_members/1

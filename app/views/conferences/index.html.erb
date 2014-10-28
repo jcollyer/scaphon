@@ -1,15 +1,11 @@
 <div class="row">
   <div class="small-12 columns">
     <%= link_to 'New Conference', new_conference_path, class: "button" %>
+    <%= render "module/no_content" %>
   </div>
 </div>
-<% if @conferences.blank? %>
-  <div class="row">
-    <div class="small-12 columns background-a">
-      <h1>section empty</h1>
-    </div>
-  </div>
-<% end %>
+
+
 <% @conferences.each do |conference| %>
 
 
