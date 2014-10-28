@@ -1,29 +1,45 @@
-<h1>Listing communities</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @communities.each do |community| %>
-      <tr>
-        <td><%= community.name %></td>
-        <td><%= community.description %></td>
-        <td><%= link_to 'Show', community %></td>
-        <td><%= link_to 'Edit', edit_community_path(community) %></td>
-        <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Community', new_community_path %>
+<div class="row">
+  <div class="small-12 columns">
+    <%= link_to 'New community', new_community_path, class: "button" %>
+    <%= render "module/no_content" %>
+  </div>
+</div>
+<% @communities.each do |community| %>
+  <div class="row">
+    <div class="small-12 columns">
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="large-4 small-12 columns">
+      <div class="image">
+        <% if defined? community.pictures.last.image %>
+          <% community.pictures.each do |picture| %>
+            <div class="image">
+              <%= image_tag picture.image.url(:large) %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="large-8 small-12 columns">
+      <div style="text-align:center">
+        <h1><%= community.name %></h1>
+        <div class="info background-a">
+          <p><%= markdown(community.description) %></p>
+          <p><%= markdown(community.descriptionb) %></p>
+          <% if defined? community.attachments.last.file %>
+            <a class="button" href="<%= community.attachments.last.file.url %>" >
+              <i class="fa fa-file-pdf-o"></i>
+              View PDF
+            </a>
+          <% end %>
+          <br>
+          <%= link_to 'Show', community, class: "button" %>
+          <%= link_to 'Edit', edit_community_path(community), class: "button" %>
+          <%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
