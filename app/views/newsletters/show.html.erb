@@ -7,7 +7,7 @@
 
   <div class="large-6 small-12 columns">
     <% if defined? @newsletter.pictures.last.image %>
-      <div class="index-image">
+      <div class="image">
         <%= image_tag @newsletter.pictures.last.image.url(:xlarg) %>
       </div>
     <% end %>
@@ -15,7 +15,7 @@
   <div class="large-6 small-12 columns">
     <div style="text-align:center">
       <p id="notice"><%= notice %></p>
-      <div class="index-info">
+      <div class="info">
         <h3><%= @newsletter.name %></h3>
         <h3><%= @newsletter.date %></h3>
 

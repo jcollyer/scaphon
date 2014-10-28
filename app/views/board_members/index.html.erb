@@ -8,7 +8,7 @@
     </div>
     <div class="large-2 small-12 columns">
       <% if defined? board_member.pictures.last.image %>
-        <div class="index-image">
+        <div class="image">
           <br>
           <br>
           <%= image_tag board_member.pictures.last.image.url(:large) %>
@@ -18,7 +18,7 @@
     <div class="large-10 small-12 columns">
       <div style="text-align:center">
         <h1><%= board_member.name %></h1>
-        <div class="index-info background-a">
+        <div class="info background-a">
           <h3><%= board_member.position %></h3>
           <h3><%= board_member.info %></h3>
           <% if defined? board_member.attachments.last.file %>
