@@ -1,35 +1,34 @@
 <div class="home-main">
-
   <% @events.each do |e| %>
-  <a href="/affairs/<%= e.id %>">
-    <div class="home-item-container large-6 small-12 columns">
-      <div class="home-item-icon">
-        <% if e.kind == "quarterly" %><i class="fa fa-users"></i>
-        <% elsif e.kind == "event" %> <i class="fa fa-paper-plane"></i>
-        <% else %><i class="fa fa-graduation-cap"></i><% end %>
+    <a href="/affairs/<%= e.id %>">
+      <div class="home-item-container large-6 small-12 columns">
+        <div class="home-item-icon">
+          <% if e.kind == "quarterly" %><i class="fa fa-bullhorn"></i>
+          <% elsif e.kind == "event" %> <i class="fa fa-paper-plane"></i>
+          <% else %><i class="fa fa-graduation-cap"></i><% end %>
+        </div>
+        <div class="home-item">
+          <% if defined? e.pictures.first %>
+            <h1 class="ellipsis"><%= e.name %></h1>
+            <%= image_tag e.pictures.first.image.url(:large), class: "item-image" %>
+          <% end %>
+        </div>
       </div>
-      <div class="home-item">
-        <% if defined? e.pictures.first %>
-          <h1 class="ellipsis"><%= e.name %></h1>
-          <%= image_tag e.pictures.first.image.url(:large), class: "item-image" %>
-        <% end %>
-      </div>
-    </div>
-  </a>
+    </a>
   <% end %>
 
   <% @newsletters.each do |n| %>
-  <a href="newsletters/<%= n.id %>">
-    <div class="home-item-container large-6 small-12 columns">
-      <div class="home-item-icon"><i class="fa fa-paperclip"></i></div>
-      <div class="home-item">
-          <h1 class="ellipsis"><%=n.name %></h1>
-          <% if defined? n.pictures.last.image %>
-            <%= image_tag n.pictures.last.image.url(:large), class: "item-image" %>
-          <% end %>
+    <a href="newsletters/<%= n.id %>">
+      <div class="home-item-container large-6 small-12 columns">
+        <div class="home-item-icon"><i class="fa fa-paperclip"></i></div>
+        <div class="home-item">
+            <h1 class="ellipsis"><%=n.name %></h1>
+            <% if defined? n.pictures.last.image %>
+              <%= image_tag n.pictures.last.image.url(:large), class: "item-image" %>
+            <% end %>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
   <% end %>
 
   <a href="/scholarships">
@@ -42,15 +41,13 @@
     </div>
   </a>
 
-</div>
-<div class="community">
-  <div class="community_board small-12 columns">
-    <% if defined? @community_picture.image %><%= image_tag @community_picture.image.url(:large), class: "image-style" %><%end%>
-    <% if defined? @community.name %><h1><%= @community.name %></h1><%end%>
-    <% if defined? @community.description %>
-      <p>
-        <%= @community.description %>
-      </p>
-    <%end%>
-  </div>
+  <a href="/communities">
+    <div class="home-item-container large-6 small-12 columns">
+      <div class="home-item-icon"><i class="fa fa-users"></i></div>
+      <div class="home-item">
+        <h1 class="ellipsis">Community</h1>
+        <%= image_tag 'community.jpg', class: "item-image" %>
+      </div>
+    </div>
+  </a>
 </div>
