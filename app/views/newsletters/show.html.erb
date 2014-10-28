@@ -6,9 +6,11 @@
   </div>
 
   <div class="large-6 small-12 columns">
-    <div class="index-image">
-      <%= image_tag @newsletter.pictures.last.image.url(:xlarg) %>
-    </div>
+    <% if defined? @newsletter.pictures.last.image %>
+      <div class="index-image">
+        <%= image_tag @newsletter.pictures.last.image.url(:xlarg) %>
+      </div>
+    <% end %>
   </div>
   <div class="large-6 small-12 columns">
     <div style="text-align:center">
