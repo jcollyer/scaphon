@@ -15,9 +15,11 @@
   <div class="large-6 small-12 columns">
     <div style="text-align:center">
       <p id="notice"><%= notice %></p>
-      <div class="info">
-        <h3><%= @newsletter.name %></h3>
-        <h3><%= @newsletter.date %></h3>
+      <h1><%= @newsletter.name %></h1>
+      <div class="info background-a">
+        <h1><%= @newsletter.date %></h1>
+        <br>
+        <br>
 
         <% if defined? @newsletter.attachments.last.file %>
           <a class="button" href="<%= @newsletter.attachments.last.file %>" >
@@ -26,10 +28,10 @@
           </a>
         <% end %>
       </div>
-    </div>
-
     <%= link_to 'Edit', edit_newsletter_path(@newsletter), class: "button" %>
     <%= link_to 'Back', newsletters_path, class: "button" %>
+    </div>
+
   </div>
 
   <div class="small-12 columns">
