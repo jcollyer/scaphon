@@ -274,7 +274,23 @@ a.button, input[type="submit"].button {
   width: 100%;
   z-index: 99;
   #footer-content {
-    padding: 20px;
+    padding: 0px 20px;
+    div {
+      float: left;
+      a {
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+        display: block;
+        white-space: nowrap;
+      }
+    }
+    div.active {
+      a {
+        color: $dark-orange;
+        background: white;
+      }
+    }
   }
 }
 
