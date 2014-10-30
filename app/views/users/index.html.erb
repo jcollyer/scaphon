@@ -1,59 +1,51 @@
-<h1>Listing users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>Password hash</th>
-      <th>Password salt</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>Phone home</th>
-      <th>Phone work</th>
-      <th>Nurse</th>
-      <th>Institution</th>
-      <th>Rn</th>
-      <th>Stage registerd</th>
-      <th>Aphon member</th>
-      <th>Scaphon member</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+<div id="user-table">
+  <table>
+    <thead>
       <tr>
-        <td><%= user.email %></td>
-        <td><%= user.password_hash %></td>
-        <td><%= user.password_salt %></td>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.address %></td>
-        <td><%= user.city %></td>
-        <td><%= user.state %></td>
-        <td><%= user.zip %></td>
-        <td><%= user.phone_home %></td>
-        <td><%= user.phone_work %></td>
-        <td><%= user.nurse %></td>
-        <td><%= user.institution %></td>
-        <td><%= user.rn_id %></td>
-        <td><%= user.stage_registerd %></td>
-        <td><%= user.aphon_member %></td>
-        <td><%= user.scaphon_member %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Email</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Phone home</th>
+        <th>Phone work</th>
+        <th>Nurse</th>
+        <th>Institution</th>
+        <th>Rn</th>
+        <th>Stage registerd</th>
+        <th>Aphon member</th>
+        <th>Scaphon member</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.address %></td>
+          <td><%= user.city %></td>
+          <td><%= user.state %></td>
+          <td><%= user.zip %></td>
+          <td><%= user.phone_home %></td>
+          <td><%= user.phone_work %></td>
+          <td><%= user.nurse %></td>
+          <td><%= user.institution %></td>
+          <td><%= user.rn_id %></td>
+          <td><%= user.stage_registerd %></td>
+          <td><%= user.aphon_member %></td>
+          <td><%= user.scaphon_member %></td>
+          <td><%= link_to 'Show', user %></td>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
