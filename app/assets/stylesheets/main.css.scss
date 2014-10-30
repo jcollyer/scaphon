@@ -82,26 +82,17 @@ a.button, input[type="submit"].button {
   text-align: center;
 }
 
-#top-bar{
-  background: $light-blue;
-  width: 100%;
-  position: fixed;
-  width: 100%;
-  height: 10px;
-  top: 0px;
-  z-index: 99;
-}
-
 #nav{
   box-sizing: content-box;
-  border-bottom: 4px solid #27a6d1;
-  background: white;
+  border-bottom: 4px solid $transparent;
+  background: $light-blue;
   position: fixed;
+  padding: 4px 0px;
   width: 100%;
-  top: 10px;
+  top: 0px;
   z-index: 99;
   &:before{
-    background-image: url(image_path("logo2.png"));
+    background-image: url(image_path("logo-white.png"));
     background-repeat: no-repeat;
     background-size: 100%;
     content: "";
@@ -109,23 +100,31 @@ a.button, input[type="submit"].button {
     bottom: 0px;
     position: absolute;
     width: 112px;
-    left: 10px;
+    left: 8%;
   }
   div{
     float: left;
     text-align: center;
-    width: 15%;
+    width: 17%;
     a{
-      color: $light-blue;
+      color: white;
       display: block;
       font-weight: bold;
-      padding: 24px;
+      padding: 20px;
       text-decoration: none;
       text-transform: uppercase;
       transition: background 0.2s;
+      position: relative;
       &:hover{
-        background: $light-blue;
-        color: $off-white;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 4px;
+          background: white;
+          bottom: -8px;
+          left: 0px;
+        }
       }
     }
   }
@@ -137,13 +136,14 @@ a.button, input[type="submit"].button {
     position: absolute;
     font-size: 12px;
     a {
+      color: $light-blue;
       padding: 6px 10px 2px;
-      margin: 5px 10px;
+      margin: 3px 10px;
     }
   }
   .active {
     outline: 3px solid $light-blue;
-    border-radius: 2px;
+    background: $transparent;
   }
 }
 
