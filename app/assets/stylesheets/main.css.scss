@@ -291,6 +291,15 @@ a.button, input[type="submit"].button {
         background: white;
       }
     }
+    #footer-logo {
+      width: 128px;
+      right: 1%;
+      top: 3px;
+      position: absolute;
+      a {
+        padding: 0px;
+      }
+    }
   }
 }
 
