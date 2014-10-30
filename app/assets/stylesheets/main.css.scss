@@ -78,10 +78,6 @@ a.button, input[type="submit"].button {
   padding: 5px 10px 2px;
 }
 
-.center-text {
-  text-align: center;
-}
-
 #nav{
   box-sizing: content-box;
   border-bottom: 4px solid $transparent;
@@ -233,26 +229,6 @@ a.button, input[type="submit"].button {
   text-overflow: ellipsis;
 }
 
-.community{
-  min-height: 200px;
-  .community_board{
-    border-bottom: 3px solid $off-white;
-    background: $light-blue;
-    margin: 10px 0px;
-    padding: 20px;
-    text-align: center;
-  }
-  h1{
-    color: $off-white;
-    float: left;
-    margin: 15px 10px 0 0px;
-  }
-  p{
-    color: $off-white;
-    line-height: 1.2em;
-  }
-}
-
 .image-box {
   padding:10px 30px 10px 0;
   background: $gray;
@@ -303,24 +279,13 @@ a.button, input[type="submit"].button {
   }
 }
 
-
-.center-text{
-  text-align: center;
-}
-
-.image-style{
-  border-radius: 20px;
-  float: right;
-  margin:10px 0 0 10px;
-}
-
 .picture-attachment-module {
   margin: 30px 0px;
   background: $light-gray;
   padding: 20px;
 }
 
-.background-a{
+.background-a {
   background: $light-blue-a;
   margin: 20px 0px;
   padding: 20px;
@@ -353,8 +318,5 @@ a.button, input[type="submit"].button {
     }
   }
 }
-
-//affair///////////
-///////////////////////
 
 
