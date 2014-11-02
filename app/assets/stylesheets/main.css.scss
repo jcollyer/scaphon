@@ -344,4 +344,30 @@ a.button, input[type="submit"].button {
   }
 }
 
-
+#user-table {
+  margin: 10px;
+  background: $light-blue-a;
+  padding: 10px;
+  table {
+    text-align: center;
+    thead {
+      border-bottom: 1px solid $gray;
+      tr {
+        th {
+          font-weight: bold;
+          padding: 5px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-right: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+        td {
+          border-left: 1px solid $gray;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}

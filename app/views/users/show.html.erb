@@ -82,7 +82,7 @@
 
 <p>
   <strong>Aphon expiration date:</strong>
-  <%= @user.aphon_expiration_date %>
+  <%= @user.aphon_expiration_date.strftime("%m/%d/%Y") %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

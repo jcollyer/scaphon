@@ -1,3 +1,7 @@
+<div class="row">
+  <br>
+  <br>
+</div>
 <div id="user-table">
   <table>
     <thead>
@@ -13,12 +17,12 @@
         <th>Phone work</th>
         <th>Nurse</th>
         <th>Institution</th>
-        <th>Rn</th>
-        <th>Stage registerd</th>
-        <th>Aphon member</th>
-        <th>Scaphon member</th>
-        <th>Aphon member number</th>
-        <th>Aphon expiration date</th>
+        <th>RN ID</th>
+        <th>S R</th>
+        <th>S M?</th>
+        <th>A M?</th>
+        <th>A #</th>
+        <th>AXD</th>
         <th></th>
         <th></th>
         <th></th>
@@ -41,13 +45,15 @@
           <td><%= user.institution %></td>
           <td><%= user.rn_id %></td>
           <td><%= user.stage_registerd %></td>
-          <td><%= user.aphon_member %></td>
           <td><%= user.scaphon_member %></td>
+          <td><%= user.aphon_member %></td>
           <td><%= user.aphon_member_number %></td>
-          <td><%= user.aphon_expiration_date %></td>
-          <td><%= link_to 'Show', user %></td>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= user.aphon_expiration_date.strftime("%m/%d/%Y") %></td>
+          <td>
+            <%= link_to 'Show', user %>
+            <%= link_to 'Edit', edit_user_path(user) %>
+            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
         </tr>
       <% end %>
     </tbody>
