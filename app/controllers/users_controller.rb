@@ -23,6 +23,14 @@ class UsersController < ApplicationController
   end
 
   private
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url }
+      format.json { head :no_content }
+    end
+  end
 
     def user_params
       params.require(:user).permit(:email, :password_hash, :password)
