@@ -22,7 +22,7 @@
       <div style="text-align:center">
         <h1><%= newsletter.name %></h1>
         <div class="info background-a">
-          <h3><%= newsletter.date %></h3>
+          <h3><%= newsletter.date.strftime("%m/%d/%Y") %></h3>
           <% if defined? newsletter.attachments.last.file %>
             <a class="button" href="<%= newsletter.attachments.last.file.url %>" >
               <i class="fa fa-file-pdf-o"></i>

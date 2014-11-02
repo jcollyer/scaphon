@@ -17,7 +17,7 @@
       <p id="notice"><%= notice %></p>
       <h1><%= @newsletter.name %></h1>
       <div class="info background-a">
-        <h1><%= @newsletter.date %></h1>
+        <h1><%= @newsletter.date.strftime("%m/%d/%Y") %></h1>
         <br>
         <br>
 
