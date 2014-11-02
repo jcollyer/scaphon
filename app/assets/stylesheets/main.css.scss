@@ -170,11 +170,11 @@ a.button, input[type="submit"].button {
       &:hover{
         background: rgba(0,0,0,0.0);
         .item-image {
-          filter: blur(0px);
-          -webkit-filter: blur(0px);
-          -moz-filter: blur(0px);
-          -o-filter: blur(0px);
-          -ms-filter: blur(0px);
+          filter: blur(1px);
+          -webkit-filter: blur(1px);
+          -moz-filter: blur(1px);
+          -o-filter: blur(1px);
+          -ms-filter: blur(1px);
         }
       }
       h1{
@@ -207,18 +207,18 @@ a.button, input[type="submit"].button {
         font-size: 50px;
       }
     }
-    .item-image{
+    .item-image {
       width: 100%;
       position: absolute;
       top: 0px;
       transition: blur 0.05s;
       z-index: -1;
       height: 100%;
-      filter: blur(1px);
-      -webkit-filter: blur(1px);
-      -moz-filter: blur(1px);
-      -o-filter: blur(1px);
-      -ms-filter: blur(1px);
+      filter: blur(0px);
+      -webkit-filter: blur(0px);
+      -moz-filter: blur(0px);
+      -o-filter: blur(0px);
+      -ms-filter: blur(0px);
     }
   }
 }
