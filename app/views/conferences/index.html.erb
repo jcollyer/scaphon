@@ -26,8 +26,7 @@
       <div style="text-align:center">
         <h1><%= conference.name %></h1>
         <div class="info background-a">
-          <h3><%= conference.date %></h3>
-          <h3><%= conference.date %></h3>
+          <h3><%= conference.date.strftime("%m/%d/%Y") %></h3>
           <h3><%= conference.location %></h3>
           <h3><%= conference.cost %></h3>
           <div id="new_pp_code">
