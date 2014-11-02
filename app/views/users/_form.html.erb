@@ -29,8 +29,8 @@
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.label :street_address %><br>
+    <%= f.text_field :street_address %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
@@ -75,6 +75,14 @@
   <div class="field">
     <%= f.label :scaphon_member %><br>
     <%= f.check_box :scaphon_member %>
+  </div>
+  <div class="field">
+    <%= f.label :aphon_member_number %><br>
+    <%= f.text_field :aphon_member_number %>
+  </div>
+    <div class="field">
+    <%= f.label :aphon_expiration_date %><br>
+    <%= f.date_field :aphon_expiration_date %>
   </div>
   <div class="actions">
     <%= f.submit %>
