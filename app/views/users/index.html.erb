@@ -48,7 +48,7 @@
           <td><%= user.scaphon_member %></td>
           <td><%= user.aphon_member %></td>
           <td><%= user.aphon_member_number %></td>
-          <td><%= user.aphon_expiration_date.strftime("%m/%d/%Y") %></td>
+          <td><% if user.aphon_expiration_date %><%= user.aphon_expiration_date.strftime("%m/%d/%Y") %><% end %></td>
           <td>
             <%= link_to 'Show', user %>
             <%= link_to 'Edit', edit_user_path(user) %>

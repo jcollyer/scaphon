@@ -340,6 +340,9 @@ a.button, input[type="submit"].button {
         font-size: 24px;
         padding: 0 5px;
       }
+      input.small {
+        width: 240px;
+      }
     }
   }
 }

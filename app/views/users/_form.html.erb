@@ -14,7 +14,7 @@
 
     <div class="field">
       <%= f.label :email %><br>
-      <%= f.text_field :email %>
+      <%= f.email_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :placeholder => "jane@smith.com" %>
     </div>
     <div class="field">
       <%= f.label :password_hash %><br>
@@ -39,19 +39,19 @@
     </div>
     <div class="field">
       <%= f.label :state %><br>
-      <%= f.text_field :state %>
+      <%= f.text_field :state, :class => "small" %>
     </div>
     <div class="field">
       <%= f.label :zip %><br>
-      <%= f.number_field :zip %>
+      <%= f.number_field :zip, class: "small" %>
     </div>
     <div class="field">
       <%= f.label :phone_home %><br>
-      <%= f.number_field :phone_home %>
+      <%= f.text_field :phone_home, :pattern =>'^\d{3}-\d{3}-\d{4}$', :placeholder => '333-444-5555', :class => "small" %>
     </div>
     <div class="field">
       <%= f.label :phone_work %><br>
-      <%= f.number_field :phone_work %>
+      <%= f.text_field :phone_work, :pattern =>'^\d{3}-\d{3}-\d{4}$', :placeholder => '333-444-5555', :class => "small" %>
     </div>
     <div class="field">
       <%= f.label :nurse %><br>
@@ -63,11 +63,11 @@
     </div>
     <div class="field">
       <%= f.label "RN ID" %><br>
-      <%= f.text_field :rn_id %>
+      <%= f.text_field :rn_id, class: "small" %>
     </div>
     <div class="field">
       <%= f.label :stage_registerd %><br>
-      <%= f.text_field :stage_registerd %>
+      <%= f.text_field :stage_registerd, class: "small" %>
     </div>
     <div class="field">
       <%= f.label :aphon_member %><br>
@@ -79,7 +79,7 @@
     </div>
     <div class="field">
       <%= f.label :aphon_member_number %><br>
-      <%= f.text_field :aphon_member_number %>
+      <%= f.text_field :aphon_member_number, class: "small" %>
     </div>
       <div class="field">
       <%= f.label :aphon_expiration_date %><br>
