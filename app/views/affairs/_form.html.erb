@@ -1,52 +1,49 @@
-<%= form_for(@affair) do |f| %>
-  <% if @affair.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@affair.errors.count, "error") %> prohibited this affair from being saved:</h2>
+<div class="style-form">
+  <%= form_for(@affair) do |f| %>
+    <% if @affair.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@affair.errors.count, "error") %> prohibited this affair from being saved:</h2>
 
-      <ul>
-      <% @affair.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-<div class="row">
-  <div class="small-6 small-offset-3 columns">
-    <div class="field">
-      <%= f.label :kind %>
-      <%= f.select :kind, options_for_select([["", ""],
-                                              ["Conference", "conference"],
-                                              ["Quarterly", "quarterly"],
-                                              ["Event", "event"]], @affair.kind) %>
-    </div>
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :date %><br>
-      <%= f.date_select :date %>
-    </div>
-    <div class="field">
-      <%= f.label :location %><br>
-      <%= f.text_field :location %>
-    </div>
-    <div class="field">
-      <%= f.label :cost %><br>
-      <%= f.text_field :cost %>
-    </div>
-    <div class="field">
-      <%= f.label :paypal %><br>
-      <%= f.text_area :paypal %>
-    </div>
-      <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_area :description %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+        <ul>
+        <% @affair.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <div class="field">
+    <%= f.label :kind %>
+    <%= f.select :kind, options_for_select([["", ""],
+                                            ["Conference", "conference"],
+                                            ["Quarterly", "quarterly"],
+                                            ["Event", "event"]], @affair.kind) %>
   </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :paypal %><br>
+    <%= f.text_area :paypal %>
+  </div>
+    <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
 </div>
-<% end %>
