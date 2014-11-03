@@ -1,21 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-12 columns">
+    <br>
+    <br>
+    <br>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @scholarship.name %>
-</p>
+  <div class="large-6 small-12 columns">
+    <% if defined? @scholarship.pictures.last.image %>
+      <div class="image">
+        <%= image_tag @scholarship.pictures.last.image.url(:xlarg) %>
+      </div>
+    <% end %>
+  </div>
+  <div class="large-6 small-12 columns">
+    <div style="text-align:center">
+      <p id="notice"><%= notice %></p>
+      <h1><%= @scholarship.name %></h1>
+      <div class="info background-a">
+        <p><%= @scholarship.info %></p>
+        <br>
+        <br>
 
-<!-- <p>
-  <strong>Author:</strong>
-  <%= @scholarship.author %>
-</p> -->
+        <% if defined? @scholarship.attachments.last.file %>
+          <a class="button" href="<%= @scholarship.attachments.last.file %>" >
+            <i class="fa fa-download"></i>
+            download Scoop
+          </a>
+        <% end %>
+      </div>
+    <%= link_to 'Edit', edit_scholarship_path(@scholarship), class: "button" %>
+    <%= link_to 'Back', scholarships_path, class: "button" %>
+    </div>
 
-<p>
-  <strong>Info:</strong>
-  <%= @scholarship.info %>
-</p>
+  </div>
 
-<%= link_to 'Edit', edit_scholarship_path(@scholarship) %> |
-<%= link_to 'Back', scholarships_path %>
-
-<%= render "module/picture_attachment" %>
+  <div class="small-12 columns">
+    <%= render "module/picture_attachment" %>
+  </div>
+</div>
