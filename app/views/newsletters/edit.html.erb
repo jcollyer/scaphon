@@ -1,6 +1,8 @@
-<h1>Editing newsletter</h1>
-
+<div class="row">
+  <%= link_to 'Show', @newsletter, class: "button" %>
+  <%= link_to 'Back', newsletters_path, class: "button" %>
+  <br>
+  <br>
+  <h1 class="center">Editing Newsletter</h1>
+</div>
 <%= render 'form' %>
-
-<%= link_to 'Show', @newsletter %> |
-<%= link_to 'Back', newsletters_path %>
