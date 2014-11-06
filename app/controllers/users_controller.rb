@@ -22,11 +22,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to root_url
-      flash[:notice] = "You Signed up successfully"
-      flash[:color]= "valid"
     else
-      flash[:notice] = "Form is invalid"
-      flash[:color]= "invalid"
       render "new"
     end
   end
