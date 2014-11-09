@@ -27,8 +27,8 @@ end
 # for heroku
 gem 'rails_12factor', group: :production
 
-#for User auth
 gem 'bcrypt-ruby', '~> 3.1.5', :require => 'bcrypt'
+
 
 # for markdown
 gem "redcarpet"

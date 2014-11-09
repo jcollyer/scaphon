@@ -17,10 +17,13 @@
       <%= f.email_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :placeholder => "jane@smith.com" %>
     </div>
     <div class="field">
-      <%= f.label "password" %><br>
-      <%= f.password_field :password_hash %>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
     </div>
-
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
     <div class="field">
       <%= f.label :first_name %><br>
       <%= f.text_field :first_name %>
