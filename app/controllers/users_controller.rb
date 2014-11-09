@@ -57,6 +57,6 @@ class UsersController < ApplicationController
                                    :city, :state, :zip, :phone_home, :phone_work, :nurse,
                                    :institution, :rn_id, :state_registerd, :aphon_member,
                                    :scaphon_member, :street_address, :aphon_member_number,
-                                   :aphon_expiration_date)
+                                   :aphon_expiration_date, :password_reset_sent_at)
     end
 end
