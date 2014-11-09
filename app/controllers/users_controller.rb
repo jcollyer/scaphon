@@ -14,13 +14,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    # binding.pry
   end
 
   def create
-    # @user = User.new(params[:user])
     @user = User.new(user_params)
     if @user.save
+      UserMailer.welcome_email(@user).deliver
       redirect_to root_url
     else
       render "new"
@@ -54,9 +53,9 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
     def user_params
-      params.require(:user).permit(:email, :password_hash, :password, :first_name, :last_name,
+      params.require(:user).permit(:email, :password, :first_name, :last_name,
                                    :city, :state, :zip, :phone_home, :phone_work, :nurse,
-                                   :institution, :rn_id, :stage_registerd, :aphon_member,
+                                   :institution, :rn_id, :state_registerd, :aphon_member,
                                    :scaphon_member, :street_address, :aphon_member_number,
                                    :aphon_expiration_date)
     end

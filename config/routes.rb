@@ -45,4 +45,5 @@ Scaphon::Application.routes.draw do
     resources :attachments
   end
 
+  resources :password_resets
 end
