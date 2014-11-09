@@ -1,89 +1,97 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-12 columns">
+    <br>
+    <br>
+    <br>
+    <p id="notice"><%= notice %></p>
+  </div>
+  <div class="info background-a">
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+    <p>
+      <strong>First name:</strong>
+      <%= @user.first_name %>
+    </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+    <p>
+      <strong>Last name:</strong>
+      <%= @user.last_name %>
+    </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @user.street_address %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @user.street_address %>
-</p>
+    <p>
+      <strong>City:</strong>
+      <%= @user.city %>
+    </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
+    <p>
+      <strong>State:</strong>
+      <%= @user.state %>
+    </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
+    <p>
+      <strong>Zip:</strong>
+      <%= @user.zip %>
+    </p>
 
-<p>
-  <strong>Zip:</strong>
-  <%= @user.zip %>
-</p>
+    <p>
+      <strong>Phone home:</strong>
+      <%= @user.phone_home %>
+    </p>
 
-<p>
-  <strong>Phone home:</strong>
-  <%= @user.phone_home %>
-</p>
+    <p>
+      <strong>Phone work:</strong>
+      <%= @user.phone_work %>
+    </p>
 
-<p>
-  <strong>Phone work:</strong>
-  <%= @user.phone_work %>
-</p>
+    <p>
+      <strong>Nurse:</strong>
+      <%= @user.nurse %>
+    </p>
 
-<p>
-  <strong>Nurse:</strong>
-  <%= @user.nurse %>
-</p>
+    <p>
+      <strong>Institution:</strong>
+      <%= @user.institution %>
+    </p>
 
-<p>
-  <strong>Institution:</strong>
-  <%= @user.institution %>
-</p>
+    <p>
+      <strong>Rn:</strong>
+      <%= @user.rn_id %>
+    </p>
 
-<p>
-  <strong>Rn:</strong>
-  <%= @user.rn_id %>
-</p>
+    <p>
+      <strong>State registerd:</strong>
+      <%= @user.state_registerd %>
+    </p>
 
-<p>
-  <strong>Stage registerd:</strong>
-  <%= @user.stage_registerd %>
-</p>
+    <p>
+      <strong>Aphon member:</strong>
+      <%= @user.aphon_member %>
+    </p>
 
-<p>
-  <strong>Aphon member:</strong>
-  <%= @user.aphon_member %>
-</p>
+    <p>
+      <strong>Scaphon member:</strong>
+      <%= @user.scaphon_member %>
+    </p>
 
-<p>
-  <strong>Scaphon member:</strong>
-  <%= @user.scaphon_member %>
-</p>
+    <p>
+      <strong>Aphon member number:</strong>
+      <%= @user.aphon_member_number %>
+    </p>
 
-<p>
-  <strong>Aphon member number:</strong>
-  <%= @user.aphon_member_number %>
-</p>
+    <p>
+      <strong>Aphon expiration date:</strong>
+      <% if @user.aphon_expiration_date %><%= @user.aphon_expiration_date.strftime("%m/%d/%Y") %><% end %>
+    </p>
 
-<p>
-  <strong>Aphon expiration date:</strong>
-  <%= @user.aphon_expiration_date.strftime("%m/%d/%Y") %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <%= link_to 'Edit', edit_user_path(@user), class: "button" %>
+    <%= link_to 'Back', users_path, class: "button" %>
+  </div>
+</div>
