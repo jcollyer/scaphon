@@ -1,7 +1,15 @@
-<%= form_tag password_resets_path, :method => :post do %>
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email], :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :placeholder => "jane@smith.com" %>
-  </div>
-  <div class="actions"><%= submit_tag "Reset Password" %></div>
-<% end %>
+<div class="row">
+  <br>
+  <br>
+  <h1 class="center">Reset Password</h1>
+  <p class="center"><%= link_to 'Back', log_in_path, class: "button" %></p>
+</div>
+<div class="style-form">
+  <%= form_tag password_resets_path, :method => :post do %>
+    <div class="field">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, params[:email], :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :placeholder => "jane@smith.com" %>
+    </div>
+    <div class="actions"><%= submit_tag "Reset Password", class: "button" %></div>
+  <% end %>
+</div>
