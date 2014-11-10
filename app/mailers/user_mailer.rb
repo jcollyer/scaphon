@@ -1,9 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: 'notifications@example.com'
+  default from: 'collyerdesign@gmail.com'
 
   def welcome_email(user)
     @user = user
-    @url  = 'http://example.com/login'
+    @url  = 'http://scaphon.org/log_in'
     mail :to => user.email, :subject => 'Welcome to SCAPHON!'
   end
 
