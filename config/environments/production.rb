@@ -83,22 +83,13 @@ Scaphon::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :address        => 'smtp.sendgrid.net',
-  #   :port           => '25',
-  #   :authentication => :plain,
-  #   :user_name      => ENV['app30095341@heroku.com'],
-  #   :password       => ENV['ajgnqqoj'],
-  #   :domain         => 'scaphon-rails4.herokuapp.com',
-  #   :enable_starttls_auto => true
-  # }
-
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'gmail.com',
-    user_name:            'collyerdesign@gmail.com',
-    password:             'jcollyer5849',
-    authentication:       'plain',
-    enable_starttls_auto: true  }
+    :address        => 'smtp.sendgrid.net',
+    :port           => '25',
+    :authentication => :plain,
+    :user_name      => 'app30095341@heroku.com',
+    :password       => 'ajgnqqoj',
+    :domain         => 'scaphon-rails4.herokuapp.com',
+    :enable_starttls_auto => true
+  }
 end
