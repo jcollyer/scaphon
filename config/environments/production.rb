@@ -87,8 +87,8 @@ Scaphon::Application.configure do
     :address        => 'smtp.sendgrid.net',
     :port           => '25',
     :authentication => :plain,
-    :user_name      => 'app30095341@heroku.com',
-    :password       => 'ajgnqqoj',
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
     :domain         => 'scaphon-rails4.herokuapp.com',
     :enable_starttls_auto => true
   }
