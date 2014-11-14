@@ -7,6 +7,7 @@ $dark-gray: #555555;
 $dark-blue: #314d5b;
 $light-blue: #27a6d1;
 $light-blue-a: rgba(39,166, 209, 0.1);
+$mid-blue: #67C0DE;
 $dark-orange: #e1574c;
 $light-green: #3db39d;
 $mid-yellow: #f0c75e;
@@ -74,6 +75,37 @@ a.button, input[type="submit"].button {
   }
 }
 
+#flash {
+  position: absolute;
+  top: 20px;
+  z-index: 999;
+  background: $light-green;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  padding: 12px 0px 8px;
+  font-size: 22px;
+  border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+  color: white;
+  .notice {
+    text-align: center;
+  }
+  #close-flash {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: $dark-gray;
+    padding: 9px 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+    &:hover {
+      background: $transparent;
+    }
+  }
+}
+
 
 #error_explanation {
   border: 1px solid $dark-orange;
@@ -83,7 +115,7 @@ a.button, input[type="submit"].button {
 
 #nav{
   box-sizing: content-box;
-  border-bottom: 4px solid $transparent;
+  border-bottom: 4px solid $mid-blue;
   background: $light-blue;
   position: fixed;
   padding: 4px 0px;
@@ -142,7 +174,7 @@ a.button, input[type="submit"].button {
   }
   .active {
     outline: 3px solid $light-blue;
-    background: $transparent;
+    background: $mid-blue;
   }
 }
 
