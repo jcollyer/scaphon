@@ -6,17 +6,15 @@
 </div>
 <div class="row">
   <% @scholarships.each do |scholarship| %>
-    <div class="small-12 columns background-every-other">
-      <div class="scholarship-info">
-        <h1><%= scholarship.name %></h1>
-        <h4><%= scholarship.author %></h4>
-        <p>
-          <% if defined? scholarship.pictures.last.image %>
-            <%= image_tag scholarship.pictures.last.image.url(:medium) %>
-          <% end %>
-          <%= scholarship.info %>
-        </p>
-      </div>
+    <div class="small-12 columns background-a">
+      <h1><%= scholarship.name %></h1>
+      <h4><%= scholarship.author %></h4>
+      <p>
+        <% if defined? scholarship.pictures.last.image %>
+          <%= image_tag scholarship.pictures.last.image.url(:medium) %>
+        <% end %>
+        <%= scholarship.info %>
+      </p>
       <div class="scholarship-image">
 
       </div>

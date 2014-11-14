@@ -77,7 +77,7 @@ a.button, input[type="submit"].button {
 
 #flash {
   position: absolute;
-  top: 20px;
+  top: 0px;
   z-index: 999;
   background: $light-green;
   width: 100%;
@@ -86,7 +86,6 @@ a.button, input[type="submit"].button {
   margin: auto;
   padding: 12px 0px 8px;
   font-size: 22px;
-  border-top: 1px solid $light-gray;
   border-bottom: 1px solid $light-gray;
   color: white;
   .notice {
@@ -322,23 +321,18 @@ a.button, input[type="submit"].button {
 
 .background-a {
   background: $light-blue-a;
-  margin: 20px 0px;
-  padding: 20px;
+  margin: 0px 0px 20px;
+  padding: 0px 0px 20px;
   h1 {
-    margin: 15px 0 0 0;
+    width: 100%;
+    background: $light-blue;
+    margin: 0px;
+    padding: 10px;
+    color: white;
   }
   p {
     margin: 0 0 15px 0;
-  }
-}
-
-.background-every-other:nth-child(even){
-  @extend .background-a;
-}
-//scholarship///////////
-///////////////////////
-.scholarship-info {
-  p {
+    padding: 20px;
     img {
       float: right;
       border-radius: 50%;
@@ -346,6 +340,13 @@ a.button, input[type="submit"].button {
     }
   }
 }
+
+
+.background-every-other:nth-child(even){
+  @extend .background-a;
+}
+//scholarship///////////
+///////////////////////
 .scholarship-download {
   a {
     i{
