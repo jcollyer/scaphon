@@ -10,11 +10,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render "layouts/nav" %>
-<div id="content">
-  <%= yield %>
-</div>
-<%= render "layouts/footer" %>
+
+  <% flash.each do |name, msg| %>
+    <div id="flash">
+      <div id="close-flash"><i class="fa fa-close"></i></div>
+      <%= content_tag :div, msg, class: name %>
+    </div>
+  <% end %>
+
+
+  <%= render "layouts/nav" %>
+  <div id="content">
+    <%= yield %>
+  </div>
+  <%= render "layouts/footer" %>
 
 </body>
 </html>
