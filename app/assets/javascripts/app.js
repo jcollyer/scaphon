@@ -19,6 +19,10 @@ ready = function() {
   content.style.marginBottom = footerHeight + "px";
   content.style.marginTop = navHeight + "px";
 
+  $("#close-flash").click(function(){
+    $("#flash").fadeOut();
+  });
+
 };
 
 $(document).ready(ready);
