@@ -330,13 +330,14 @@ a.button, input[type="submit"].button {
     padding: 10px;
     color: white;
   }
-  p {
-    margin: 0 0 15px 0;
+  .background-a-contents {
     padding: 20px;
-    img {
-      float: right;
-      border-radius: 50%;
-      margin-left: 20px;
+    p {
+      img {
+        float: right;
+        border-radius: 50%;
+        margin-left: 20px;
+      }
     }
   }
 }

@@ -8,26 +8,26 @@
   <% @scholarships.each do |scholarship| %>
     <div class="small-12 columns background-a">
       <h1><%= scholarship.name %></h1>
-      <h4><%= scholarship.author %></h4>
-      <p>
-        <% if defined? scholarship.pictures.last.image %>
-          <%= image_tag scholarship.pictures.last.image.url(:medium) %>
-        <% end %>
-        <%= scholarship.info %>
-      </p>
-      <div class="scholarship-image">
-
+      <div class="background-a-contents">
+        <h4><%= scholarship.author %></h4>
+        <p>
+          <% if defined? scholarship.pictures.last.image %>
+            <%= image_tag scholarship.pictures.last.image.url(:medium) %>
+          <% end %>
+          <%= scholarship.info %>
+        </p>
+        <div class="scholarship-download">
+          <% if defined? scholarship.attachments.last.file %>
+            <a class="button" href="<%= scholarship.attachments.last.file %>" >
+              <i class="fa fa-download"></i>
+              download scholarship form
+            </a>
+          <% end %>
+        </div>
+        <%= link_to 'Add Image/PDF', scholarship, class: "button" %>
+        <%= link_to 'Edit', edit_scholarship_path(scholarship), class: "button"%>
+        <%= link_to 'Destroy', scholarship, method: :delete, data: { confirm: 'Are you sure?' }, class: "button"%>
       </div>
-      <div class="scholarship-download">
-        <% if defined? scholarship.attachments.last.file %>
-          <a class="button" href="<%= scholarship.attachments.last.file %>" >
-            <i class="fa fa-download"></i>
-            download scholarship form
-          </a>
-        <% end %>
-      </div>
-      <%= link_to 'Edit', scholarship, class: "button"%>
-      <%= link_to 'Destroy', scholarship, method: :delete, data: { confirm: 'Are you sure?' }, class: "button"%>
     </div>
   <% end %>
 </div>
