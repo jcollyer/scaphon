@@ -4,26 +4,23 @@
     <br>
     <br>
   </div>
-  <div class="small-12 columns">
-    <div style="text-align:center">
-      <h1><%= @community.name %></h1>
-      <div class="info background-a">
-        <p><%= markdown(@community.description) %></p>
-        <p><%= markdown(@community.descriptionb) %></p>
-        <br>
-        <br>
+  <div class="small-12 columns background-a">
+    <h1><%= @community.name %></h1>
+    <div class="background-a-content">
+      <p><%= markdown(@community.description) %></p>
+      <p><%= markdown(@community.descriptionb) %></p>
+      <br>
+      <br>
 
-        <% if defined? @community.attachments.last.file %>
-          <a class="button" href="<%= @community.attachments.last.file %>" >
-            <i class="fa fa-download"></i>
-            download Info
-          </a>
-        <% end %>
-      </div>
-    <%= link_to 'Edit', edit_community_path(@community), class: "button" %>
-    <%= link_to 'Back', communities_path, class: "button" %>
+      <% if defined? @community.attachments.last.file %>
+        <a class="button" href="<%= @community.attachments.last.file %>" >
+          <i class="fa fa-download"></i>
+          download Info
+        </a>
+      <% end %>
+      <%= link_to 'Edit', edit_community_path(@community), class: "button" %>
+      <%= link_to 'Back', communities_path, class: "button" %>
     </div>
-
   </div>
 
   <div class="small-12 columns">

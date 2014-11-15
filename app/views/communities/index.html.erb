@@ -11,7 +11,7 @@
       <br>
       <br>
     </div>
-    <div class="large-4 small-12 columns">
+    <div class="large-3 small-12 columns">
       <div class="image">
         <% if defined? community.pictures.last.image %>
           <% community.pictures.each do |picture| %>
@@ -22,23 +22,21 @@
         <% end %>
       </div>
     </div>
-    <div class="large-8 small-12 columns">
-      <div style="text-align:center">
-        <h1><%= community.name %></h1>
-        <div class="info background-a">
-          <p><%= markdown(community.description) %></p>
-          <p><%= markdown(community.descriptionb) %></p>
-          <% if defined? community.attachments.last.file %>
-            <a class="button" href="<%= community.attachments.last.file.url %>" >
-              <i class="fa fa-file-pdf-o"></i>
-              View PDF
-            </a>
-          <% end %>
-          <br>
-          <%= link_to 'Show', community, class: "button" %>
-          <%= link_to 'Edit', edit_community_path(community), class: "button" %>
-          <%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
-        </div>
+    <div class="large-9 small-12 columns background-a">
+      <h1><%= community.name %></h1>
+      <div class="background-a-content">
+        <p><%= markdown(community.description) %></p>
+        <p><%= markdown(community.descriptionb) %></p>
+        <% if defined? community.attachments.last.file %>
+          <a class="button" href="<%= community.attachments.last.file.url %>" >
+            <i class="fa fa-file-pdf-o"></i>
+            View PDF
+          </a>
+        <% end %>
+        <br>
+        <%= link_to 'Add Image', community, class: "button" %>
+        <%= link_to 'Edit', edit_community_path(community), class: "button" %>
+        <%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
       </div>
     </div>
   </div>

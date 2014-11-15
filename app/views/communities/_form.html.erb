@@ -1,30 +1,32 @@
-<%= form_for(@community) do |f| %>
-  <% if @community.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@community.errors.count, "error") %> prohibited this community from being saved:</h2>
+<div class="style-form">
+  <%= form_for(@community) do |f| %>
+    <% if @community.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@community.errors.count, "error") %> prohibited this community from being saved:</h2>
 
-      <ul>
-      <% @community.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @community.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label "description part A" %><br>
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="field">
+      <%= f.label "description part B" %><br>
+      <%= f.text_area :descriptionb %>
+    </div>
+    <div class="actions">
+      <%= f.submit class: "button" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label "description part A" %><br>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label "description part B" %><br>
-    <%= f.text_area :descriptionb %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
