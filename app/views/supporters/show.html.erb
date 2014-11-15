@@ -28,3 +28,38 @@
   </div>
 </div>
 
+
+<div class="row">
+  <div class="small-12 columns">
+    <br>
+    <br>
+    <br>
+  </div>
+
+  <div class="large-6 small-12 columns">
+    <% if defined? @supporter.pictures.last.image %>
+      <div class="image">
+        <%= image_tag @supporter.pictures.last.image.url(:xlarg) %>
+      </div>
+    <% end %>
+  </div>
+  <div class="large-6 small-12 columns background-a">
+    <h1><%= @supporter.name %></h1>
+    <div class="background-a-content">
+      <% if defined? @supporter.pictures.last.image %>
+        <a class="button" href="<%= @supporter.pictures.last.image %>" >
+          <i class="fa fa-download"></i>
+          download Scoop
+        </a>
+      <% end %>
+      <%= link_to 'Edit', edit_supporter_path(@supporter), class: "button" %>
+      <%= link_to 'Back', supporters_path, class: "button" %>
+    </div>
+  </div>
+
+  <div class="small-12 columns">
+    <%= render "module/picture" %>
+  </div>
+</div>
+
+

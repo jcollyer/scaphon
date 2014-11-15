@@ -10,6 +10,7 @@ Scaphon::Application.routes.draw do
 
   resources :supporters do
     resources :pictures
+    resources :attachments
   end
 
   resources :abouts do
