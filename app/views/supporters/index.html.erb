@@ -9,26 +9,24 @@
     <div class="small-12 columns">
       <br>
       <br>
-      <br>
     </div>
     <div class="large-4 small-12 columns">
       <div class="image">
+          <br>
+          <br>
         <% if defined? supporter.pictures.last.image %>
           <%= image_tag supporter.pictures.last.image.url(:large) %>
         <% end %>
       </div>
     </div>
-    <div class="large-8 small-12 columns">
-      <div style="text-align:center">
-        <h1><%= supporter.name %></h1>
-        <div class="info background-a">
-          <h3><%= supporter.status %></h3>
-          <h3><%= supporter.active %></h3>
-
-          <%= link_to 'Show', supporter, class: "button" %>
-          <%= link_to 'Edit', edit_supporter_path(supporter), class: "button" %>
-          <%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
-        </div>
+    <div class="large-8 small-12 columns background-a">
+      <h1><%= supporter.name %></h1>
+      <div class="background-a-content">
+        <h3><%= supporter.status %></h3>
+        <h3><%= supporter.active %></h3>
+        <%= link_to 'Add Image', supporter, class: "button" %>
+        <%= link_to 'Edit', edit_supporter_path(supporter), class: "button" %>
+        <%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
       </div>
     </div>
   </div>

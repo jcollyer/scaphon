@@ -17,6 +17,11 @@ class SupportersController < ApplicationController
     @pictures      = @imageable.pictures
     @picture       = Picture.new
 
+    @fileable    = @supporter
+    @attachments = @fileable.attachments
+    @attachment  = Attachment.new
+
+
     @thisModel     =  Supporter.find(params[:id])
   end
 

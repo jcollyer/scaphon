@@ -1,29 +1,35 @@
-<%= form_for(@supporter) do |f| %>
-  <% if @supporter.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@supporter.errors.count, "error") %> prohibited this supporter from being saved:</h2>
+<div class="style-form">
+  <%= form_for(@supporter) do |f| %>
+    <% if @supporter.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@supporter.errors.count, "error") %> prohibited this supporter from being saved:</h2>
 
-      <ul>
-      <% @supporter.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @supporter.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :status %>
+      <%= f.select :status, options_for_select([["", ""],
+                                              ["Bronze", "Bronze"],
+                                              ["Silver", "Silver"],
+                                              ["Gold", "Gold"],
+                                              ["Platinum","Platinum"]], @supporter.status) %>
+    </div>
+    <div class="field">
+      <%= f.label :active %><br>
+      <%= f.check_box :active %>
+    </div>
+    <div class="actions">
+      <%= f.submit class: "button" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :active %><br>
-    <%= f.check_box :active %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
