@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       UserMailer.welcome_email(@user).deliver
-      redirect_to root_url
+      redirect_to root_url, notice: 'your logged in!'
     else
       render "new"
     end
