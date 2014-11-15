@@ -12,25 +12,19 @@
       </div>
     <% end %>
   </div>
-  <div class="large-6 small-12 columns">
-    <div style="text-align:center">
-      <h1><%= @newsletter.name %></h1>
-      <div class="info background-a">
-        <h1><%= @newsletter.date.strftime("%m/%d/%Y") %></h1>
-        <br>
-        <br>
-
-        <% if defined? @newsletter.attachments.last.file %>
-          <a class="button" href="<%= @newsletter.attachments.last.file %>" >
-            <i class="fa fa-download"></i>
-            download Scoop
-          </a>
-        <% end %>
-      </div>
-    <%= link_to 'Edit', edit_newsletter_path(@newsletter), class: "button" %>
-    <%= link_to 'Back', newsletters_path, class: "button" %>
+  <div class="large-6 small-12 columns background-a">
+    <h1><%= @newsletter.name %></h1>
+    <div class="background-a-content">
+      <h3><%= @newsletter.date.strftime("%m/%d/%Y") %></h3>
+      <% if defined? @newsletter.attachments.last.file %>
+        <a class="button" href="<%= @newsletter.attachments.last.file %>" >
+          <i class="fa fa-download"></i>
+          download Scoop
+        </a>
+      <% end %>
+      <%= link_to 'Edit', edit_newsletter_path(@newsletter), class: "button" %>
+      <%= link_to 'Back', newsletters_path, class: "button" %>
     </div>
-
   </div>
 
   <div class="small-12 columns">

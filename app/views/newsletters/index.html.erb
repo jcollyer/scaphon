@@ -16,22 +16,22 @@
         <% end %>
       </div>
     </div>
-    <div class="large-8 small-12 columns">
-      <div style="text-align:center">
-        <h1><%= newsletter.name %></h1>
-        <div class="info background-a">
-          <h1><%= newsletter.date.strftime("%m/%d/%Y") %></h1>
-          <% if defined? newsletter.attachments.last.file %>
+    <div class="large-8 small-12 columns background-a">
+      <h1><%= newsletter.name %></h1>
+      <div class="background-a-content">
+        <h2><%= newsletter.date.strftime("%m/%d/%Y") %></h2>
+        <% if defined? newsletter.attachments.last.file %>
+          <div class="download-button">
             <a class="button" href="<%= newsletter.attachments.last.file.url %>" >
               <i class="fa fa-file-pdf-o"></i>
               View PDF
             </a>
-          <% end %>
-          <br>
-          <%= link_to 'Add Image/PDF', newsletter, class: "button" %>
-          <%= link_to 'Edit', edit_newsletter_path(newsletter), class: "button" %>
-          <%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
-        </div>
+          </div>
+        <% end %>
+        <br>
+        <%= link_to 'Add Image/PDF', newsletter, class: "button" %>
+        <%= link_to 'Edit', edit_newsletter_path(newsletter), class: "button" %>
+        <%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
       </div>
     </div>
   </div>
