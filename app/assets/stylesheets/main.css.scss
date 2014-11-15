@@ -51,6 +51,14 @@ a.button, input[type="submit"].button {
   }
 }
 
+.download-button {
+  a {
+    i{
+      font-size: 34px;
+    }
+  }
+}
+
 .fz-50 {
   font-size: 50px;
 }
@@ -342,18 +350,8 @@ a.button, input[type="submit"].button {
   }
 }
 
-
 .background-every-other:nth-child(even){
   @extend .background-a;
-}
-//scholarship///////////
-///////////////////////
-.scholarship-download {
-  a {
-    i{
-      font-size: 34px;
-    }
-  }
 }
 
 .style-form {

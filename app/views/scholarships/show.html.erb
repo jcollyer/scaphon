@@ -14,7 +14,7 @@
         <% end %>
         <%= markdown(@scholarship.info) %>
       </p>
-      <div class="scholarship-download">
+      <div class="download-button">
         <% if defined? @scholarship.attachments.last.file %>
           <a class="button" href="<%= @scholarship.attachments.last.file %>" >
             <i class="fa fa-download"></i>
