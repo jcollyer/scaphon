@@ -56,7 +56,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:email, :password, :first_name, :last_name,
                                    :city, :state, :zip, :phone_home, :phone_work, :nurse,
                                    :institution, :rn_id, :state_registerd, :aphon_member,
-                                   :scaphon_member, :street_address, :aphon_member_number,
+                                   :street_address, :aphon_member_number,
                                    :aphon_expiration_date, :password_reset_sent_at)
     end
 end

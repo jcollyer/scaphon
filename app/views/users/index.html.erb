@@ -1,61 +1,41 @@
-<div class="row">
-  <br>
-  <br>
-</div>
 <div id="user-table">
-  <table>
-    <thead>
-      <tr>
-        <th>Email</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Zip</th>
-        <th>Phone home</th>
-        <th>Phone work</th>
-        <th>Nurse</th>
-        <th>Institution</th>
-        <th>RN ID</th>
-        <th>S R</th>
-        <th>S M?</th>
-        <th>A M?</th>
-        <th>A #</th>
-        <th>AXD</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @users.each do |user| %>
+  <div id="user-table-header-background"> </div>
+  <div id="user-table-body">
+    <table>
+      <thead>
         <tr>
-          <td><%= user.email %></td>
-          <td><%= user.first_name %></td>
-          <td><%= user.last_name %></td>
-          <td><%= user.street_address %></td>
-          <td><%= user.city %></td>
-          <td><%= user.state %></td>
-          <td><%= user.zip %></td>
-          <td><%= user.phone_home %></td>
-          <td><%= user.phone_work %></td>
-          <td><%= user.nurse %></td>
-          <td><%= user.institution %></td>
-          <td><%= user.rn_id %></td>
-          <td><%= user.state_registerd %></td>
-          <td><%= user.scaphon_member %></td>
-          <td><%= user.aphon_member %></td>
-          <td><%= user.aphon_member_number %></td>
-          <td><% if user.aphon_expiration_date %><%= user.aphon_expiration_date.strftime("%m/%d/%Y") %><% end %></td>
-          <td>
-            <%= link_to 'Show', user %>
-            <%= link_to 'Edit', edit_user_path(user) %>
-            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
+          <th><div class="th-inner">Email</th></div>
+          <th><div class="th-inner">Name</th></div>
+          <th><div class="th-inner">Address</th></div>
+          <th><div class="th-inner">City</th></div>
+          <th><div class="th-inner">State</th></div>
+          <th><div class="th-inner">Zip</th></div>
+          <th><div class="th-inner">Institution</th></div>
+          <th><div class="th-inner">SR</th></div>
+          <th><div class="th-inner">AM?</th></div>
+          <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.email %></td>
+            <td><%= user.last_name %>, <%= user.first_name %></td>
+            <td><%= user.street_address %></td>
+            <td><%= user.city %></td>
+            <td><%= user.state %></td>
+            <td><%= user.zip %></td>
+            <td><%= user.institution %></td>
+            <td><%= user.state_registerd %></td>
+            <td><%= user.aphon_member %></td>
+            <td>
+              <%= link_to 'Details', user %>
+              <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
