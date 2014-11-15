@@ -1,45 +1,41 @@
 <div class="row">
   <div class="small-12 columns">
+    <br>
     <%= link_to 'New Event', new_affair_path, class: "button" %>
     <%= render "module/no_content" %>
   </div>
 </div>
 <% @affairs.each do |affair| %>
 <div class="row">
-  <div class="small-12 columns">
-    <br>
-    <br>
-    <br>
-  </div>
-
   <div class="large-4 small-12 columns">
     <div class="image">
+      <br>
+      <br>
       <% if defined? affair.pictures.last.image %>
         <%= image_tag affair.pictures.last.image.url(:large) %>
       <% end %>
     </div>
   </div>
-  <div class="large-8 small-12 columns">
-    <div style="text-align:center">
-      <h1><%= affair.name %></h1>
-      <div class="info background-a">
-        <h3><%= affair.date.strftime("%m/%d/%Y") %></h3>
-        <h3><%= affair.location %></h3>
-        <h3><%= affair.cost %></h3>
-        <div id="new_pp_code">
-          <div style="display:none" id="initial_paypal_code">
-            <%= affair.paypal %>
-          </div>
+  <div class="large-8 small-12 columns background-a">
+    <h1><%= affair.name %></h1>
+    <div class="background-a-content">
+      <h3><%= affair.date.strftime("%m/%d/%Y") %></h3>
+      <h3><%= affair.location %></h3>
+      <h3><%= affair.cost %></h3>
+      <div id="new_pp_code">
+        <div style="display:none" id="initial_paypal_code">
+          <%= affair.paypal %>
         </div>
-        <% if defined? @affair.attachments.last.file %>
-          <a class="button" href="<%= @affair.attachments.last.file.url %>" >
-            <i class="fa fa-file-pdf-o"></i>
-            View PDF
-          </a>
-        <% end %>
-        <%= link_to 'Edit', edit_affair_path(affair), class: "button" %>
-        <%= link_to 'Destroy', affair, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
       </div>
+      <% if defined? @affair.attachments.last.file %>
+        <a class="button" href="<%= @affair.attachments.last.file.url %>" >
+          <i class="fa fa-file-pdf-o"></i>
+          View PDF
+        </a>
+      <% end %>
+      <%= link_to 'Add Image/PDF/DOC', affair, class: "button" %>
+      <%= link_to 'Edit', edit_affair_path(affair), class: "button" %>
+      <%= link_to 'Destroy', affair, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
     </div>
   </div>
 </div>

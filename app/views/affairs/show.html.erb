@@ -5,37 +5,36 @@
     <br>
   </div>
 
-  <div class="large-6 small-12 columns">
+  <div class="large-2 small-12 columns">
     <% if defined? @affair.pictures.last.image %>
+      <br>
+      <br>
       <div class="image">
         <%= image_tag @affair.pictures.last.image.url(:xlarg) %>
       </div>
     <% end %>
   </div>
-  <div class="large-6 small-12 columns">
-    <div style="text-align:center">
-      <h1><%= @affair.name %></h1>
-      <div class="info background-a">
-        <h3><%= @affair.date.strftime("%m/%d/%Y") %></h3>
-        <h3><%= @affair.location %></h3>
-        <p><%= @affair.description %></p>
-        <h2><%= @affair.cost %></h2>
-        <div id="new_pp_code">
-          <div style="display:none" id="initial_paypal_code">
-            <%= @affair.paypal %>
-          </div>
+  <div class="large-10 small-12 columns background-a">
+    <h1><%= @affair.name %></h1>
+    <div class="background-a-content">
+      <h3><%= @affair.date.strftime("%m/%d/%Y") %></h3>
+      <h3><%= @affair.location %></h3>
+      <p><%= @affair.description %></p>
+      <h2><%= @affair.cost %></h2>
+      <div id="new_pp_code">
+        <div style="display:none" id="initial_paypal_code">
+          <%= @affair.paypal %>
         </div>
-        <% if defined? @affair.attachments.last.file %>
-        <a class="button" href="<%= @affair.attachments.last.file.url %>" >
-          <i class="fa fa-file-pdf-o"></i>
-          View PDF
-        </a>
-        <% end %>
       </div>
+      <% if defined? @affair.attachments.last.file %>
+      <a class="button" href="<%= @affair.attachments.last.file.url %>" >
+        <i class="fa fa-file-pdf-o"></i>
+        View PDF
+      </a>
+      <% end %>
+      <%= link_to 'Edit', edit_affair_path(@affair), class: "button" %>
+      <%= link_to 'Back', affairs_path, class: "button" %>
     </div>
-
-    <%= link_to 'Edit', edit_affair_path(@affair), class: "button" %>
-    <%= link_to 'Back', affairs_path, class: "button" %>
   </div>
 
   <div class="small-12 columns">
