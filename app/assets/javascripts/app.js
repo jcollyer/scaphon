@@ -34,7 +34,8 @@ ready = function() {
   var editUserSubmit = $("#edit_user_submit");
   editUserSubmit.click(function(){
     passwordMatch();
-  })
+  });
+
 };
 
 $(document).ready(ready);
