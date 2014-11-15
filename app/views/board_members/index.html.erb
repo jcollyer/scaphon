@@ -1,16 +1,13 @@
 <div class="row">
   <div class="small-12 columns">
+    <br>
+    <br>
     <%= link_to 'New Board member', new_board_member_path, class: "button" %>
     <%= render "module/no_content" %>
   </div>
 </div>
 <% @board_members.each do |board_member| %>
   <div class="row">
-    <div class="small-12 columns">
-      <br>
-      <br>
-      <br>
-    </div>
     <div class="large-2 small-12 columns">
       <% if defined? board_member.pictures.last.image %>
         <div class="image">
@@ -20,23 +17,21 @@
         </div>
       <% end %>
     </div>
-    <div class="large-10 small-12 columns">
-      <div style="text-align:center">
-        <h1><%= board_member.name %></h1>
-        <div class="info background-a">
-          <h3><%= board_member.position %></h3>
-          <h3><%= board_member.info %></h3>
-          <% if defined? board_member.attachments.last.file %>
-            <a class="button" href="<%= board_member.attachments.last.file.url %>" >
-              <i class="fa fa-file-pdf-o"></i>
-              View PDF
-            </a>
-          <% end %>
-          <br>
-          <%= link_to 'Show', board_member, class: "button" %>
-          <%= link_to 'Edit', edit_board_member_path(board_member), class: "button" %>
-          <%= link_to 'Destroy', board_member, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
-        </div>
+    <div class="large-10 small-12 columns background-a">
+      <h1><%= board_member.name %></h1>
+      <div class="background-a-content">
+        <h3><%= board_member.position %></h3>
+        <h3><%= board_member.info %></h3>
+        <% if defined? board_member.attachments.last.file %>
+          <a class="button" href="<%= board_member.attachments.last.file.url %>" >
+            <i class="fa fa-file-pdf-o"></i>
+            View PDF
+          </a>
+        <% end %>
+        <br>
+        <%= link_to 'Show', board_member, class: "button" %>
+        <%= link_to 'Edit', edit_board_member_path(board_member), class: "button" %>
+        <%= link_to 'Destroy', board_member, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
       </div>
     </div>
   </div>

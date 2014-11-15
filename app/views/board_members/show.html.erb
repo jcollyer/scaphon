@@ -6,27 +6,26 @@
   </div>
 </div>
 <div class="row">
-  <div class="large-4 small-12 columns">
+  <div class="large-2 small-12 columns">
     <% if defined? @board_member.pictures.last.image %>
+      <br>
+      <br>
       <div class="image">
         <%= image_tag @board_member.pictures.last.image.url(:xlarg) %>
       </div>
     </div>
   <% end%>
-  <div class="large-8 small-12 columns">
-    <div style="text-align:center">
-        <h1><%= @board_member.name %></h1>
-      <div class="background-a">
-        <h3><%= @board_member.position %></h3>
-        <%= link_to 'Edit', edit_board_member_path(@board_member), class: "button" %>
-        <%= link_to 'Back', board_members_path, class: "button" %>
-      </div>
+  <div class="large-10 small-12 columns background-a">
+    <h1><%= @board_member.name %></h1>
+    <div class="background-a-content">
+      <h3><%= @board_member.position %></h3>
+      <%= link_to 'Edit', edit_board_member_path(@board_member), class: "button" %>
+      <%= link_to 'Back', board_members_path, class: "button" %>
     </div>
   </div>
 
   <div class="small-12 columns">
-    <%= render "pictures/pictures" %>
-    <%= render "pictures/form" %>
+    <%= render "module/picture" %>
   </div>
 </div>
 
