@@ -1,8 +1,9 @@
 <% @abouts.each do |about| %>
   <div class="row">
-    <div class="small-12 columns picture-attachment-module">
+    <div class="small-12 columns">
+      <br>
+      <%= link_to 'Add Image', about, class: "button" %>
       <%= link_to 'Edit', edit_about_path(about), class: "button" %>
-      <%= link_to 'Back', abouts_path, class: "button" %>
     </div>
 
     <div class="small-12 columns background-a">
@@ -18,12 +19,16 @@
 
     <div class="small-12 columns background-a">
       <h1>SCAPHON</h1>
-      <p><%= markdown(about.scaphon) %></p>
+      <div class="background-a-contents">
+        <p><%= markdown(about.scaphon) %></p>
+      </div>
     </div>
 
     <div class="small-12 columns background-a">
       <h1>APHON</h1>
-      <p><%= markdown(about.aphon) %></p>
+      <div class="background-a-contents">
+        <p><%= markdown(about.aphon) %></p>
+      </div>
     </div>
 
   </div>
