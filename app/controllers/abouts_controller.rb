@@ -48,7 +48,7 @@ class AboutsController < ApplicationController
   def update
     respond_to do |format|
       if @about.update(about_params)
-        format.html { redirect_to @about, notice: 'About was successfully updated.' }
+        format.html { redirect_to abouts_path, notice: 'About was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
