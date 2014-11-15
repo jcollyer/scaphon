@@ -3,7 +3,8 @@
     <a href="/affairs/<%= e.id %>">
       <div class="home-item-container large-6 small-12 columns">
         <div class="home-item-icon">
-          <% if e.kind == "quarterly" %><i class="fa fa-bullhorn"></i>
+          <% if e.kind == "quarterly" %><i class="fa fa-rocket"></i>
+          <% elsif e.kind == "conference" %><i class="fa fa-tachometer"></i>
           <% elsif e.kind == "event" %> <i class="fa fa-paper-plane"></i>
           <% else %><i class="fa fa-graduation-cap"></i><% end %>
         </div>
@@ -20,7 +21,7 @@
   <% @newsletters.each do |n| %>
     <a href="newsletters/<%= n.id %>">
       <div class="home-item-container large-6 small-12 columns">
-        <div class="home-item-icon"><i class="fa fa-paperclip"></i></div>
+        <div class="home-item-icon"><i class="fa fa-newspaper-o"></i></div>
         <div class="home-item">
             <h1 class="ellipsis"><%=n.name %></h1>
             <% if defined? n.pictures.last.image %>
