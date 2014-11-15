@@ -23,6 +23,18 @@ ready = function() {
     $("#flash").fadeOut();
   });
 
+  var passwordMatch = function() {
+    var password = $("#user_password").val();
+    var passwordConf = $("#user_password_confirmation").val();
+    if (password != passwordConf) {
+      alert("please match passwords, thanks!");
+    }
+  };
+
+  var editUserSubmit = $("#edit_user_submit");
+  editUserSubmit.click(function(){
+    passwordMatch();
+  })
 };
 
 $(document).ready(ready);
