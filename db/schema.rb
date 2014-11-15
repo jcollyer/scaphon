@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115181303) do
+ActiveRecord::Schema.define(version: 20141115191847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,38 +58,9 @@ ActiveRecord::Schema.define(version: 20141115181303) do
     t.datetime "updated_at"
   end
 
-  create_table "boards", force: true do |t|
-    t.string   "name"
-    t.date     "date"
-    t.string   "title"
-    t.string   "info"
-    t.string   "email"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.string   "file_file_name"
-    t.string   "file_content_type"
-    t.integer  "file_file_size"
-    t.datetime "file_updated_at"
-  end
-
   create_table "categorizations", force: true do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "comments", force: true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
   end
 
   create_table "communities", force: true do |t|
@@ -98,11 +69,6 @@ ActiveRecord::Schema.define(version: 20141115181303) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "descriptionb"
-  end
-
-  create_table "dinners", force: true do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: true do |t|
@@ -121,13 +87,6 @@ ActiveRecord::Schema.define(version: 20141115181303) do
     t.datetime "file_updated_at"
   end
 
-  create_table "exhibitors", force: true do |t|
-    t.string   "name"
-    t.string   "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "files", force: true do |t|
     t.string   "name"
     t.integer  "fileable_id"
@@ -138,15 +97,6 @@ ActiveRecord::Schema.define(version: 20141115181303) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
-  end
-
-  create_table "messages", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "subject"
-    t.string   "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "newsletters", force: true do |t|
@@ -164,16 +114,6 @@ ActiveRecord::Schema.define(version: 20141115181303) do
     t.datetime "file_updated_at"
   end
 
-  create_table "officers", force: true do |t|
-    t.string   "name"
-    t.date     "date"
-    t.string   "title"
-    t.string   "info"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "pictures", force: true do |t|
     t.string   "name"
     t.integer  "imageable_id"
@@ -184,24 +124,6 @@ ActiveRecord::Schema.define(version: 20141115181303) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-  end
-
-  create_table "quarterlies", force: true do |t|
-    t.string   "name"
-    t.string   "location"
-    t.date     "date"
-    t.integer  "cost"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.text     "paypal"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.string   "file_file_name"
-    t.string   "file_content_type"
-    t.integer  "file_file_size"
-    t.datetime "file_updated_at"
   end
 
   create_table "roles", force: true do |t|
@@ -227,22 +149,12 @@ ActiveRecord::Schema.define(version: 20141115181303) do
 
   create_table "supporters", force: true do |t|
     t.string   "name"
-    t.date     "date"
-    t.integer  "fee"
-    t.boolean  "platinum"
-    t.boolean  "gold"
-    t.boolean  "silver"
-    t.boolean  "bronze"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.string   "avatar_file_name"
     t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "file_file_name"
-    t.string   "file_content_type"
-    t.integer  "file_file_size"
-    t.datetime "file_updated_at"
+    t.string   "status"
+    t.boolean  "active"
   end
 
   create_table "users", force: true do |t|
