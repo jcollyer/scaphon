@@ -4,15 +4,15 @@
     <table>
       <thead>
         <tr>
-          <th><div class="th-inner">Email</th></div>
-          <th><div class="th-inner">Name</th></div>
-          <th><div class="th-inner">Address</th></div>
-          <th><div class="th-inner">City</th></div>
-          <th><div class="th-inner">State</th></div>
-          <th><div class="th-inner">Zip</th></div>
-          <th><div class="th-inner">Institution</th></div>
-          <th><div class="th-inner">SR</th></div>
-          <th><div class="th-inner">AM?</th></div>
+          <th><div class="th-inner"><%= sortable "email" %></th></div>
+          <th><div class="th-inner"><%= sortable "last_name" %></th></div>
+          <th><div class="th-inner"><%= sortable "street_address", "Address" %></th></div>
+          <th><div class="th-inner"><%= sortable "city" %>City</th></div>
+          <th><div class="th-inner"><%= sortable "state" %></th></div>
+          <th><div class="th-inner"><%= sortable "zip" %></th></div>
+          <th><div class="th-inner"><%= sortable "institution" %></th></div>
+          <th><div class="th-inner"><%= sortable "state_registerd", "SR" %></th></div>
+          <th><div class="th-inner"><%= sortable "aphon_member", "AM?" %></th></div>
           <th></th>
         </tr>
       </thead>

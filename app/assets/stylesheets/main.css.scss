@@ -422,9 +422,13 @@ input[type="submit"].button:disabled  {
         tr {
           th {
             .th-inner {
-              color:white;
+              a {
+                color:white;
+                text-decoration: none;
+                font-size: 20px;
+              }
               border-left: 1px solid white;
-              font-weight: bold;
+              font-weight: lighter;
               padding: 7px;
               position: absolute;
               top:0px;
