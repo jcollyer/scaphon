@@ -69,6 +69,10 @@ input[type="submit"].button:disabled  {
   }
 }
 
+input[type="checkbox"] {
+  margin: 5px;
+}
+
 .fz-50 {
   font-size: 50px;
 }

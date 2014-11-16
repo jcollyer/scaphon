@@ -36,6 +36,19 @@ ready = function() {
     passwordMatch();
   });
 
+  var checkAllButton = $(".check-all");
+  checkAllButton.click(function(){
+    var checked = $(this).closest('table').find(':checkbox');
+    var allChecked = $(this).hasClass("all-checked");
+      // debugger;
+    if (!allChecked){
+      checked.prop( "checked", true );
+      $(this).addClass("all-checked");
+    } else {
+      checked.prop( "checked", false );
+      $(this).removeClass("all-checked");
+    };
+  });
 };
 
 $(document).ready(ready);
