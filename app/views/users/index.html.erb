@@ -4,15 +4,16 @@
     <table>
       <thead>
         <tr>
-          <th><div class="th-inner"><%= sortable "email" %></th></div>
-          <th><div class="th-inner"><%= sortable "last_name" %></th></div>
-          <th><div class="th-inner"><%= sortable "street_address", "Address" %></th></div>
-          <th><div class="th-inner"><%= sortable "city" %>City</th></div>
-          <th><div class="th-inner"><%= sortable "state" %></th></div>
-          <th><div class="th-inner"><%= sortable "zip" %></th></div>
-          <th><div class="th-inner"><%= sortable "institution" %></th></div>
-          <th><div class="th-inner"><%= sortable "state_registerd", "SR" %></th></div>
-          <th><div class="th-inner"><%= sortable "aphon_member", "AM?" %></th></div>
+          <th><div class="th-inner check-all"><a class="fa fa-check"></a></div></th>
+          <th><div class="th-inner"><%= sortable "email" %></div></th>
+          <th><div class="th-inner"><%= sortable "last_name" %></div></th>
+          <th><div class="th-inner"><%= sortable "street_address", "Address" %></div></th>
+          <th><div class="th-inner"><%= sortable "city" %>City</div></th>
+          <th><div class="th-inner"><%= sortable "state" %></div></th>
+          <th><div class="th-inner"><%= sortable "zip" %></div></th>
+          <th><div class="th-inner"><%= sortable "institution" %></div></th>
+          <th><div class="th-inner"><%= sortable "state_registerd", "SR" %></div></th>
+          <th><div class="th-inner"><%= sortable "aphon_member", "AM?" %></div></th>
           <th></th>
         </tr>
       </thead>
@@ -20,6 +21,7 @@
       <tbody>
         <% @users.each do |user| %>
           <tr>
+            <td><%= check_box_tag "class[]", user.email %></td>
             <td><%= user.email %></td>
             <td><%= user.last_name %>, <%= user.first_name %></td>
             <td><%= user.street_address %></td>
