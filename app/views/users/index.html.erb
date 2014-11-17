@@ -3,6 +3,9 @@
     <input type="button" onClick="window.print()" />
     <i class="fa fa-print"></i>
   </div>
+  <div id="search">
+
+  </div>
 </div>
 <div id="user-table">
   <div id="user-table-header-background"> </div>
@@ -45,5 +48,10 @@
         <% end %>
       </tbody>
     </table>
+  </div>
+</div>
+<div class="row">
+  <div id="paginate">
+    <%= will_paginate @users %>
   </div>
 </div>

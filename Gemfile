@@ -12,6 +12,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
 
+gem 'will_paginate'
+
 group :doc do
   gem 'sdoc', require: false
 end

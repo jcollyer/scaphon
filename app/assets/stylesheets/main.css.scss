@@ -433,9 +433,10 @@ input[type="checkbox"] {
 }
 
 #user-table {
-  height: 600px;
   background-color: white;
   position: relative;
+  height: 600px;
+  margin: 10px;
   #user-table-header-background {
     background-color: $dark-gray;
     height: 30px;
@@ -481,6 +482,57 @@ input[type="checkbox"] {
           }
         }
       }
+    }
+  }
+}
+
+#paginate {
+
+  width: 600px;
+  position: fixed;
+  bottom: 35px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  font-size: 24px;
+  color: $dark-gray;
+  .previous_page{
+    float: left;
+    background: $light-gray;
+    padding: 5px;
+    &:hover {
+      background: $light-green;
+      color: white;
+    }
+  }
+  .previous_page.disabled{}
+  .next_page{
+    float: left;
+    background: $light-gray;
+    padding: 5px;
+  }
+  .next_page.disabled{}
+  em.current{
+    float: left;
+    background: $light-blue;
+    padding: 5px;
+  }
+  .gap {
+    float: left;
+    padding: 5px;
+  }
+  a {
+    border-top: 1px solid $gray;
+    text-decoration: none;
+    background: $light-gray;
+    margin: 0px;
+    padding: 5px;
+    float: left;
+    border-left: 1px solid $gray;
+    color: $dark-gray;
+    &:hover {
+      background: $light-green;
+      color: white;
     }
   }
 }
