@@ -19,4 +19,13 @@ class User < ActiveRecord::Base
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
+
+  def self.search(search)
+    if search
+      where('last_name LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
 end

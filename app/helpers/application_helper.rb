@@ -12,6 +12,6 @@ module ApplicationHelper
     else
       css_class = nil
     end
-    link_to title, {:sort => column, :direction => direction}, {:class => css_class}
+    link_to title, params.merge(:sort => column, :direction => direction, :page => nil), {:class => css_class}
   end
 end

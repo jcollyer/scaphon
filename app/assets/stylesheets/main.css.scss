@@ -430,6 +430,12 @@ input[type="checkbox"] {
       cursor: pointer;
     }
   }
+  #search {
+    top: 0px;
+    position: absolute;
+    left: 50px;
+    color: #333;
+  }
 }
 
 #user-table {
