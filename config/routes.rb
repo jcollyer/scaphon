@@ -42,4 +42,5 @@ Scaphon::Application.routes.draw do
   end
 
   resources :password_resets
+  resources :newsletter_blasts
 end
