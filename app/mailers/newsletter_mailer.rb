@@ -7,7 +7,7 @@ class NewsletterMailer < ActionMailer::Base
   #   en.newsletter_mailer.blast.subject
   #
   def blast(newsletter)
-    @greeting = "Hi, get the scoop!"
+    @greeting = "Hi there, get the scoop!"
 
     mail to: 'collyerdesign@gmail.com', subject: "SCAPHON Scoop"
   end
