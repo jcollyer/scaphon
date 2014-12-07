@@ -2,8 +2,10 @@
   <br>
   <%= link_to 'Show', @about, class: "button" %>
   <%= link_to 'Back', abouts_path, class: "button" %>
-  <br>
-  <br>
-  <h1 class="center">Editing About</h1>
+  <div class="background-a">
+    <h1 class="center">Editing About</h1>
+    <div class="background-a-content">
+      <%= render 'form' %>
+    </div>
+  </div>
 </div>
-<%= render 'form' %>
