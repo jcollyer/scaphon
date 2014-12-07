@@ -7,8 +7,14 @@ class NewsletterMailer < ActionMailer::Base
   #   en.newsletter_mailer.blast.subject
   #
   def blast(newsletter)
-    @greeting = "Hi there, get the scoop!"
+    @greeting = "heres the scoop!"
+    @users = User.all
+    @email = []
+    @users.each do |user|
+      @emails = @email << user.email
+    end
 
-    mail to: 'collyerdesign@gmail.com', subject: "SCAPHON Scoop"
+
+    mail to: @emails, subject: "SCAPHON Scoop"
   end
 end
