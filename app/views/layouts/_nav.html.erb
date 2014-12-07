@@ -10,8 +10,9 @@
     <% if current_user %>
       <%= link_to "log out", log_out_path, class: "button" %>
     <% else %>
-      <%= link_to "log in", log_in_path, class: "button" %>
-      <%= link_to "sign up", sign_up_path, class: "button" %>
+      <%= link_to "log in", log_in_path %>
+
+      <%= link_to "sign up", sign_up_path %>
     <% end %>
     <%# link_to "Pictures", newsletter_pictures_path %>
   </div>
