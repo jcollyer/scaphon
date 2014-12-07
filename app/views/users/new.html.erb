@@ -1,8 +1,10 @@
 <div class="row">
-  <br>
-  <br>
-  <h1 class="center">Sign Up!</h1>
-  <p class="center"><%= link_to 'Back', root_url, class: "button" %></p>
+  <p class="center"><%= link_to 'Back', log_in_path, class: "button" %></p>
+  <div class="background-a">
+    <h1 class="center">Sign Up!</h1>
+    <div class="background-a-content">
+      <%= render 'form' %>
+    </div>
+  </div>
 </div>
-<%= render 'form' %>
 
