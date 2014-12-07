@@ -11,11 +11,7 @@ ready = function() {
     theNav.css("background","rgba(255,255,255, "+opcity+")");
   });
 
-  // paypal - ensure document is ready
-  var paypal = $('#initial_paypal_code');
-  var ppcode = $('#new_pp_code');
-  var code = paypal.text();
-  ppcode.append(code);
+
 
 
   // fixed elements setup
@@ -60,3 +56,9 @@ ready = function() {
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
+ // paypal - ensure document is ready
+  var paypal = $('#initial_paypal_code');
+  var ppcode = $('#new_pp_code');
+  var code = paypal.text();
+  ppcode.append(code);
