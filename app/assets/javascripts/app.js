@@ -3,6 +3,10 @@ ready = function() {
 
   // ...your javascript goes here...
 
+  $(window).scroll(function(){
+    opcity = Math.ceil($("body").scrollTop() * 0.1) * 0.1;
+    $("#nav").css("background","rgba(255,255,255, "+opcity+")");
+  });
 
   // paypal - ensure document is ready
   var paypal = $('#initial_paypal_code');
