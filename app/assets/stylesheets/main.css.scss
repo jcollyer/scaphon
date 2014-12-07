@@ -96,8 +96,8 @@ input[type="checkbox"] {
 }
 
 #flash {
-  position: absolute;
-  top: 50px;
+  position: fixed;
+  top: 56px;
   z-index: 999;
   background: $light-green;
   width: 100%;
@@ -172,9 +172,10 @@ input[type="checkbox"] {
     width: 100px;
     margin: 5px  5px 0px 0px;
     right: 10px;
-    top: -5px;
+    top: 0px;
     position: absolute;
     font-size: 12px;
+    i {color: $light-blue;}
     a {
       color: $light-blue;
       padding: 6px 10px 2px;
@@ -426,6 +427,7 @@ input[type="checkbox"] {
       thead {
         tr {
           th {
+            min-width: 110px;
             .th-inner {
               a {
                 color:white;
