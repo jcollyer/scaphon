@@ -3,9 +3,12 @@ ready = function() {
 
   // ...your javascript goes here...
 
+  //nav scroll animation color
+    var theBody = $("body");
+    var theNav  = $("#nav");
   $(window).scroll(function(){
-    opcity = Math.ceil($("body").scrollTop() * 0.1) * 0.1;
-    $("#nav").css("background","rgba(255,255,255, "+opcity+")");
+    opcity = Math.ceil(theBody.scrollTop() * 0.1) * 0.1;
+    theNav.css("background","rgba(255,255,255, "+opcity+")");
   });
 
   // paypal - ensure document is ready
