@@ -32,7 +32,12 @@
         <%= link_to 'Add Image/PDF', newsletter, class: "button" %>
         <%= link_to 'Edit', edit_newsletter_path(newsletter), class: "button" %>
         <%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
-        <%= link_to "Email Blast", newsletter_mailers_path(newsletter), method: :post, class: "button" %>
+
+          <h2>
+            <i class="fa fa-send-o"></i>
+            <%= link_to "Email Blast", newsletter_mailers_path(newsletter), method: :post, data: { confirm: 'Are you sure?' }, class: "button" %>
+          </h2>
+
       </div>
     </div>
   </div>
