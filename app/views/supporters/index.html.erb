@@ -28,7 +28,10 @@
         <h3><%= supporter.active %></h3>
         <%= link_to 'Add Image', supporter, class: "button" %>
         <%= link_to 'Edit', edit_supporter_path(supporter), class: "button" %>
-        <%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        <h2>
+          <i class="fa fa-trash"></i>
+          <%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        </h2>
       </div>
     </div>
   </div>

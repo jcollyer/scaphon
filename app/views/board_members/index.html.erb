@@ -31,7 +31,10 @@
         <br>
         <%= link_to 'Show', board_member, class: "button" %>
         <%= link_to 'Edit', edit_board_member_path(board_member), class: "button" %>
-        <%= link_to 'Destroy', board_member, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        <h2>
+          <i class="fa fa-trash"></i>
+          <%= link_to 'Destroy', board_member, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        </h2>
       </div>
     </div>
   </div>

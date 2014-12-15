@@ -27,7 +27,10 @@
         </div>
         <%= link_to 'Add Image/PDF', scholarship, class: "button" %>
         <%= link_to 'Edit', edit_scholarship_path(scholarship), class: "button"%>
-        <%= link_to 'Destroy', scholarship, method: :delete, data: { confirm: 'Are you sure?' }, class: "button"%>
+        <h2>
+          <i class="fa fa-trash"></i>
+          <%= link_to 'Destroy', scholarship, method: :delete, data: { confirm: 'Are you sure?' }, class: "button"%>
+        </h2>
       </div>
     </div>
   <% end %>

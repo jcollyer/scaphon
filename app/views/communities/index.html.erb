@@ -36,7 +36,10 @@
         <br>
         <%= link_to 'Add Image', community, class: "button" %>
         <%= link_to 'Edit', edit_community_path(community), class: "button" %>
-        <%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        <h2>
+          <i class="fa fa-trash"></i>
+          <%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        </h2>
       </div>
     </div>
   </div>
