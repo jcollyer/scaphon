@@ -13,8 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin
-    # binding.pry
-
+    true if current_user.admin
   end
 
   def authorize
