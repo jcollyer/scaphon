@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
   end
 
   def admin
-    true if current_user.admin
+    if current_user
+      true if current_user.admin
+    else
+      false
+    end
   end
 
   def authorize
