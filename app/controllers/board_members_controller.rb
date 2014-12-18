@@ -1,4 +1,5 @@
 class BoardMembersController < ApplicationController
+  before_filter :authorize, except: [:index]
   before_action :set_board_member, only: [:show, :edit, :update, :destroy]
 
   # GET /board_members

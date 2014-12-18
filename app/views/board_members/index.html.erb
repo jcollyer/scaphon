@@ -1,8 +1,13 @@
 <div class="row">
+  <% if admin %>
+    <div class="small-12 columns">
+      <h2>
+        <i class="fa fa-plus"></i>
+        <%= link_to 'New Board member', new_board_member_path, class: "button" %>
+      </h2>
+    </div>
+  <% end %>
   <div class="small-12 columns">
-    <br>
-    <br>
-    <%= link_to 'New Board member', new_board_member_path, class: "button" %>
     <%= render "module/no_content" %>
   </div>
 </div>
@@ -28,13 +33,17 @@
             View PDF
           </a>
         <% end %>
-        <br>
-        <%= link_to 'Show', board_member, class: "button" %>
-        <%= link_to 'Edit', edit_board_member_path(board_member), class: "button" %>
-        <h2>
-          <i class="fa fa-trash"></i>
-          <%= link_to 'Destroy', board_member, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
-        </h2>
+
+        <% if admin %>
+          <h2>
+            <i class="fa fa-edit"></i>
+            <%= link_to 'Edit', edit_board_member_path(board_member), class: "button" %>
+          </h2>
+          <h2>
+            <i class="fa fa-trash"></i>
+            <%= link_to 'Destroy', board_member, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+          </h2>
+        <% end %>
       </div>
     </div>
   </div>
