@@ -1,8 +1,13 @@
 <div class="row">
+  <% if admin %>
+    <div class="small-12 columns">
+      <h2>
+        <i class="fa fa-plus"></i>
+        <%= link_to 'New Supporter', new_supporter_path, class: "button" %>
+      </h2>
+    </div>
+  <% end %>
   <div class="small-12 columns">
-    <br>
-    <br>
-    <%= link_to 'New Supporter', new_supporter_path, class: "button" %>
     <%= render "module/no_content" %>
   </div>
 </div>
@@ -26,12 +31,20 @@
       <div class="background-a-content">
         <h3><%= supporter.status %></h3>
         <h3><%= supporter.active %></h3>
-        <%= link_to 'Add Image', supporter, class: "button" %>
-        <%= link_to 'Edit', edit_supporter_path(supporter), class: "button" %>
-        <h2>
-          <i class="fa fa-trash"></i>
-          <%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
-        </h2>
+          <% if admin %>
+            <h2>
+              <i class="fa fa-edit"></i>
+              <%= link_to 'Edit', edit_supporter_path(supporter), class: "button" %>
+            </h2>
+            <h2>
+              <i class="fa fa-plus"></i>
+              <%= link_to 'Add Image', supporter, class: "button" %>
+            </h2>
+            <h2>
+              <i class="fa fa-trash"></i>
+              <%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+            </h2>
+          <% end %>
       </div>
     </div>
   </div>

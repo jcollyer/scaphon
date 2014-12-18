@@ -1,10 +1,11 @@
 class SupportersController < ApplicationController
+  before_filter :authorize, except: [:index]
   before_action :set_supporter, only: [:show, :edit, :update, :destroy]
 
   # GET /supporters
   # GET /supporters.json
   def index
-    @supporters = Supporter.all
+    @supporters = Supporter.all.order(updated_at: :desc)
     @thisModel = Supporter.all
   end
 
