@@ -12,26 +12,27 @@
   </div>
 </div>
 <% @supporters.each do |supporter| %>
-  <div class="row">
-    <div class="small-12 columns">
-      <br>
-      <br>
-    </div>
-    <div class="large-4 small-12 columns">
-      <div class="image">
-          <br>
-          <br>
-        <% if defined? supporter.pictures.last.image %>
-          <%= image_tag supporter.pictures.last.image.url(:large) %>
-        <% end %>
+  <% if supporter.active? || admin %>
+    <div class="row">
+      <div class="small-12 columns">
+        <br>
+        <br>
       </div>
-    </div>
-    <div class="large-8 small-12 columns background-a">
-      <h1><%= supporter.name %></h1>
-      <div class="background-a-content">
-        <h3><%= supporter.status %></h3>
-        <h3><%= supporter.active %></h3>
-          <% if admin %>
+      <div class="large-4 small-12 columns">
+        <div class="image">
+          <% if defined? supporter.pictures.last.image %>
+            <%= image_tag supporter.pictures.last.image.url(:large) %>
+          <% end %>
+        </div>
+      </div>
+      <div class="large-8 small-12 columns supporter-box">
+        <div class="supporter <%= supporter.status %>">
+          <h1><%= supporter.name %></h1>
+          <h3>Status: <%= supporter.status %></h3>
+        </div>
+        <% if admin %>
+          <div class="supporter <%= supporter.status %>">
+            <h1>Active? <%= supporter.active %></h1>
             <h2>
               <i class="fa fa-edit"></i>
               <%= link_to 'Edit', edit_supporter_path(supporter), class: "button" %>
@@ -44,8 +45,9 @@
               <i class="fa fa-trash"></i>
               <%= link_to 'Destroy', supporter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
             </h2>
-          <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>

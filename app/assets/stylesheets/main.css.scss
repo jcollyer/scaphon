@@ -10,6 +10,10 @@ $light-blue-a: rgba(39,166, 209, 0.1);
 $dark-orange: #e1574c;
 $light-green: #3db39d;
 
+$silver: #BDC3C7;
+$gold: #F89406;
+$platinum: #6C7A89;
+
 body {
   font-family: $font-main;
   background: $off-white;
@@ -370,6 +374,20 @@ input[type="checkbox"] {
 
 .background-every-other:nth-child(even){
   @extend .background-a;
+}
+
+.supporter-box {
+  .supporter{
+    margin: 7px;
+    padding: 20px;
+    h1, h3{
+      color: white;
+    }
+  }
+  .Gold { background: $gold; }
+  .Silver { background: $silver; }
+  .Bronze { background: $dark-orange; }
+  .Platinum { background: $platinum; }
 }
 
 #user-bar{
