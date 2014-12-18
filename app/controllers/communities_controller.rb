@@ -1,4 +1,5 @@
 class CommunitiesController < ApplicationController
+  before_filter :authorize, except: [:index]
   before_action :set_community, only: [:show, :edit, :update, :destroy]
 
   # GET /communities
