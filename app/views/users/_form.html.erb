@@ -12,10 +12,13 @@
       </div>
     <% end %>
     <% if admin %>
-    <div class="field">
-      <%= f.label :admin %><br>
-      <%= f.check_box :admin %>
-    </div>
+      <div class="field">
+        <h2>
+          <i class="fa fa-plus float-left"></i>
+          Make Admin
+          <%= f.check_box :admin %>
+        </h2>
+      </div>
     <% end %>
     <div class="field">
       <%= f.label :email %><br>
