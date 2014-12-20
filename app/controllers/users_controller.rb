@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      cookies[:auth_token] = @user.auth_token
       UserMailer.welcome_email(@user).deliver
       redirect_to root_url, notice: 'your logged in!'
     else
