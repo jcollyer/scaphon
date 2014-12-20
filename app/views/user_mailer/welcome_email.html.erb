@@ -4,13 +4,13 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com, <%= @user.first_name %></h1>
+    <h1>Welcome to SCAPHON, <%= @user.first_name %>!</h1>
     <p>
-      You have successfully signed up to example.com,
+      You have successfully signed up to scaphon.org,
       your username is: <%= @user.email %>.<br>
     </p>
     <p>
-      To login to the site, just follow this link: <%= @url %>.
+      To login to the site, just follow this link: <a href="<%= @url %>"><%= @url %></a>.
     </p>
     <p>Thanks for joining and have a great day!</p>
   </body>
