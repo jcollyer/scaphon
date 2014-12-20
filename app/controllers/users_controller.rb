@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authorize, only: [:index]
+  before_filter :authorize, only: [:index, :show]
   helper_method :sort_column, :sort_direction
   def index
     @users = User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 420, :page => params[:page])
