@@ -1,11 +1,6 @@
 <% @attachments.each do | attachment | %>
-  <div class="small-1 column">
+  <div class="small-6 column gray-box">
     <i class="fa fa-file-pdf-o fz-50"></i>
-  </div>
-  <div class="small-6 column">
-    <p><%= attachment.name %><p>
-  </div>
-  <div class="small-6 column">
     <%= link_to "View File", attachment.file.url, class: "button" %>
     <%= link_to 'Destroy', [@thisModel, attachment], method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
   </div>

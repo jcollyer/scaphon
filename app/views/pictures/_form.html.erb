@@ -1,21 +1,23 @@
-<%= form_for [@imageable, @picture] do |f| %>
-  <% if @picture.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+<div class="small-6 columns">
+  <%= form_for [@imageable, @picture] do |f| %>
+    <% if @picture.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
 
-      <ul>
-      <% @picture.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @picture.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <h3><%= f.label "Add New Image" %></h3>
+      <%= f.file_field :image, style: "width:190px;", :required => true %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit class: "button" %>
     </div>
   <% end %>
-  <div class="field">
-    <h3><%= f.label "Add New Image" %></h3>
-    <%= f.file_field :image, style: "width:190px;" %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit class: "button" %>
-  </div>
-<% end %>
+</div>
