@@ -1,7 +1,13 @@
 <div class="row">
+  <% if admin %>
+    <div class="small-12 columns">
+      <h2>
+        <i class="fa fa-plus"></i>
+        <%= link_to 'New Newsletter', new_newsletter_path, class: "button" %>
+      </h2>
+    </div>
+  <% end %>
   <div class="small-12 columns">
-    <br>
-    <%= link_to 'New Newsletter', new_newsletter_path, class: "button" %>
     <%= render "module/no_content" %>
   </div>
 </div>

@@ -1,24 +1,21 @@
 var ready;
 ready = function() {
 
-  // ...your javascript goes here...
-
   //nav scroll animation color
-    var theBody = $("body");
-    var theNav  = $("#nav");
+  var theBody = $("body");
+  var theNav  = $("#nav");
   $(window).scroll(function(){
     opcity = Math.ceil(theBody.scrollTop() * 0.1) * 0.1;
     theNav.css("background","rgba(255,255,255, "+opcity+")");
   });
 
 
-
-
   // fixed elements setup
-  var footerHeight = document.getElementById("footer").offsetHeight;
-  var navHeight = document.getElementById("nav").offsetHeight;
+  var nav = document.getElementById("nav");
+  var footer = document.getElementById("footer");
   var content = document.getElementById("content");
-
+  if (nav) {var navHeight = nav.offsetHeight;};
+  if (footer){var footerHeight = footer.offsetHeight;};
   content.style.marginBottom = footerHeight + "px";
   content.style.marginTop = navHeight + "px";
 
@@ -52,8 +49,11 @@ ready = function() {
       $(this).removeClass("all-checked");
     };
   });
-};
 
+  var windowHeight = $(window).height() - 88;
+  $("#user-table").css("height",windowHeight);
+
+};
 $(document).ready(ready);
 $(document).on('page:load', ready);
 
