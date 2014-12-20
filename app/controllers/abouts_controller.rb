@@ -1,4 +1,5 @@
 class AboutsController < ApplicationController
+  before_filter :authorize, except: [:index]
   before_action :set_about, only: [:show, :edit, :update, :destroy]
 
   # GET /abouts

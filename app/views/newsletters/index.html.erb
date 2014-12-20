@@ -28,16 +28,25 @@
             </a>
           </div>
         <% end %>
-        <br>
-        <%= link_to 'Add Image/PDF', newsletter, class: "button" %>
-        <%= link_to 'Edit', edit_newsletter_path(newsletter), class: "button" %>
-        <%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
-
+        <% if admin %>
+          <h2>
+            <i class="fa fa-edit"></i>
+            <%= link_to 'Edit', edit_newsletter_path(newsletter), class: "button" %>
+          </h2>
+          <h2>
+            <i class="fa fa-plus"></i>
+            <%= link_to 'Add Image/PDF', newsletter, class: "button" %>
+          </h2>
           <h2>
             <i class="fa fa-send-o"></i>
             <%= link_to "Email Blast", newsletter_mailers_path(newsletter), method: :post, data: { confirm: 'Are you sure?' }, class: "button" %>
           </h2>
+          <h2>
+            <i class="fa fa-trash"></i>
 
+            <%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+          </h2>
+        <% end %>
       </div>
     </div>
   </div>

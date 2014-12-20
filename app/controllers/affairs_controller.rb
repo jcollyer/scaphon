@@ -1,4 +1,5 @@
 class AffairsController < ApplicationController
+  before_filter :authorize, except: [:index]
   before_action :set_affair, only: [:show, :edit, :update, :destroy]
 
   # GET /affairs

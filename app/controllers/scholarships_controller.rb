@@ -1,4 +1,5 @@
 class ScholarshipsController < ApplicationController
+  before_filter :authorize, except: [:index]
   before_action :set_scholarship, only: [:show, :edit, :update, :destroy]
 
   # GET /scholarships

@@ -11,7 +11,15 @@
         </ul>
       </div>
     <% end %>
-
+    <% if admin %>
+      <div class="field">
+        <h2>
+          <i class="fa fa-plus float-left"></i>
+          Make Admin
+          <%= f.check_box :admin %>
+        </h2>
+      </div>
+    <% end %>
     <div class="field">
       <%= f.label :email %><br>
       <%= f.email_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :placeholder => "jane@smith.com" %>

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
+  helper_method :admin
 
   private
 
@@ -11,8 +12,17 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_auth_token(cookies[:auth_token]) if cookies[:auth_token]
   end
 
+  def admin
+    if current_user
+      true if current_user.admin
+    else
+      false
+    end
+  end
+
   def authorize
-    unless current_user
+    # binding.pry
+    unless admin
       flash[:error] = "unauthorized access"
       redirect_to :root
       false

@@ -1,6 +1,6 @@
 <div class="home-main">
   <% @events.each do |e| %>
-    <a href="/affairs/<%= e.id %>">
+    <a href="/affairs">
       <div class="home-item-container large-6 small-12 columns">
         <div class="home-item-icon">
           <% if e.kind == "quarterly" %><i class="fa fa-rocket"></i>
@@ -19,7 +19,7 @@
   <% end %>
 
   <% @newsletters.each do |n| %>
-    <a href="newsletters/<%= n.id %>">
+    <a href="newsletters">
       <div class="home-item-container large-6 small-12 columns">
         <div class="home-item-icon"><i class="fa fa-newspaper-o"></i></div>
         <div class="home-item">

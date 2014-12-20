@@ -1,7 +1,13 @@
 <div class="row">
+  <% if admin %>
+    <div class="small-12 columns">
+      <h2>
+        <i class="fa fa-plus"></i>
+        <%= link_to 'New Event', new_affair_path, class: "button" %>
+      </h2>
+    </div>
+  <% end %>
   <div class="small-12 columns">
-    <br>
-    <%= link_to 'New Event', new_affair_path, class: "button" %>
     <%= render "module/no_content" %>
   </div>
 </div>
@@ -33,9 +39,20 @@
           View PDF
         </a>
       <% end %>
-      <%= link_to 'Add Image/PDF/DOC', affair, class: "button" %>
-      <%= link_to 'Edit', edit_affair_path(affair), class: "button" %>
-      <%= link_to 'Destroy', affair, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+      <% if admin %>
+        <h2>
+          <i class="fa fa-edit"></i>
+          <%= link_to 'Edit', edit_affair_path(affair), class: "button" %>
+        </h2>
+        <h2>
+          <i class="fa fa-plus"></i>
+          <%= link_to 'Add Image/PDF/DOC', affair, class: "button" %>
+        </h2>
+        <h2>
+          <i class="fa fa-trash"></i>
+          <%= link_to 'Destroy', affair, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+        </h2>
+      <% end %>
     </div>
   </div>
 </div>
