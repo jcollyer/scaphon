@@ -11,87 +11,97 @@
         </ul>
       </div>
     <% end %>
-    <% if admin %>
-      <div class="field">
-        <h2>
-          <i class="fa fa-plus float-left"></i>
-          Make Admin
-          <%= f.check_box :admin %>
-        </h2>
+    <div class="row">
+      <div class="small-4 columns">
+        <% if admin %>
+          <div class="field">
+            <h2>
+              <i class="fa fa-plus float-left"></i>
+              Make Admin
+              <%= f.check_box :admin %>
+            </h2>
+          </div>
+        <% end %>
+        <div class="field">
+          <%= f.label :email, class: "required" %><br>
+          <%= f.email_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :placeholder => "jane@smith.com" %>
+        </div>
+        <% if current_page? sign_up_path %>
+          <div class="field">
+            <%= f.label :password, class: "required" %><br>
+            <%= f.password_field :password, :required => true %>
+          </div>
+          <div class="field">
+            <%= f.label :password_confirmation, class: "required" %>
+            <%= f.password_field :password_confirmation, :required => true %>
+          </div>
+        <% end %>
+        <div class="field">
+          <%= f.label :first_name, class: "required" %><br>
+          <%= f.text_field :first_name, :required => true %>
+        </div>
+        <div class="field">
+          <%= f.label :last_name, class: "required" %><br>
+          <%= f.text_field :last_name, :required => true %>
+        </div>
       </div>
-    <% end %>
-    <div class="field">
-      <%= f.label :email %><br>
-      <%= f.email_field :email, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :placeholder => "jane@smith.com" %>
-    </div>
-    <% if current_page? sign_up_path %>
-      <div class="field">
-        <%= f.label :password %><br>
-        <%= f.password_field :password, :required => true %>
+      <div class="small-4 columns">
+        <div class="field">
+          <%= f.label :street_address %><br>
+          <%= f.text_field :street_address %>
+        </div>
+        <div class="field">
+          <%= f.label :city %><br>
+          <%= f.text_field :city %>
+        </div>
+        <div class="field">
+          <%= f.label :state %><br>
+          <%= f.text_field :state, :class => "small" %>
+        </div>
+        <div class="field">
+          <%= f.label :zip %><br>
+          <%= f.number_field :zip, class: "small" %>
+        </div>
+        <div class="field">
+          <%= f.label :phone_home %><br>
+          <%= f.text_field :phone_home, :pattern =>'^\d{3}-\d{3}-\d{4}$', :placeholder => '333-444-5555', :class => "small" %>
+        </div>
+        <div class="field">
+          <%= f.label :phone_work %><br>
+          <%= f.text_field :phone_work, :pattern =>'^\d{3}-\d{3}-\d{4}$', :placeholder => '333-444-5555', :class => "small" %>
+        </div>
       </div>
-      <div class="field">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, :required => true %>
+      <div class="small-4 columns">
+        <div class="field">
+          <%= f.label :nurse %><br>
+          <%= f.check_box :nurse %>
+        </div>
+        <div class="field">
+          <%= f.label :institution %><br>
+          <%= f.text_field :institution %>
+        </div>
+        <div class="field">
+          <%= f.label "RN ID" %><br>
+          <%= f.text_field :rn_id, class: "small" %>
+        </div>
+        <div class="field">
+          <%= f.label :aphon_member %><br>
+          <%= f.check_box :aphon_member %>
+        </div>
+        <div class="field">
+          <%= f.label :aphon_member_number %><br>
+          <%= f.text_field :aphon_member_number, class: "small" %>
+        </div>
+          <div class="field">
+          <%= f.label :aphon_expiration_date %><br>
+          <%= f.date_field :aphon_expiration_date %>
+        </div>
       </div>
-    <% end %>
-    <div class="field">
-      <%= f.label :first_name %><br>
-      <%= f.text_field :first_name %>
     </div>
-    <div class="field">
-      <%= f.label :last_name %><br>
-      <%= f.text_field :last_name %>
-    </div>
-    <div class="field">
-      <%= f.label :street_address %><br>
-      <%= f.text_field :street_address %>
-    </div>
-    <div class="field">
-      <%= f.label :city %><br>
-      <%= f.text_field :city %>
-    </div>
-    <div class="field">
-      <%= f.label :state %><br>
-      <%= f.text_field :state, :class => "small" %>
-    </div>
-    <div class="field">
-      <%= f.label :zip %><br>
-      <%= f.number_field :zip, class: "small" %>
-    </div>
-    <div class="field">
-      <%= f.label :phone_home %><br>
-      <%= f.text_field :phone_home, :pattern =>'^\d{3}-\d{3}-\d{4}$', :placeholder => '333-444-5555', :class => "small" %>
-    </div>
-    <div class="field">
-      <%= f.label :phone_work %><br>
-      <%= f.text_field :phone_work, :pattern =>'^\d{3}-\d{3}-\d{4}$', :placeholder => '333-444-5555', :class => "small" %>
-    </div>
-    <div class="field">
-      <%= f.label :nurse %><br>
-      <%= f.check_box :nurse %>
-    </div>
-    <div class="field">
-      <%= f.label :institution %><br>
-      <%= f.text_field :institution %>
-    </div>
-    <div class="field">
-      <%= f.label "RN ID" %><br>
-      <%= f.text_field :rn_id, class: "small" %>
-    </div>
-    <div class="field">
-      <%= f.label :aphon_member %><br>
-      <%= f.check_box :aphon_member %>
-    </div>
-    <div class="field">
-      <%= f.label :aphon_member_number %><br>
-      <%= f.text_field :aphon_member_number, class: "small" %>
-    </div>
-      <div class="field">
-      <%= f.label :aphon_expiration_date %><br>
-      <%= f.date_field :aphon_expiration_date %>
-    </div>
-    <div class="actions">
-      <%= f.submit class: "button", id: "edit_user_submit" %>
+    <div class="row">
+      <div class="actions">
+        <h2 class="center"><%= f.submit class: "button", id: "edit_user_submit" %></h2>
+      </div>
     </div>
   <% end %>
 </div>

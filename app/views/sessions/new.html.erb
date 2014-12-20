@@ -1,7 +1,7 @@
 <div class="row">
   <br>
   <br>
-  <div class="background-a">
+  <div class="background-a small-box">
     <h1 class="center">Log in!</h1>
     <%= form_tag sessions_path do %>
       <div class="background-a-content">
@@ -25,10 +25,7 @@
       </div> -->
     <% end %>
   </div>
-  <div class="background-a">
-    <h1>Sign up!</h1>
-    <div class="background-a-content">
-      <%= link_to "sign up", sign_up_path, class: "button" %>
-    </div>
-  </div>
+  <h3 class="center">
+    OR - <%= link_to "sign up", sign_up_path, class: "button" %>
+  </h3>
 </div>
