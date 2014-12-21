@@ -5,7 +5,7 @@ class ScholarshipsController < ApplicationController
   # GET /scholarships
   # GET /scholarships.json
   def index
-    @scholarships = Scholarship.all
+    @scholarships = Scholarship.all.order(updated_at: :desc)
     @thisModel = Scholarship.all
   end
 

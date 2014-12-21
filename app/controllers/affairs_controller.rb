@@ -5,7 +5,7 @@ class AffairsController < ApplicationController
   # GET /affairs
   # GET /affairs.json
   def index
-    @affairs = Affair.all
+    @affairs = Affair.all.order(updated_at: :desc)
     @thisModel = Affair.all
   end
 
