@@ -6,8 +6,11 @@ class NewsletterMailer < ActionMailer::Base
   #
   #   en.newsletter_mailer.blast.subject
   #
-  def blast(newsletter)
+  def newsletter_blast(newsletter)
     @greeting = "heres the scoop!"
+    # @id = @id
+    @newsletter_name = "new SCAPHON SCOOP is here!"
+    @url = "http://scaphon.org/newsletters"
     @users = User.all
     @email = []
     @users.each do |user|
@@ -15,6 +18,6 @@ class NewsletterMailer < ActionMailer::Base
     end
 
 
-    mail to: @emails, subject: "SCAPHON Scoop"
+    mail to: @emails, from: "no_reply@scaphon.org", subject: "SCAPHON Scoop"
   end
 end

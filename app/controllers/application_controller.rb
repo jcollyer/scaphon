@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-    # binding.pry
     unless admin
       flash[:error] = "unauthorized access"
       redirect_to :root

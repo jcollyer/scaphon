@@ -45,11 +45,10 @@
           </h2>
           <h2>
             <i class="fa fa-send-o"></i>
-            <%= link_to "Email Blast", newsletter_mailers_path(newsletter), method: :post, data: { confirm: 'Are you sure?' }, class: "button" %>
+            <%= link_to "Email Blast", new_newsletter_blast_path, data: { confirm: 'Are you sure?' }, class: "button" %>
           </h2>
           <h2>
             <i class="fa fa-trash"></i>
-
             <%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
           </h2>
         <% end %>
