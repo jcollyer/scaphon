@@ -12,7 +12,7 @@ namespace :users do
   task add_auth_token_to_users: :environment do
     @users = User.all
     @users.each do |user|
-      user.auth_token = "blue"
+      user.auth_token = SecureRandom.base64
       user.save
     end
   end

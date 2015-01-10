@@ -9,6 +9,7 @@ class UserMailer < ActionMailer::Base
 
   def password_reset(user)
     @user = user
+    # @url = 'http://scaphon.org'
     @url = 'http://scaphon-rails4.herokuapp.com'
     mail :to => user.email, :subject => "Password Reset"
   end
