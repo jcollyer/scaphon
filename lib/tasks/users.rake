@@ -7,4 +7,13 @@ namespace :users do
       user.save
     end
   end
+
+  desc "add auth token to all users"
+  task add_auth_token_to_users: :environment do
+    @users = User.all
+    @users.each do |user|
+      user.auth_token = "blue"
+      user.save
+    end
+  end
 end
