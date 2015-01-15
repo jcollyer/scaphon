@@ -19,12 +19,12 @@
       <br>
     </div>
     <div class="large-3 small-12 columns">
+      <br>
+      <br>
       <div class="image">
         <% if defined? community.pictures.last.image %>
           <% community.pictures.each do |picture| %>
-            <div class="image">
-              <%= image_tag picture.image.url(:large) %>
-            </div>
+            <%= image_tag picture.image.url(:large) %>
           <% end %>
         <% end %>
       </div>
@@ -47,7 +47,7 @@
           </h2>
           <h2>
             <i class="fa fa-plus"></i>
-            <%= link_to 'Add Image', community, class: "button" %>
+            <%= link_to 'Add Image/PDF', community, class: "button" %>
           </h2>
           <h2>
             <i class="fa fa-trash"></i>
