@@ -28,11 +28,20 @@
       <h2><%= affair.date.strftime("%m/%d/%Y") %></h2>
       <h3><%= affair.location %></h3>
       <h3><%= affair.cost %></h3>
-      <div id="new_pp_code">
-        <div style="display:none" id="initial_paypal_code">
-          <%= affair.paypal %>
+      <% if current_user %>
+        <div id="new_pp_code">
+          <div style="display:none" id="initial_paypal_code">
+            <%= affair.paypal %>
+          </div>
         </div>
-      </div>
+      <% else %>
+        <br>
+        <h4>Please log-in <br>to purchase ticket</h4>
+        <div class="log-in">
+          <%= link_to "LOG IN", log_in_path, style: "color:#67c0de;text-decoration:none;font-weight:700;" %>
+          <i class="fa fa-toggle-on"></i>
+        </div>
+      <% end %>
       <% if defined? @affair.attachments.last.file %>
         <a class="button" href="<%= @affair.attachments.last.file.url %>" >
           <i class="fa fa-file-pdf-o"></i>
