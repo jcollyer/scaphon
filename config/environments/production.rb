@@ -78,7 +78,7 @@ Scaphon::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { :host => "scaphon-rails4.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "scaphon.org" }
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
@@ -89,7 +89,7 @@ Scaphon::Application.configure do
     :authentication => :plain,
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'scaphon-rails4.herokuapp.com',
+    :domain         => 'scaphon.org',
     :enable_starttls_auto => true
   }
 end
