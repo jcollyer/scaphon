@@ -10,7 +10,8 @@ class NewsletterMailer < ActionMailer::Base
     @greeting = "heres the scoop!"
     # @id = @id
     @newsletter_name = "new SCAPHON SCOOP is here!"
-    @url = "http://www.scaphon.org/newsletters"
+    # @url = "http://www.scaphon.org/newsletters"
+    @url = "http://scaphon-rails4.herokuapp.com/newsletters"
     @users = User.all
     @email = []
     @users.each do |user|
