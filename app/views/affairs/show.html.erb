@@ -20,7 +20,7 @@
       <h3><%= @affair.date.strftime("%m/%d/%Y") %></h3>
       <h3><%= @affair.location %></h3>
       <p><%= @affair.description %></p>
-      <h2><%= @affair.cost %></h2>
+      <h2>$<%= @affair.cost %></h2>
       <div id="new_pp_code">
         <div style="display:none" id="initial_paypal_code">
           <%= @affair.paypal %>

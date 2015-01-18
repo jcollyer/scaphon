@@ -12,35 +12,34 @@
       </div>
     <% end %>
   <div class="field">
-    <%= f.label :kind %>
-    <%= f.select :kind, options_for_select([["", ""],
-                                            ["Conference", "conference"],
+    <%= f.label :kind, class: "required" %>
+    <%= f.select :kind, options_for_select([["Conference", "conference"],
                                             ["Quarterly", "quarterly"],
-                                            ["Event", "event"]], @affair.kind) %>
+                                            ["Event", "event"]], @affair.kind), :required => true %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name, class: "required" %><br>
+    <%= f.text_field :name, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
+    <%= f.label :date, class: "required" %><br>
+    <%= f.date_select :date, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.label :location, class: "required" %><br>
+    <%= f.text_field :location, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :cost %><br>
-    <%= f.text_field :cost %>
+    <%= f.label :cost, class: "required" %><br>
+    <span class="d-n-b">$</span><span class="d-n-b"><%= f.text_field :cost, :required => true %></span>
   </div>
   <div class="field">
     <%= f.label :paypal %><br>
     <%= f.text_area :paypal %>
   </div>
     <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.label :description, class: "required" %><br>
+    <%= f.text_area :description, :required => true %>
   </div>
   <div class="actions">
     <%= f.submit class: "button" %>
