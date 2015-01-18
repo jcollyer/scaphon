@@ -13,12 +13,12 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
+      <%= f.label :name, class: "required" %><br>
+      <%= f.text_field :name, :required => true %>
     </div>
     <div class="field">
-      <%= f.label :date %><br>
-      <%= f.date_select :date %>
+      <%= f.label :date, class: "required" %><br>
+      <%= f.date_select :date, :required => true %>
     </div>
     <div class="actions">
       <%= f.submit %>
