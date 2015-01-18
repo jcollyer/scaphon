@@ -1,35 +1,35 @@
 <div class="home-main">
   <% @events.each do |e| %>
-    <a href="/affairs">
-      <div class="home-item-container large-6 small-12 columns">
-        <div class="home-item-icon">
-          <% if e.kind == "quarterly" %><i class="fa fa-rocket"></i>
-          <% elsif e.kind == "conference" %><i class="fa fa-tachometer"></i>
-          <% elsif e.kind == "event" %> <i class="fa fa-paper-plane"></i>
-          <% else %><i class="fa fa-graduation-cap"></i><% end %>
+    <% if defined? e.pictures.first.image %>
+      <a href="/affairs">
+        <div class="home-item-container large-6 small-12 columns">
+          <div class="home-item-icon">
+            <% if e.kind == "quarterly" %><i class="fa fa-rocket"></i>
+            <% elsif e.kind == "conference" %><i class="fa fa-tachometer"></i>
+            <% elsif e.kind == "event" %> <i class="fa fa-paper-plane"></i>
+            <% else %><i class="fa fa-graduation-cap"></i><% end %>
+          </div>
+          <div class="home-item">
+              <h1 class="ellipsis"><%= e.name %></h1>
+              <%= image_tag e.pictures.first.image.url(:large), class: "item-image" %>
+          </div>
         </div>
-        <div class="home-item">
-          <% if defined? e.pictures.first %>
-            <h1 class="ellipsis"><%= e.name %></h1>
-            <%= image_tag e.pictures.first.image.url(:large), class: "item-image" %>
-          <% end %>
-        </div>
-      </div>
-    </a>
+      </a>
+    <% end %>
   <% end %>
 
   <% @newsletters.each do |n| %>
-    <a href="newsletters">
-      <div class="home-item-container large-6 small-12 columns">
-        <div class="home-item-icon"><i class="fa fa-newspaper-o"></i></div>
-        <div class="home-item">
-            <h1 class="ellipsis"><%=n.name %></h1>
-            <% if defined? n.pictures.last.image %>
-              <%= image_tag n.pictures.last.image.url(:large), class: "item-image" %>
-            <% end %>
+    <% if defined? n.pictures.last.image %>
+      <a href="newsletters">
+        <div class="home-item-container large-6 small-12 columns">
+          <div class="home-item-icon"><i class="fa fa-newspaper-o"></i></div>
+          <div class="home-item">
+              <h1 class="ellipsis"><%=n.name %></h1>
+                <%= image_tag n.pictures.last.image.url(:large), class: "item-image" %>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
+    <% end %>
   <% end %>
 
   <a href="/scholarships">
